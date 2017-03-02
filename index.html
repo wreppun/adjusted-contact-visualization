@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+.arc text {
+  font: 10px sans-serif;
+  text-anchor: middle;
+}
+.arc path {
+  stroke: #fff;
+}
+</style>
+<body>
+  <button onClick="load(nextPlayer())">next</button>
+<script src="https://d3js.org/d3.v4.js"></script>
+<script>
+var width = 960,
+    height = 700,
+    chartRadius = 1200;
+
+const arcLength = Math.PI / 10;
+var color = d3.scaleOrdinal()
+    .range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
+
+var pie = d3.pie()
+    .startAngle(0)
+    .endAngle(arcLength)
+    .padAngle(Math.PI / 540)
+    .sort(null)
+    .value(function(d) { return d.sampleSize; });
+
+var svg = d3.select("body").append("svg")
+    .attr("width", width)
+    .attr("height", height)
+  .append("g")
+    .attr("transform", "translate("+ (width - chartRadius - 10) + "," + height / 2 + ")");
+
+function typeVelocityAngle (input) {
+  return {
+    velocity: +input.hit_speed,
+    angle: +input.hit_angle
+  };
+}
+
+const angleBucketer = [
+  {
+    label: '< -30',
+    fits: angle => angle < -30
+  },
+  between(-30, -20),
+  between(-20, -10),
+  between(-10, 0),
+  between(0, 10),
+  between(10, 20),
+  between(20, 30),
+  between(30, 40),
+  between(40, 50),
+  {
+    label: '> 50',
+    fits: angle => angle > 50
+  }
+];
+
+const velocityBucketer = [
+  {
+    label: '< 60',
+    fits: vel => vel < 60,
+    between: () => 0.5
+  },
+  between(60, 65),
+  between(65, 70),
+  between(70, 75),
+  between(75, 80),
+  between(80, 85),
+  between(85, 90),
+  between(90, 95),
+  between(95, 100),
+  between(100, 105),
+  between(105, 110),
+  {
+    label: '< 60',
+    fits: vel => vel > 110,
+    between: () => 0.5
+  }
+];
+
+function between(min, max) {
+  return {
+    label: parensIfNegative(min) + '-' + parensIfNegative(max),
+    fits: input => input >= min && input < max,
+    between: val => (max - val) * (max - min)
+  };
+}
+
+function parensIfNegative(num) {
+  return num < 0 ? '(' + num + ')' : '' + num;
+}
+
+function initBuckets(bucketer) {
+  const buckets = [];
+
+  for (let i = 0; i < bucketer.length; i++) {
+    buckets[i] = {
+      sampleSize: 0,
+      label: bucketer[i].label,
+      fits: bucketer[i].fits
+    };
+  }
+
+  return buckets;
+}
+
+function angleBucket(velAngles) {
+  const buckets = initBuckets(angleBucketer);
+
+  velAngles
+    .map(velAngle => velAngle.angle)
+    .forEach(angle => {
+      angleBucketer.forEach((bucketer, i) => {
+        if (bucketer.fits(angle)) {
+          buckets[i].sampleSize += 1;
+        }
+      })
+    });
+
+  return buckets;
+}
+
+function velocityBucket(velAngles) {
+  const buckets = initBuckets(velocityBucketer);
+
+  velAngles
+    .map(velAngle => velAngle.velocity)
+    .forEach(velocity => {
+      velocityBucketer.forEach((bucketer, i) => {
+        if (bucketer.fits(velocity)) {
+          buckets[i].sampleSize += 1;
+        }
+      })
+    });
+
+  return buckets;
+}
+
+function calculateRadii(bucketed) {
+  const sections = [];
+  let sum = 0
+  let runningSum = 0;
+
+  bucketed.forEach(d => sum += d.sampleSize);
+
+  bucketed.forEach(d => {
+    const innerScaled = runningSum / sum;
+    const outerScaled = (runningSum + d.sampleSize) / sum;
+
+    const innerRadius = shiftArc(innerScaled) + 2;
+    const outerRadius = shiftArc(outerScaled);
+
+    console.log(innerScaled, outerScaled, innerRadius, outerRadius);
+
+    sections.push({
+      cornerRadius: 4,
+      innerRadius,
+      outerRadius
+    });
+
+    runningSum += d.sampleSize;
+  });
+
+  return sections;
+  // return sections.map(section => d3.arc()
+  //     .cornerRadius(4)
+  //     .outerRadius(section.endTick * (radius * 0.7) + radius * 0.3)
+  //     .innerRadius(section.startTick * (radius * 0.7) + radius * 0.3 + 2));
+}
+
+function shiftArc(scaled) {
+  return scaled * (chartRadius * 0.7) + (chartRadius * 0.3);
+}
+
+function calculatePied(bucketed) {
+  const pied = pie(bucketed);
+
+  const {startAngle} = pied.find(p => p.data.label.startsWith('10') ? p : null);
+
+  const piedShifted = pied.map(p => {
+    p.startAngle = (p.startAngle - startAngle) * -1 + Math.PI / 2;
+    p.endAngle = (p.endAngle - startAngle) * -1 + Math.PI / 2;
+
+    // p.data.interpolate = vel =>
+
+    return p;
+  });
+
+  return piedShifted;
+}
+
+function sampleSizeFloor(samples) {
+  return samples.map(s => {
+    if (s.sampleSize < 1) {
+      s.sampleSize = 1;
+    }
+
+    return s;
+  });
+}
+
+const players = [
+  'aoki.csv',
+  'frazier.csv',
+  'mookie.csv',
+  'yelich.csv'
+];
+
+const nextPlayer = (function() {
+  let currentPlayer = 0;
+
+  return function () {
+    currentPlayer += 1;
+
+    return players[currentPlayer % players.length];
+  };
+}());
+
+load(nextPlayer());
+
+function arcTween(radius) {
+
+  return function factory(dParent) {
+
+    const iStart = d3.interpolate(this._current.startAngle, dParent.startAngle);
+    const iEnd = d3.interpolate(this._current.endAngle, dParent.endAngle);
+    const iInner = d3.interpolate(this._current.innerRadius, radius.innerRadius);
+    const iOuter = d3.interpolate(this._current.outerRadius, radius.outerRadius);
+
+    // store the current for next interpolation
+    this._current = Object.assign({}, dParent, radius);
+
+    return function onTick(t) {
+      return d3.arc()({
+        innerRadius: iInner(t),
+        outerRadius: iOuter(t),
+        startAngle: iStart(t),
+        endAngle: iEnd(t),
+        padAngle: dParent.padAngle
+      });
+    };
+  };
+}
+
+function load (csvFile) {
+  d3.csv(csvFile, typeVelocityAngle, function(error, velAngles) {
+    const angles = sampleSizeFloor(angleBucket(velAngles));
+    const velocities = sampleSizeFloor(velocityBucket(velAngles));
+    const radialSections = calculateRadii(velocities);
+    const pied = calculatePied(angles);
+
+    const wedges = svg.selectAll(".wedge")
+        .data(pied);
+
+    const newWedges = wedges.enter()
+      .append("g")
+        .attr("class", "wedge");
+
+    radialSection.forEach((radius, i) => {
+
+      wedges.select(".arc" + i)
+        .transition()
+        .duration(1000)
+        .attrTween("d", arcTween(radius));
+
+      newWedges.append("path")
+        .attr("class", "arc" + i)
+        .each(function(d) {
+          d.innerRadius = radius.innerRadius;
+          d.outerRadius = radius.outerRadius;
+          this._current = Object.assign({}, d, radius);
+        })
+        .attr("d", d3.arc())
+        .style("fill", function(d) { return color(d.data.label); });
+    });
+  });
+}
+
+function typeSampleSize(d) {
+  d.sampleSize = +d.sampleSize;
+  return d;
+}
+
+</script>
