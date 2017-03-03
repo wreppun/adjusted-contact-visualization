@@ -10,7 +10,7 @@
 }
 </style>
 <body>
-  <button onClick="load(nextPlayer())">next</button>
+  <button onClick="load('players/' + nextPlayer())">next</button>
 <script src="https://d3js.org/d3.v4.js"></script>
 <script>
 var width = 960,
@@ -200,7 +200,7 @@ function sampleSizeFloor(samples) {
   });
 }
 
-load(nextPlayer());
+load('./players/' + nextPlayer());
 
 function arcTween(radius) {
   return function factory(dParent) {
