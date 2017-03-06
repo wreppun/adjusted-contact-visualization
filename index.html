@@ -50,7 +50,7 @@ const pie = d3.pie()
     .startAngle(0)
     .endAngle(arcLength)
     .sort(null)
-    .value(function(d) { return d.sampleSize; });
+    .value(function(d) { return Math.max(5, d.sampleSize); });
 
 const svg = d3.select("body").append("svg")
     .attr("width", width)
@@ -144,15 +144,16 @@ function bucketThings(velAngles, bucketer, getThing) {
   return buckets;
 }
 
-function calculateRadii(bucketed) {
+function calculateRadii(bucketed, accessor) {
+  const sampleSizes = bucketed.map(accessor ? accessor : d => d.sampleSizes);
+  const sum = sampleSizes.reduce((agg, ss) => agg + ss, 0);
   const sections = [];
-  const sum = bucketed.reduce((a, d) => a + d.sampleSize, 0);
 
   let runningSum = 0;
 
-  bucketed.forEach(d => {
+  sampleSizes.forEach(sampleSize => {
     const innerScaled = runningSum / sum;
-    const outerScaled = (runningSum + d.sampleSize) / sum;
+    const outerScaled = (runningSum + sampleSize) / sum;
 
     const innerRadius = shiftArc(innerScaled) + 2;
     const outerRadius = shiftArc(outerScaled);
@@ -163,7 +164,7 @@ function calculateRadii(bucketed) {
       outerRadius
     });
 
-    runningSum += d.sampleSize;
+    runningSum += sampleSize;
   });
 
   return sections;
@@ -187,16 +188,6 @@ function calculatePied(bucketed) {
   });
 
   return piedShifted;
-}
-
-function sampleSizeFloor(samples) {
-  return samples.map(s => {
-    if (s.sampleSize < 1) {
-      s.sampleSize = 1;
-    }
-
-    return s;
-  });
 }
 
 load('./players/' + nextPlayer());
@@ -225,9 +216,9 @@ function arcTween(radius) {
 
 function load (csvFile) {
   d3.csv(csvFile, typeVelocityAngle, function(error, velAngles) {
-    const angles = sampleSizeFloor(angleBucket(velAngles));
-    const velocities = sampleSizeFloor(velocityBucket(velAngles));
-    const radialSections = calculateRadii(velocities);
+    const angles = angleBucket(velAngles);
+    const velocities = velocityBucket(velAngles);
+    const radialSections = calculateRadii(velocities, d => Math.max(d.sampleSize, 5));
     const pied = calculatePied(angles);
 
     const plotted = mapToChart(
@@ -338,3 +329,4 @@ function typeSampleSize(d) {
 }
 
 </script>
+</body>
