@@ -13,10 +13,9 @@
   <button onClick="load('players/' + nextPlayer())">next</button>
 <script src="https://d3js.org/d3.v4.js"></script>
 <script>
-var width = 960,
-    height = 700,
-    chartRadius = 600;
-
+const width = 960;
+const height = 700;
+const chartRadius = 600;
 const arcLength = Math.PI / 6;
 
 const polarToGrid = polar => {
@@ -30,7 +29,8 @@ const players = [
   'aoki.csv',
   'frazier.csv',
   'mookie.csv',
-  'yelich.csv'
+  'yelich.csv',
+  'schimpf.csv'
 ];
 
 const nextPlayer = (function() {
@@ -43,16 +43,16 @@ const nextPlayer = (function() {
   };
 }());
 
-var color = d3.scaleOrdinal()
+const color = d3.scaleOrdinal()
     .range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
 
-var pie = d3.pie()
+const pie = d3.pie()
     .startAngle(0)
     .endAngle(arcLength)
     .sort(null)
     .value(function(d) { return d.sampleSize; });
 
-var svg = d3.select("body").append("svg")
+const svg = d3.select("body").append("svg")
     .attr("width", width)
     .attr("height", height)
   .append("g")
@@ -146,10 +146,9 @@ function bucketThings(velAngles, bucketer, getThing) {
 
 function calculateRadii(bucketed) {
   const sections = [];
-  let sum = 0
-  let runningSum = 0;
+  const sum = bucketed.reduce((a, d) => a + d.sampleSize, 0);
 
-  bucketed.forEach(d => sum += d.sampleSize);
+  let runningSum = 0;
 
   bucketed.forEach(d => {
     const innerScaled = runningSum / sum;
