@@ -1,5 +1,15 @@
 import {playerCsv, setPlayerScale} from './bipCartographer.js';
 
+import Vue from 'vue';
+
+new Vue({
+  el: '#main',
+
+  data: {
+    message: 'Hello World?'
+  }
+});
+
 const players = [
   'aoki.csv',
   'frazier.csv',

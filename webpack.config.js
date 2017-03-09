@@ -7,5 +7,16 @@ module.exports = {
     filename: 'bundle.js',
     library: 'BipCartographer'
   },
-  devtool: 'cheap-eval-source-map'
+  devtool: 'cheap-eval-source-map',
+  resolve: {
+    extensions: ['.js'],
+    alias: {
+      'vue': 'vue/dist/vue.common.js'
+    }
+  },
+
+  devServer: {
+    publicPath: '/assets/'
+  }
+
 };
