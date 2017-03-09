@@ -6,36 +6,43 @@ new Vue({
   el: '#main',
 
   data: {
-    message: 'Hello World?'
+    currentPlayer: {},
+    players: [
+      {
+        name: 'Norichika Aoki',
+        id: 'aoki.csv'
+      },
+      {
+        name: 'Todd Frazier',
+        id: 'frazier.csv'
+      },
+      {
+        name: 'Mookie Betts',
+        id: 'mookie.csv'
+      },
+      {
+        name: 'Christian Yelich',
+        id: 'yelich.csv'
+      },
+      {
+        name: 'Ryan Schimpf',
+        id: 'schimpf.csv'
+      }
+    ]
+  },
+
+  methods: {
+    setScale: function (isPlayerScale) {
+      setPlayerScale(isPlayerScale);
+      if (this.currentPlayer.id) {
+        playerCsv('./players/' + this.currentPlayer.id);
+      }
+    }
+  },
+
+  watch: {
+    currentPlayer: function (newCurrent) {
+      playerCsv('./players/' + newCurrent.id);
+    }
   }
 });
-
-const players = [
-  'aoki.csv',
-  'frazier.csv',
-  'mookie.csv',
-  'yelich.csv',
-  'schimpf.csv'
-];
-
-const selector = (function () {
-  let currentPlayer = 0;
-
-  return {
-    current: () => players[currentPlayer % players.length],
-
-    next: () => {
-      currentPlayer += 1;
-
-      return players[currentPlayer % players.length];
-    }
-  };
-}());
-
-playerCsv('./players/' + selector.next());
-
-export const next = () => playerCsv('./players/' + selector.next());
-export const setScale = isPlayer => {
-  setPlayerScale(isPlayer);
-  playerCsv('./players/' + selector.current());
-};
