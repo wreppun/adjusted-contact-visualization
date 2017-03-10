@@ -2,8 +2,15 @@ import * as d3 from 'd3';
 
 const width = 960;
 const height = 700;
-const chartRadius = 600;
-const arcLength = Math.PI / 6;
+const chartRadius = 800;
+const arcLength = Math.PI / 4;
+
+// init
+d3.select('#graph').append('svg')
+    .attr('width', width)
+    .attr('height', height)
+  .append('g')
+    .attr('transform', 'translate(' + Math.min(0, width - chartRadius - 10) + ',' + height / 2 + ')');
 
 const polarToGrid = polar => {
   const x = Math.sin(polar.theta) * polar.r;
@@ -12,23 +19,15 @@ const polarToGrid = polar => {
   return { x, y };
 };
 
-console.log('d3', d3);
-
 const color = d3.scaleLinear()
-  .domain([0, 1.5])
-  .range(['white', 'green']);
+  .domain([0, 1.0, 1.5])
+  .range(['white', 'orange', 'green']);
 
 const pie = d3.pie()
     .startAngle(0)
     .endAngle(arcLength)
     .sort(null)
     .value(function (d) { return Math.max(5, d.sampleSize); });
-
-const svg = d3.select('body').append('svg')
-    .attr('width', width)
-    .attr('height', height)
-  .append('g')
-    .attr('transform', 'translate(' + Math.min(0, width - chartRadius - 10) + ',' + height / 2 + ')');
 
 // last in wins
 const distinctByKey = (dataArray, keyGenerator) => {
@@ -99,27 +98,29 @@ const scaleAndDraw = (function () {
   let evBucketer;
   let leagueProduction;
 
-  const drawScaled = (isPlayerScale, bipData) => {
-    if (isPlayerScale) {
+  const drawScaled = (scaleType, bipData) => {
+    if (scaleType === 'player') {
       draw(
         angleBucket(bipData, laBucketer),
         velocityBucket(bipData, evBucketer),
         leagueProduction,
         bipData
       );
-    } else {
+    } else if (scaleType === 'league') {
       draw(
         leagueLaScale,
         leagueEvScale,
         leagueProduction,
         bipData
       );
+    } else {
+      console.log('Unknown scale type', scaleType);
     }
   };
 
-  return (isPlayerScale, bipData) => {
+  return (scaleType, bipData) => {
     if (leagueProdFetched) {
-      drawScaled(isPlayerScale, bipData);
+      drawScaled(scaleType, bipData);
     } else {
       // fetch and parse league production data
       d3.json('./league/production.json', (err, production) => {
@@ -157,7 +158,7 @@ const scaleAndDraw = (function () {
           return Object.assign({}, b, {sampleSize});
         });
 
-        drawScaled(isPlayerScale, bipData);
+        drawScaled(scaleType, bipData);
       });
     }
   };
@@ -204,8 +205,6 @@ function calculateRadii (bucketed, accessor) {
     .map(ssAccessor)
     .reduce((agg, part) => agg + part, 0);
   const sections = [];
-
-  console.log('sum');
 
   let runningSum = 0;
 
@@ -275,7 +274,6 @@ function arcTween (radius) {
 function draw (angles, velocities, leagueProduction, velAngles) {
   const radialSections = calculateRadii(velocities, d => Math.max(d.sampleSize, 5));
   const pied = calculatePied(angles);
-
   const plotted = mapToChart(
     velocities,
     radialSections.map(r => Object.assign({
@@ -289,6 +287,8 @@ function draw (angles, velocities, leagueProduction, velAngles) {
     })),
     velAngles
   );
+
+  const svg = d3.select('#graph svg g');
 
   const wedges = svg.selectAll('.wedge')
       .data(pied);
@@ -350,28 +350,6 @@ function draw (angles, velocities, leagueProduction, velAngles) {
   points.exit().remove();
 }
 
-let playerScale = true;
-
-function setPlayerScale (b) {
-  playerScale = b;
-}
-
-function load (csvFile) {
-  d3.csv(
-    csvFile,
-    row => Object.assign({
-      velocity: +row.hit_speed,
-      angle: +row.hit_angle
-    }),
-    (error, velAngles) => {
-      if (error) {
-        throw error;
-      }
-
-      scaleAndDraw(playerScale, velAngles);
-    });
-}
-
 function mapToChart (rBuckets, rMinMax, thetaBuckets, thetaMinMax, velAngles) {
   const rMapper = merge(rBuckets, rMinMax);
   const thetaMapper = merge(thetaBuckets, thetaMinMax);
@@ -398,6 +376,5 @@ function merge (arr1, arr2) {
 }
 
 export {
-  setPlayerScale,
-  load as playerCsv
+  scaleAndDraw as render
 };

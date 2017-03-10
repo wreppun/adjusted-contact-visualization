@@ -1,0 +1,61 @@
+input, select, textarea, button{
+  font-family: inherit;
+  font-size: inherit;
+}
+
+body {
+  font-size: 16px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+input.search {
+  padding: 8px 8px 8px 42px;
+  font-size: 16px;
+  background: #fff url("../images/search.png") 8px 5px no-repeat;
+  background-size: 30px;
+  outline: none;
+  border: 1px solid #e3e3e3;
+  border-radius: 15px;
+  width: 240px;
+}
+
+#main {
+  margin-top: 24px;
+}
+
+.player-selector {
+  position: relative;
+}
+
+.player-completions {
+  position: absolute;
+  top: 32px;
+  list-style: none;
+  padding-left: 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: #fff;
+}
+
+.player-completions div {
+  padding: 12px 16px;
+}
+
+.player-completions .arrowed {
+  background-color: #aaa;
+}
+
+.scale-select input {
+  margin-top: 12px;
+}
+
+.scale-select-header {
+  font-weight:lighter;
+  color: #999;
+}
+
+
+/* GRAPH */
+.arc path {
+  stroke: #fff;
+}

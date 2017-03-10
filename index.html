@@ -1,22 +1,63 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
-<style>
-.arc path {
-  stroke: #fff;
-}
-</style>
+<head>
+<link rel="stylesheet" type="text/css" href="css/grid12.css" />
+<link rel="stylesheet" type="text/css" href="css/stylez.css" />
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+</head>
 <body>
-  <div id="main">
-    <div>
-      <button v-on:click="setScale(true)">Player Scale</button>
-      <button v-on:click="setScale(false)">League Scale</button>
-      <h1>{{ currentPlayer.name }}</h1>
-      <select v-model="currentPlayer">
-        <option v-for="player in players" v-bind:value="player">
-          {{ player.name }}
-        </option>
-      </select>
+  <div id="main" class="container">
+    <div class="row">
+      <div class="col-4">
+        <div class="player-selector">
+          <input v-model="playerInput" class="search" v-on:keyup.enter="selectArrowed()" v-on:keyup.down="moveArrow(1)" v-on:keyup.up="moveArrow(-1)">
+          <ul class="player-completions">
+            <li v-for="(player, index) in filteredPlayers">
+              <div v-on:click="setPlayer(player)" v-bind:class="{arrowed: index === arrowed}">
+                {{ player.name }}
+              </div>
+            </li>
+            <li v-if="overflow > 0">
+              <div>
+                {{ overflow }} others...
+              <div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class=col-8>
+        <!-- previous players -->
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <h1>{{ currentPlayer.name }}</h1>
+      </div>
+    </div>
+    <div class="row">
+
+      <div class="col-md-4">
+
+      </div>
+
+      <div class="col-md-8">
+        <div class="scale-select" v-if="currentPlayer.name">
+          <span class="scale-select-header">Select Scale</span>
+          <br/>
+          <input type="radio" id="playerScale" value="player" v-model="scaleType">
+          <label for="playerScale">Player</label>
+          <br>
+          <input type="radio" id="leagueScale" value="league" v-model="scaleType">
+          <label for="leagueScale">League</label>
+        </div>
+        <!-- <button v-if="currentPlayer.name" v-on:click="setScale(true)">Player Scale</button>
+        <button v-if="currentPlayer.name" v-on:click="setScale(false)">League Scale</button> -->
+        <div id="graph"></div>
+
+      </div>
     </div>
   </div>
+  <div id="sss"></div>
   <script src="assets/bundle.js"></script>
 </body>
