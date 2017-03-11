@@ -2,15 +2,33 @@ import * as d3 from 'd3';
 
 const width = 960;
 const height = 700;
-const chartRadius = 800;
-const arcLength = Math.PI / 4;
+const chartRadius = 600;
+const arcLength = Math.PI / 3;
 
 // init
-d3.select('#graph').append('svg')
-    .attr('width', width)
-    .attr('height', height)
-  .append('g')
-    .attr('transform', 'translate(' + Math.min(0, width - chartRadius - 10) + ',' + height / 2 + ')');
+const initGraph =
+  d3.select('#graph').append('svg')
+      .attr('width', width)
+      .attr('height', height)
+    .append('g')
+      .attr('transform', 'translate(' + Math.min(-100, width - chartRadius - 10) + ',' + height / 2 + ')');
+
+initGraph.append('text')
+  .append('textPath')
+  .attr('xlink:href', '#launchAngleLabel')
+  .style('text-anchor', 'middle')
+  .attr('startOffset', '50%')
+  .attr('class', 'axis-label')
+  .text('LAUNCH ANGLE');
+
+initGraph.append('text')
+  .attr('dy', -48)
+  .append('textPath')
+  .attr('xlink:href', '#exitVelocityLabel')
+  .style('text-anchor', 'left')
+  .attr('startOffset', '5%')
+  .attr('class', 'axis-label')
+  .text('EXIT VELOCITY');
 
 const polarToGrid = polar => {
   const x = Math.sin(polar.theta) * polar.r;
@@ -21,7 +39,7 @@ const polarToGrid = polar => {
 
 const color = d3.scaleLinear()
   .domain([0, 1.0, 1.5])
-  .range(['white', 'orange', 'green']);
+  .range(['#fffbf5', 'orange', 'green']);
 
 const pie = d3.pie()
     .startAngle(0)
@@ -249,6 +267,80 @@ function calculatePied (bucketed) {
   return piedShifted;
 }
 
+function getLaunchAngleTextArc (pied) {
+  const radius = shiftArc(1.1);
+  // backwards, because we run wedges counter clockwise
+  const startAngle = pied.reduce((agg, p) => Math.min(agg, p.endAngle), 2 * Math.PI);
+  const endAngle = pied.reduce((agg, p) => Math.max(agg, p.startAngle), -2 * Math.PI);
+  const arcStart = polarToGrid({r: radius, theta: startAngle});
+  const arcEnd = polarToGrid({r: radius, theta: endAngle});
+
+  // from https://www.visualcinnamon.com/2015/09/placing-text-on-arcs.html
+  const path = `M ${arcStart.x},${arcStart.y} A ${radius},${radius} 0 0,1 ${arcEnd.x} ${arcEnd.y}`;
+
+  return path;
+}
+
+function getLaunchAngleTicks (pied) {
+  const radiusStart = shiftArc(1);
+  const radiusEnd = shiftArc(1.1);
+
+  return pied.slice(1, pied.length)
+    .map(p => Object.assign({
+      coords: [
+        polarToGrid({r: radiusStart, theta: p.startAngle}),
+        polarToGrid({r: radiusEnd, theta: p.startAngle})
+      ],
+      id: 'la' + p.data.laMin,
+      label: p.data.laMin
+    }));
+}
+
+function getExitVelocityTicks (pied, radialSections) {
+  // path angle (since it is measured from the top of the circle) is the same
+  // as the angle needed when creating a perpendicular line.
+  const pathAngle = pied.reduce((agg, p) => Math.min(agg, p.endAngle), 2 * Math.PI);
+  const offset = xyOffset(pathAngle, 32);
+
+  return radialSections.slice(1, radialSections.length).map(r => {
+    const perpIntersection = polarToGrid({ r: r.innerRadius, theta: pathAngle });
+
+    const segmentEnd = {
+      x: perpIntersection.x - offset.x,
+      y: perpIntersection.y - offset.y
+    };
+
+    return {
+      coords: [
+        segmentEnd,
+        perpIntersection
+      ],
+      label: r.evMin,
+      id: 'ev' + r.evMin
+    };
+  });
+}
+
+function xyOffset (angle, hypotenuse) {
+  return {
+    x: Math.cos(angle) * hypotenuse,
+    y: Math.sin(angle) * hypotenuse
+  };
+}
+
+function getExitVelocityTextPath (pied) {
+  const innerRadius = shiftArc(0);
+  const outerRadius = shiftArc(1);
+  const pathAngle = pied.reduce((agg, p) => Math.min(agg, p.endAngle), 2 * Math.PI);
+
+  const pathBegin = polarToGrid({r: innerRadius, theta: pathAngle});
+  const pathEnd = polarToGrid({r: outerRadius, theta: pathAngle});
+
+  const path = `M ${pathBegin.x},${pathBegin.y} L ${pathEnd.x},${pathEnd.y}`;
+
+  return path;
+}
+
 function arcTween (radius) {
   return function factory (dParent) {
     const iStart = d3.interpolate(this._current.startAngle, dParent.startAngle);
@@ -287,8 +379,86 @@ function draw (angles, velocities, leagueProduction, velAngles) {
     })),
     velAngles
   );
+  const launchAngleTextArc = getLaunchAngleTextArc(pied);
+  const launchTicksD = getLaunchAngleTicks(pied);
+  const exitVelocityTextPath = getExitVelocityTextPath(pied);
+  const velocityTicksD = getExitVelocityTicks(pied, radialSections);
 
   const svg = d3.select('#graph svg g');
+
+  const tickSegment = d3.line()
+    .x(function (d) { return d.x; })
+    .y(function (d) { return d.y; });
+
+  const launchTicks = svg.selectAll('.launch-tick')
+    .data(launchTicksD, function (d) { return d.id; });
+
+  launchTicks.enter()
+    .append('path')
+      .attr('class', 'launch-tick')
+      .attr('id', function (d) { return d.id; })
+      .attr('d', function (d) { return tickSegment(d.coords); });
+
+  launchTicks.enter()
+    .append('text')
+      .attr('dy', 8)
+      .attr('class', 'launch-tick-label')
+    .append('textPath')
+      .attr('xlink:href', function (d) { return '#' + d.id; })
+      .style('text-anchor', 'middle')
+      .attr('startOffset', '50%')
+      .text(function (d) { return d.label; });
+
+  launchTicks.transition().duration(400)
+    .attr('d', function (d) { return tickSegment(d.coords); });
+
+  const velocityTicks = svg.selectAll('.velocity-tick')
+    .data(velocityTicksD, function (d) { return d.id; });
+
+  velocityTicks.enter()
+    .append('path')
+      .attr('class', 'velocity-tick')
+      .attr('id', function (d) { return d.id; })
+      .attr('d', function (d) { return tickSegment(d.coords); });
+
+  velocityTicks.enter()
+    .append('text')
+      .attr('dy', 8)
+      .attr('class', 'velocity-tick-label')
+    .append('textPath')
+      .attr('xlink:href', function (d) { return '#' + d.id; })
+      .style('text-anchor', 'end')
+      .attr('startOffset', '60%')
+      .text(function (d) { return d.label; });
+
+  velocityTicks.transition().duration(400)
+    .attr('d', function (d) { return tickSegment(d.coords); });
+
+  // launch angle label
+  const laLabel = svg.selectAll('#launchAngleLabel')
+    .data([launchAngleTextArc]);
+
+  laLabel.enter()
+    .append('path')
+      .attr('id', 'launchAngleLabel')
+      .attr('d', function (d) { return d; })
+      .style('fill', 'none');
+
+  laLabel.transition().duration(400)
+    .attr('d', function (d) { return d; });
+
+  // exit velocity label
+  const evLabel = svg.selectAll('#exitVelocityLabel')
+    .data([exitVelocityTextPath]);
+
+  evLabel.enter()
+    .append('path')
+      .attr('id', 'exitVelocityLabel')
+      .attr('d', function (d) { return d; })
+      .style('fill', 'none');
+
+  evLabel.transition().duration(400)
+    .attr('d', function (d) { return d; });
 
   const wedges = svg.selectAll('.wedge')
       .data(pied);
