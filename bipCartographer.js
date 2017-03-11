@@ -1,7 +1,7 @@
 import * as d3 from 'd3';
 
 const width = 960;
-const height = 700;
+const height = 900;
 const chartRadius = 600;
 const arcLength = Math.PI / 3;
 
@@ -401,7 +401,7 @@ function draw (angles, velocities, leagueProduction, velAngles) {
 
   launchTicks.enter()
     .append('text')
-      .attr('dy', 8)
+      .attr('dy', 6)
       .attr('class', 'launch-tick-label')
     .append('textPath')
       .attr('xlink:href', function (d) { return '#' + d.id; })
@@ -423,7 +423,7 @@ function draw (angles, velocities, leagueProduction, velAngles) {
 
   velocityTicks.enter()
     .append('text')
-      .attr('dy', 8)
+      .attr('dy', 6)
       .attr('class', 'velocity-tick-label')
     .append('textPath')
       .attr('xlink:href', function (d) { return '#' + d.id; })
@@ -501,9 +501,16 @@ function draw (angles, velocities, leagueProduction, velAngles) {
     .data(plotted.map(polarToGrid));
 
   points.transition()
-    .duration(400)
+    .duration(100)
+    .style('opacity', 0)
+    .transition()
+    .duration(0)
     .attr('cx', d => d.x)
-    .attr('cy', d => d.y);
+    .attr('cy', d => d.y)
+    .transition()
+    .delay(200)
+    .duration(300)
+    .style('opacity', 1);
 
   points.enter()
     .append('circle')
@@ -514,7 +521,7 @@ function draw (angles, velocities, leagueProduction, velAngles) {
     .style('opacity', 0)
     .transition()
     .delay(300)
-    .duration(600)
+    .duration(300)
     .style('opacity', 1);
 
   points.exit().remove();

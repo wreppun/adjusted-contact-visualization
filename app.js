@@ -11,9 +11,9 @@ new Vue({
 
   data: {
     playerInput: null,
-    filteredPlayer: [],
     overflow: 0,
     currentPlayer: {},
+    recentPlayers: [],
     arrowed: 0,
     scaleType: 'league'
   },
@@ -43,7 +43,14 @@ new Vue({
   },
 
   methods: {
-    setPlayer: function (player) {
+    setPlayer (player) {
+      ifFoundRemove(player, this.recentPlayers);
+      ifFoundRemove(this.currentPlayer, this.recentPlayers);
+
+      if (this.currentPlayer.name) {
+        this.recentPlayers.splice(0, 0, this.currentPlayer);
+      }
+
       this.currentPlayer = player;
       this.playerInput = null;
       this.overflow = 0;
@@ -54,7 +61,7 @@ new Vue({
         });
     },
 
-    fetchBatter: function (batterId) {
+    fetchBatter (batterId) {
       return this.$http.get(`http://localhost:3714/batter/${batterId}`)
         .then(results => {
           console.log(results);
@@ -62,14 +69,20 @@ new Vue({
         })
         .then(results => results.body);
     },
-    selectArrowed: function () {
+
+    getInitials (player) {
+      return player.name.split(' ').map(part => part[0]).join('');
+    },
+
+    selectArrowed () {
       const selectedViaArrow = this.filteredPlayers[this.arrowed];
 
       if (selectedViaArrow) {
         this.setPlayer(selectedViaArrow);
       }
     },
-    moveArrow: function (increment) {
+
+    moveArrow (increment) {
       this.arrowed = bound(this.arrowed + increment, 0, this.filteredPlayers.length);
     }
   },
@@ -82,6 +95,16 @@ new Vue({
     }
   }
 });
+
+function ifFoundRemove (player, players) {
+  const existing = players.findIndex(p => p.name === player.name);
+
+  console.log(existing, player, players);
+
+  if (existing > -1) {
+    players.splice(existing, 1);
+  }
+}
 
 function bound (value, min, max) {
   return Math.min(max, Math.max(value, min));
