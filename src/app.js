@@ -1,5 +1,5 @@
 import {render} from './bipCartographer.js';
-import * as Players from './league/players.json';
+import * as Players from './static/league/players.json';
 
 import Vue from 'vue';
 import VueResource from 'vue-resource';

@@ -141,7 +141,8 @@ const scaleAndDraw = (function () {
       drawScaled(scaleType, bipData);
     } else {
       // fetch and parse league production data
-      d3.json('./league/production.json', (err, production) => {
+      // could be imported, but probably dynamic later
+      d3.json('./src/static/league/production.json', (err, production) => {
         if (err) {
           throw err;
         }

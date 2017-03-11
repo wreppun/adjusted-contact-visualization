@@ -8,7 +8,7 @@
 <body>
   <div id="main" class="container">
     <div class="row">
-      <div class="col-md-4">
+      <div class="col-md-4 col-sm-6">
         <div class="player-selector">
           <input v-model="playerInput" class="search" v-on:keyup.enter="selectArrowed()" v-on:keyup.down="moveArrow(1)" v-on:keyup.up="moveArrow(-1)">
           <ul class="player-completions">
@@ -26,7 +26,7 @@
         </div>
       </div>
 
-      <div class="col-md-8">
+      <div class="col-md-8 col-sm-6">
         <div class="recent-players">
           <div v-for="recentPlayer in recentPlayers" class="recent-player" v-on:click="setPlayer(recentPlayer)">
             <!-- <span v-on:click="setPlayer(recentPlayer)"> -->
