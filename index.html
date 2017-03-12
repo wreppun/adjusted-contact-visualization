@@ -42,13 +42,146 @@
         <h1 class="player-name">{{ currentPlayer.name }}</h1>
       </div>
     </div>
-    <div class="row">
+    <div class="row bip-data">
 
-      <div class="col-md-3">
+      <div class="col-md-4 stats-column">
+        <div class="player-stats" v-if="currentPlayer.name">
+          <div class="stats-header">
+            wOBA for All BIP
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <td>
+                </td>
+                <td>
+                  Actual
+                </td>
+                <td>
+                  Expected
+                </td>
+                <td>
+                  Diff
+                </td>
+                <td>
+                  #
+                </td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="player-woba">
+                <td class="player-woba-label">
+                  All BIP
+                </td>
+                <td class="player-woba-actual">
+                  {{ playerWoba.actual }}
+                </td>
+                <td class="player-woba-expected">
+                  {{ playerWoba.expected }}
+                </td>
+                <td class="player-woba-diff">
+                  {{ playerWoba.diff }}
+                </td>
+                <td class="player-woba-count">
+                  {{ playerWoba.count }}
+                </td>
+              </tr>
+            </tbody>
+          </table>
 
+          <div class="stats-header">
+            wOBA by Launch Angle
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <td>
+                </td>
+                <td>
+                  Actual
+                </td>
+                <td>
+                  Expected
+                </td>
+                <td>
+                  Diff
+                </td>
+                <td>
+                  #
+                </td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="angleWoba in playerAngleWoba"
+                  class="player-angle-woba"
+                  v-bind:class="{ 'small-sample': angleWoba.count < 20 }">
+                <td class="player-woba-label">
+                  {{ angleWoba.label}}
+                </td>
+                <td class="player-woba-actual">
+                  {{ angleWoba.actual }}
+                </td>
+                <td class="player-woba-expected">
+                  {{ angleWoba.expected }}
+                </td>
+                <td class="player-woba-diff">
+                  {{ angleWoba.diff }}
+                </td>
+                <td class="player-woba-count">
+                  {{ angleWoba.count }}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="stats-header">
+            wOBA by Exit Velocity
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <td>
+                </td>
+                <td>
+                  Actual
+                </td>
+                <td>
+                  Expected
+                </td>
+                <td>
+                  Diff
+                </td>
+                <td>
+                  #
+                </td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="velocityWoba in playerVelocityWoba"
+                  class="player-velocity-woba"
+                  v-bind:class="{ 'small-sample': velocityWoba.count < 20 }">
+                <td class="player-woba-label">
+                  {{ velocityWoba.label}}
+                </td>
+                <td class="player-woba-actual">
+                  {{ velocityWoba.actual }}
+                </td>
+                <td class="player-woba-expected">
+                  {{ velocityWoba.expected }}
+                </td>
+                <td class="player-woba-diff">
+                  {{ velocityWoba.diff }}
+                </td>
+                <td class="player-woba-count">
+                  {{ velocityWoba.count }}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
 
-      <div class="col-md-9">
+      <div class="col-md-8">
         <div class="scale-select" v-if="currentPlayer.name">
           <span class="scale-select-header">Select Scale</span>
           <br/>
@@ -58,9 +191,14 @@
           <input type="radio" id="leagueScale" value="league" v-model="scaleType">
           <label for="leagueScale">League</label>
         </div>
-        <!-- <button v-if="currentPlayer.name" v-on:click="setScale(true)">Player Scale</button>
-        <button v-if="currentPlayer.name" v-on:click="setScale(false)">League Scale</button> -->
-        <div id="graph"></div>
+
+        <div class="batter-outline" v-if="currentPlayer.name">
+          <img src="./images/baseball-batter-outline-silhouette.svg" />
+        </div>
+
+        <!-- used by d3 -->
+        <div id="graph">
+        </div>
 
       </div>
     </div>

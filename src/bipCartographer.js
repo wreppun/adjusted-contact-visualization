@@ -11,7 +11,7 @@ const initGraph =
       .attr('width', width)
       .attr('height', height)
     .append('g')
-      .attr('transform', 'translate(' + Math.min(-100, width - chartRadius - 10) + ',' + height / 2 + ')');
+      .attr('transform', 'translate(' + (0) + ',' + height / 2 + ')');
 
 initGraph.append('text')
   .append('textPath')

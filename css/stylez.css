@@ -29,16 +29,18 @@ input.search {
 
 .player-selector {
   position: relative;
+  z-index: 1;
 }
 
 .player-completions {
   position: absolute;
   top: 32px;
+  left: 16px;
   list-style: none;
   padding-left: 0;
   border: 1px solid #ccc;
   border-radius: 4px;
-  background: #fff;
+  background-color: #fff;
 }
 
 .player-completions div {
@@ -47,6 +49,11 @@ input.search {
 
 .player-completions .arrowed {
   background-color: #aaa;
+}
+
+.scale-select {
+  position: absolute;
+  padding: 24px;
 }
 
 .scale-select input {
@@ -58,6 +65,58 @@ input.search {
   color: #999;
 }
 
+.recent-players {
+  display: flex;
+}
+
+.recent-player {
+    padding: 12px;
+    background: #ddd;
+    margin-left: 16px;
+    border-radius: 32px;
+    font-weight: normal;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+thead td {
+  font-size: 12px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+td {
+  padding: 2px 12px;
+}
+
+tbody td {
+  text-align: right;
+}
+
+.player-woba-label {
+  font-size: 12px;
+}
+
+.stats-header {
+  margin: 16px;
+  font-size: 20px;
+  color: #999;
+}
+
+.batter-outline {
+  width: 120px;
+  position: absolute;
+  top: 400px;
+  left: 36px;
+}
+
+.bip-data {
+  border-top: 1px solid #ddd;
+}
+
+.stats-column {
+  border-right: 1px solid #ddd;
+}
 
 /* GRAPH */
 .arc path {
@@ -74,16 +133,6 @@ input.search {
   font-size: 24px;
 }
 
-.recent-players {
-  display: flex;
-}
-
-.recent-player {
-    padding: 12px;
-    background: #ddd;
-    margin-left: 16px;
-    border-radius: 32px;
-    font-weight: normal;
-    letter-spacing: 1px;
-    cursor: pointer;
+tr.small-sample {
+  color: #ccc;
 }
