@@ -23,30 +23,36 @@ function getBipScore (bip) {
 
 const woba = {
   expected (bipData) {
-    return (bipData.reduce((agg, bip) => agg + bip.xwoba, 0) / bipData.length).toFixed(3);
-
-    // return toFixed(
-    //   bipData.reduce((agg, bip) => agg + bip.xwoba, 0) / bipData.length,
-    //   3
-    // );
+    return average(bipData, bip => bip.xwoba).toFixed(3);
   },
 
   actual (bipData) {
-    const bipTotals = bipData.reduce((agg, bip) => {
-      const bipScore = getBipScore(bip);
-      agg.score += bipScore.score;
-      agg.abs += bipScore.ab;
+    return average(
+        bipData.map(getBipScore),
+        bs => bs.score,
+        bs => bs.ab
+      )
+      .toFixed(3);
+  },
 
-      return agg;
-    }, { score: 0, abs: 0 });
-
-    return (bipTotals.score / bipTotals.abs).toFixed(3);
-    // return toFixed(
-    //   bipTotals.score / bipTotals.abs,
-    //   3
-    // );
+  league (leagueData) {
+    return average(leagueData, bucket => bucket.woba, bucket => bucket.ab).toFixed(3);
   }
 };
+
+function average (data, getValue, getWeight) {
+  const totals = data.reduce((agg, d) => {
+    const weight = getWeight ? getWeight(d) : 1;
+    const value = getValue ? getValue(d) : d;
+
+    agg.sum += value * weight;
+    agg.count += weight;
+
+    return agg;
+  }, { sum: 0, count: 0 });
+
+  return totals.sum / totals.count;
+}
 
 function toFixed (num, fixed) {
   return Math.floor(Math.pow(10, fixed) * num) / Math.pow(10, fixed);

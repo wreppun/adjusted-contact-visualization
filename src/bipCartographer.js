@@ -1,4 +1,7 @@
 import * as d3 from 'd3';
+import {polarToGrid, sizeSegments} from './graphUtils';
+import {angleBucketer, velocityBucketer} from './partitions';
+import * as LeagueData from './static/league/production.json';
 
 const width = 960;
 const height = 900;
@@ -7,7 +10,7 @@ const arcLength = Math.PI / 3;
 
 // init
 const initGraph =
-  d3.select('#graph').append('svg')
+  d3.select('#launch-angle-exit-velocity').append('svg')
       .attr('width', width)
       .attr('height', height)
     .append('g')
@@ -30,13 +33,6 @@ initGraph.append('text')
   .attr('class', 'axis-label')
   .text('EXIT VELOCITY');
 
-const polarToGrid = polar => {
-  const x = Math.sin(polar.theta) * polar.r;
-  const y = -Math.cos(polar.theta) * polar.r;
-
-  return { x, y };
-};
-
 const color = d3.scaleLinear()
   .domain([0, 1.0, 1.5])
   .range(['#fffbf5', 'orange', 'green']);
@@ -47,138 +43,40 @@ const pie = d3.pie()
     .sort(null)
     .value(function (d) { return Math.max(5, d.sampleSize); });
 
-// last in wins
-const distinctByKey = (dataArray, keyGenerator) => {
-  const distinctMap = dataArray
-    .reduce((agg, datum) => {
-      agg[keyGenerator(datum)] = datum;
-      return agg;
-    }, {});
-
-  return Object.keys(distinctMap).map(key => distinctMap[key]);
-};
-
-const angleLimits = performanceData => {
-  return distinctByKey(performanceData, p => p.laMin + ':' + p.laMax)
-    .map(p => Object.assign({
-      laMin: p.laMin,
-      laMax: p.laMax
-    }))
-    .sort((a, b) => a.laMin - b.laMin);
-};
-
-const velocityLimits = performanceData => {
-  return distinctByKey(performanceData, p => p.evMin + ':' + p.evMax)
-    .map(p => Object.assign({
-      evMin: p.evMin,
-      evMax: p.evMax
-    }))
-    .sort((a, b) => a.evMin - b.evMin);
-};
-
-const buildBucketer = (sortedLimits, getMin, getMax) => {
-  const bucketer = new Array(sortedLimits.length);
-  const first = sortedLimits[0];
-  const last = sortedLimits[sortedLimits.length - 1];
-
-  bucketer[0] = Object.assign({
-    label: '< ' + getMax(first),
-    fits: angle => angle < getMax(first),
-    interpolate: () => 0.5
-  }, first);
-
-  bucketer[sortedLimits.length - 1] = Object.assign({
-    label: '> ' + getMin(last),
-    fits: angle => angle >= getMin(last),
-    interpolate: () => 0.5
-  }, last);
-
-  for (let i = 1; i < sortedLimits.length - 1; i++) {
-    const limit = sortedLimits[i];
-    const min = getMin(limit);
-    const max = getMax(limit);
-
-    bucketer[i] = Object.assign({
-      label: min + '-' + max,
-      fits: input => input >= min && input < max,
-      interpolate: input => (input - min) / (max - min)
-    }, limit);
-  }
-
-  return bucketer;
-};
-
 const scaleAndDraw = (function () {
-  let leagueProdFetched = false;
-  let leagueLaScale;
-  let leagueEvScale;
-  let laBucketer;
-  let evBucketer;
-  let leagueProduction;
+  const leagueLaScale = angleBucketer.map(b => {
+    const sampleSize = LeagueData
+      .filter(lp => lp.laMin === b.laMin && lp.laMax === b.laMax)
+      .reduce((agg, lp) => agg + lp.abs, 0);
 
-  const drawScaled = (scaleType, bipData) => {
+    return Object.assign({}, b, {sampleSize});
+  });
+
+  const leagueEvScale = velocityBucketer.map(b => {
+    const sampleSize = LeagueData
+      .filter(lp => lp.evMin === b.evMin && lp.evMax === b.evMax)
+      .reduce((agg, lp) => agg + lp.abs, 0);
+
+    return Object.assign({}, b, {sampleSize});
+  });
+
+  return (scaleType, bipData) => {
     if (scaleType === 'player') {
       draw(
-        angleBucket(bipData, laBucketer),
-        velocityBucket(bipData, evBucketer),
-        leagueProduction,
+        angleBucket(bipData, angleBucketer),
+        velocityBucket(bipData, velocityBucketer),
+        LeagueData,
         bipData
       );
     } else if (scaleType === 'league') {
       draw(
         leagueLaScale,
         leagueEvScale,
-        leagueProduction,
+        LeagueData,
         bipData
       );
     } else {
       console.log('Unknown scale type', scaleType);
-    }
-  };
-
-  return (scaleType, bipData) => {
-    if (leagueProdFetched) {
-      drawScaled(scaleType, bipData);
-    } else {
-      // fetch and parse league production data
-      // could be imported, but probably dynamic later
-      d3.json('./src/static/league/production.json', (err, production) => {
-        if (err) {
-          throw err;
-        }
-
-        leagueProdFetched = true;
-
-        leagueProduction = production;
-
-        laBucketer = buildBucketer(
-          angleLimits(production),
-          p => p.laMin,
-          p => p.laMax);
-
-        evBucketer = buildBucketer(
-          velocityLimits(production),
-          p => p.evMin,
-          p => p.evMax);
-
-        leagueLaScale = laBucketer.map(b => {
-          const sampleSize = production
-            .filter(lp => lp.laMin === b.laMin && lp.laMax === b.laMax)
-            .reduce((agg, lp) => agg + lp.abs, 0);
-
-          return Object.assign({}, b, {sampleSize});
-        });
-
-        leagueEvScale = evBucketer.map(b => {
-          const sampleSize = production
-            .filter(lp => lp.evMin === b.evMin && lp.evMax === b.evMax)
-            .reduce((agg, lp) => agg + lp.abs, 0);
-
-          return Object.assign({}, b, {sampleSize});
-        });
-
-        drawScaled(scaleType, bipData);
-      });
     }
   };
 }());
@@ -219,45 +117,24 @@ function bucketThings (velAngles, bucketer, getThing) {
 }
 
 function calculateRadii (bucketed, accessor) {
-  const ssAccessor = accessor || (d => d.sampleSizes);
-  const sum = bucketed
-    .map(ssAccessor)
-    .reduce((agg, part) => agg + part, 0);
-  const sections = [];
-
-  let runningSum = 0;
-
-  bucketed.forEach(bucket => {
-    const sampleSize = ssAccessor(bucket);
-
-    const innerScaled = runningSum / sum;
-    const outerScaled = (runningSum + sampleSize) / sum;
-
-    const innerRadius = shiftArc(innerScaled) + 2;
-    const outerRadius = shiftArc(outerScaled);
-
-    sections.push(Object.assign({
-      cornerRadius: 4,
-      innerRadius,
-      outerRadius
-    }, bucket));
-
-    runningSum += sampleSize;
-  });
-
-  return sections;
+  return sizeSegments(bucketed, accessor)
+    .map(segment => Object.assign(segment, {
+      innerRadius: shiftArc(segment.left) + 2,
+      outerRadius: shiftArc(segment.right)
+    }));
 }
 
 function shiftArc (scaled) {
   return scaled * (chartRadius * 0.7) + (chartRadius * 0.3);
 }
 
-function calculatePied (bucketed) {
+function rotatePied (bucketed) {
   const pied = pie(bucketed);
 
-  const {startAngle} = pied.find(p => p.data.label.startsWith('10') ? p : null);
+  const {startAngle} = pied.find(p => p.data.laMin === 10 ? p : null);
 
-  // rotate the chart so that ground balls (< 10 degrees) have a negative angle
+  // Reverse and rotate the chart so that ground balls (< 10 degrees)
+  // have a negative angle
   const piedShifted = pied.map(p => {
     p.startAngle = (p.startAngle - startAngle) * (-1) + (Math.PI / 2);
     p.endAngle = (p.endAngle - startAngle) * (-1) + (Math.PI / 2);
@@ -366,7 +243,7 @@ function arcTween (radius) {
 
 function draw (angles, velocities, leagueProduction, velAngles) {
   const radialSections = calculateRadii(velocities, d => Math.max(d.sampleSize, 5));
-  const pied = calculatePied(angles);
+  const pied = rotatePied(angles);
   const plotted = mapToChart(
     velocities,
     radialSections.map(r => Object.assign({
@@ -385,7 +262,7 @@ function draw (angles, velocities, leagueProduction, velAngles) {
   const exitVelocityTextPath = getExitVelocityTextPath(pied);
   const velocityTicksD = getExitVelocityTicks(pied, radialSections);
 
-  const svg = d3.select('#graph svg g');
+  const svg = d3.select('#launch-angle-exit-velocity svg g');
 
   const tickSegment = d3.line()
     .x(function (d) { return d.x; })

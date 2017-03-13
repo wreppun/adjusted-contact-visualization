@@ -1,5 +1,6 @@
 import {render} from './bipCartographer';
 import * as Players from './static/league/players.json';
+import * as LeagueData from './static/league/productionAll.json';
 import {woba, toFixed} from './stats';
 import {fromPartitioningArray} from './partitions';
 
@@ -8,7 +9,7 @@ import VueResource from 'vue-resource';
 
 Vue.use(VueResource);
 
-const anglePartitioner = fromPartitioningArray([
+const anglePartitions = [
   -40,
   -30,
   -20,
@@ -19,9 +20,9 @@ const anglePartitioner = fromPartitioningArray([
   30,
   40,
   50
-]);
+];
 
-const velocityPartitioner = fromPartitioningArray([
+const velocityPartitions = [
   60,
   65,
   70,
@@ -33,7 +34,7 @@ const velocityPartitioner = fromPartitioningArray([
   100,
   105,
   110
-]);
+];
 
 new Vue({
   el: '#main',
@@ -45,10 +46,20 @@ new Vue({
     recentPlayers: [],
     arrowed: 0,
     scaleType: 'league',
-    playerBipData: []
+    playerBipData: [],
+    anglePartitions: anglePartitions,
+    velocityPartitions: velocityPartitions
   },
 
   computed: {
+    anglePartitioner () {
+      return fromPartitioningArray(this.anglePartitions);
+    },
+
+    velocityPartitioner () {
+      return fromPartitioningArray(this.velocityPartitions);
+    },
+
     filteredPlayers () {
       if (!this.playerInput) {
         this.overflow = 0;
@@ -87,8 +98,9 @@ new Vue({
     },
 
     playerAngleWoba () {
-      return anglePartitioner.map(ap => {
+      return this.anglePartitioner.map(ap => {
         const partition = this.playerBipData.filter(bip => ap.fits(bip.angle));
+        const leaguePartition = LeagueData.filter(bucket => ap.fits(bucket.angle));
 
         if (!partition.length) {
           return Object.assign({ label: ap.label }, emptyPartition);
@@ -96,6 +108,7 @@ new Vue({
 
         const expected = woba.expected(partition);
         const actual = woba.actual(partition);
+        const league = woba.league(leaguePartition);
         const diff = (actual - expected).toFixed(3);
 
         return {
@@ -103,14 +116,18 @@ new Vue({
           count: partition.length,
           expected,
           actual,
-          diff
+          league,
+          diff,
+          min: ap.min,
+          max: ap.max
         };
       });
     },
 
     playerVelocityWoba () {
-      return velocityPartitioner.map(vp => {
+      return this.velocityPartitioner.map(vp => {
         const partition = this.playerBipData.filter(bip => vp.fits(bip.velocity));
+        const leaguePartition = LeagueData.filter(bucket => vp.fits(bucket.velocity));
 
         if (!partition.length) {
           return Object.assign({ label: vp.label }, emptyPartition);
@@ -118,6 +135,7 @@ new Vue({
 
         const expected = woba.expected(partition);
         const actual = woba.actual(partition);
+        const league = woba.league(leaguePartition);
         const diff = (actual - expected).toFixed(3);
 
         return {
@@ -125,9 +143,14 @@ new Vue({
           count: partition.length,
           expected,
           actual,
+          league,
           diff
         };
       });
+    },
+
+    leagueWoba () {
+      return woba.league(LeagueData);
     }
   },
 

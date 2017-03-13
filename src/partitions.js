@@ -1,4 +1,5 @@
 import * as production from './static/league/production.json';
+import {distinctByKey} from './graphUtils';
 
 function buildBucketer (sortedLimits, getMin, getMax) {
   const bucketer = new Array(sortedLimits.length);
@@ -34,16 +35,6 @@ function buildBucketer (sortedLimits, getMin, getMax) {
   }
 
   return bucketer;
-}
-
-function distinctByKey (dataArray, keyGenerator) {
-  const distinctMap = dataArray
-    .reduce((agg, datum) => {
-      agg[keyGenerator(datum)] = datum;
-      return agg;
-    }, {});
-
-  return Object.keys(distinctMap).map(key => distinctMap[key]);
 }
 
 function angleLimits (performanceData) {
@@ -96,7 +87,7 @@ function fromPartitioningArray (splitPoints) {
 }
 
 export {
-  laBucketer as angles,
-  evBucketer as velocities,
+  laBucketer as angleBucketer,
+  evBucketer as velocityBucketer,
   fromPartitioningArray
 };

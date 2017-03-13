@@ -55,10 +55,13 @@
                 <td>
                 </td>
                 <td>
-                  Actual
+                  League
                 </td>
                 <td>
-                  Expected
+                  xWOBA
+                </td>
+                <td>
+                  wOBA
                 </td>
                 <td>
                   Diff
@@ -73,11 +76,14 @@
                 <td class="player-woba-label">
                   All BIP
                 </td>
-                <td class="player-woba-actual">
-                  {{ playerWoba.actual }}
+                <td class="player-woba-expected">
+                  {{ leagueWoba }}
                 </td>
                 <td class="player-woba-expected">
                   {{ playerWoba.expected }}
+                </td>
+                <td class="player-woba-actual">
+                  {{ playerWoba.actual }}
                 </td>
                 <td class="player-woba-diff">
                   {{ playerWoba.diff }}
@@ -98,10 +104,13 @@
                 <td>
                 </td>
                 <td>
-                  Actual
+                  League
                 </td>
                 <td>
-                  Expected
+                  xWOBA
+                </td>
+                <td>
+                  WOBA
                 </td>
                 <td>
                   Diff
@@ -118,11 +127,14 @@
                 <td class="player-woba-label">
                   {{ angleWoba.label}}
                 </td>
-                <td class="player-woba-actual">
-                  {{ angleWoba.actual }}
+                <td class="player-woba-expected">
+                  {{ angleWoba.league }}
                 </td>
                 <td class="player-woba-expected">
                   {{ angleWoba.expected }}
+                </td>
+                <td class="player-woba-actual">
+                  {{ angleWoba.actual }}
                 </td>
                 <td class="player-woba-diff">
                   {{ angleWoba.diff }}
@@ -143,10 +155,13 @@
                 <td>
                 </td>
                 <td>
-                  Actual
+                  League
                 </td>
                 <td>
-                  Expected
+                  xWOBA
+                </td>
+                <td>
+                  WOBA
                 </td>
                 <td>
                   Diff
@@ -163,11 +178,14 @@
                 <td class="player-woba-label">
                   {{ velocityWoba.label}}
                 </td>
-                <td class="player-woba-actual">
-                  {{ velocityWoba.actual }}
+                <td class="player-woba-label">
+                  {{ velocityWoba.league}}
                 </td>
                 <td class="player-woba-expected">
                   {{ velocityWoba.expected }}
+                </td>
+                <td class="player-woba-actual">
+                  {{ velocityWoba.actual }}
                 </td>
                 <td class="player-woba-diff">
                   {{ velocityWoba.diff }}
@@ -197,7 +215,7 @@
         </div>
 
         <!-- used by d3 -->
-        <div id="graph">
+        <div id="launch-angle-exit-velocity">
         </div>
 
       </div>
