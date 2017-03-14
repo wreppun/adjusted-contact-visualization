@@ -17,13 +17,16 @@ const distinctByKey = (dataArray, keyGenerator) => {
   return Object.keys(distinctMap).map(key => distinctMap[key]);
 };
 
+// The padding unit is weird; it's relative to the number of
+// total units (sum) returned by getScalar.
 const sizeSegments = (segments, getScalar, padding) => {
   getScalar = getScalar || (d => d);
   padding = padding || 0;
 
   const sum = segments
     .map(getScalar)
-    .reduce((agg, v) => agg + v, 0);
+    .reduce((agg, v) => agg + v, 0) +
+    padding * (segments.length - 1);
 
   const sized = [];
   let count = 0;
@@ -34,14 +37,15 @@ const sizeSegments = (segments, getScalar, padding) => {
     const right = (count + v) / sum;
 
     sized.push(Object.assign(
+      {},
+      segment,
       {
         left,
         right
-      },
-      segment
+      }
     ));
 
-    count += v;
+    count += (v + padding);
   });
 
   return sized;

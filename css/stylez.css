@@ -19,8 +19,19 @@ input.search {
   width: 100%;
 }
 
+.navbar {
+  position: fixed;
+  background-color: #efefef;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 8px 0px;
+  z-index: 2;
+  opacity: 0.9;
+}
+
 #main {
-  margin-top: 24px;
+  padding-top: 48px;
 }
 
 .player-name {
@@ -53,7 +64,9 @@ input.search {
 
 .scale-select {
   position: absolute;
-  padding: 24px;
+  top: 72px;
+  left: 36px;
+  font-size:16px;
 }
 
 .scale-select input {
@@ -118,7 +131,72 @@ tbody td {
   border-right: 1px solid #ddd;
 }
 
+tr.small-sample {
+  color: #ccc;
+}
+
+.graph-title {
+  text-align: center;
+}
+
+#exit-velocity {
+  position: relative;
+}
+
+.legend {
+  position: absolute;
+  bottom: 20px;
+  left: 120px;
+}
+
+.swatch {
+  height: 24px;
+}
+
+.swatch-label {
+  margin-left: 16px;
+}
+
+.swatch-label-title {
+  font-size: 14px;
+  float: left;
+}
+
+.swatch, .swatch-label {
+  float: left;
+  margin-top: 8px;
+}
+
+.production-distribution {
+  width: 24px;
+  background-color: #eeeeee;
+}
+
+.expected-minus-league-positive {
+  width: 12px;
+  background-color: blue;
+}
+
+.expected-minus-league-negative {
+  width: 12px;
+  background-color: red;
+}
+
+.formula {
+  font-size: 12px;
+  background-color: #eee;
+  padding: 2px 4px;
+  font-family: monospace;
+  border: 1px solid #ddd;
+  float: right;
+  margin-left: 16px;
+}
+
 /* GRAPH */
+#launch-angle-exit-velocity {
+  position: relative;
+}
+
 .arc path {
   stroke: #fff;
 }
@@ -133,6 +211,18 @@ tbody td {
   font-size: 24px;
 }
 
-tr.small-sample {
-  color: #ccc;
+.velo-x-axis-text {
+  font-size: 10px;
+}
+
+.hidden {
+  display: none;
+}
+
+.ev-axis line, .ev-axis path {
+  stroke: #666;
+}
+
+.ev-axis text {
+  fill: #666;
 }

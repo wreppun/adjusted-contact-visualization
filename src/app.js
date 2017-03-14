@@ -1,4 +1,5 @@
 import {render} from './bipCartographer';
+import {render as renderVelo} from './velocityCartographer';
 import * as Players from './static/league/players.json';
 import * as LeagueData from './static/league/productionAll.json';
 import {woba, toFixed} from './stats';
@@ -35,6 +36,20 @@ const velocityPartitions = [
   105,
   110
 ];
+
+const emptyDisplayPartition = {
+  expected: '--',
+  actual: '--',
+  diff: '--',
+  count: '-'
+};
+
+const emptySafePartition = {
+  expected: 0,
+  actual: 0,
+  diff: 0,
+  count: 0
+};
 
 new Vue({
   el: '#main',
@@ -83,8 +98,6 @@ new Vue({
     },
 
     playerWoba () {
-      console.log('when does this run?');
-
       const expected = woba.expected(this.playerBipData);
       const actual = woba.actual(this.playerBipData);
       const diff = toFixed(actual - expected, 3);
@@ -103,7 +116,7 @@ new Vue({
         const leaguePartition = LeagueData.filter(bucket => ap.fits(bucket.angle));
 
         if (!partition.length) {
-          return Object.assign({ label: ap.label }, emptyPartition);
+          return Object.assign({ label: ap.label }, emptyDisplayPartition);
         }
 
         const expected = woba.expected(partition);
@@ -128,18 +141,23 @@ new Vue({
       return this.velocityPartitioner.map(vp => {
         const partition = this.playerBipData.filter(bip => vp.fits(bip.velocity));
         const leaguePartition = LeagueData.filter(bucket => vp.fits(bucket.velocity));
+        const league = woba.league(leaguePartition);
 
         if (!partition.length) {
-          return Object.assign({ label: vp.label }, emptyPartition);
+          return Object.assign({
+            label: vp.label,
+            min: vp.min,
+            league
+          }, emptySafePartition);
         }
 
         const expected = woba.expected(partition);
         const actual = woba.actual(partition);
-        const league = woba.league(leaguePartition);
         const diff = (actual - expected).toFixed(3);
 
         return {
           label: vp.label,
+          min: vp.min,
           count: partition.length,
           expected,
           actual,
@@ -208,14 +226,18 @@ new Vue({
       if (this.playerBipData.length) {
         render(scaleType, this.playerBipData);
       }
+    },
+
+    playerVelocityWoba: function (pvw) {
+      if (pvw.length && this.playerBipData.length) {
+        renderVelo(pvw);
+      }
     }
   }
 });
 
 function ifFoundRemove (player, players) {
   const existing = players.findIndex(p => p.name === player.name);
-
-  console.log(existing, player, players);
 
   if (existing > -1) {
     players.splice(existing, 1);
@@ -225,10 +247,3 @@ function ifFoundRemove (player, players) {
 function bound (value, min, max) {
   return Math.min(max, Math.max(value, min));
 }
-
-const emptyPartition = {
-  expected: '--',
-  actual: '--',
-  diff: '--',
-  count: '-'
-};
