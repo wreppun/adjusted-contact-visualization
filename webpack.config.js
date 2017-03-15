@@ -1,22 +1,5 @@
-const path = require('path');
+function buildConfig (env) {
+  return require('./config/webpack.config.' + env + '.js')({ env: env });
+}
 
-module.exports = {
-  entry: './src/app.js',
-  output: {
-    path: path.resolve(__dirname, 'public/assets'),
-    filename: 'bundle.js'
-  },
-  devtool: 'cheap-eval-source-map',
-  resolve: {
-    extensions: ['.js'],
-    alias: {
-      'vue': 'vue/dist/vue.common.js'
-    }
-  },
-
-  devServer: {
-    contentBase: './public',
-    publicPath: '/assets/'
-  }
-
-};
+module.exports = buildConfig;
