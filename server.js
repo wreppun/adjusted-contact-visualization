@@ -4,10 +4,6 @@ const {rename} = require('./server/utils');
 
 const app = express();
 
-app.get('/', (req, res) => {
-  res.send('Hello World!');
-});
-
 app.get('/batter/:batter', (req, res) => {
   db('exit_velocity')
     .select('hit_speed', 'hit_angle', 'is_bip_out', 'result', 'xwoba')
