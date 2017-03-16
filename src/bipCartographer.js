@@ -33,9 +33,10 @@ initGraph.append('text')
   .attr('class', 'axis-label')
   .text('EXIT VELOCITY');
 
+// .402 is league average
 const color = d3.scaleLinear()
-  .domain([0, 1.0, 1.5])
-  .range(['#fffbf5', 'orange', 'green']);
+  .domain([0, 0.402, 1.5])
+  .range(['#f27e74', '#fffbf5', 'green']);
 
 const pie = d3.pie()
     .startAngle(0)

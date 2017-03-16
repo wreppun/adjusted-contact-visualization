@@ -1,4 +1,3 @@
-
 const polarToGrid = polar => {
   const x = Math.sin(polar.theta) * polar.r;
   const y = -Math.cos(polar.theta) * polar.r;

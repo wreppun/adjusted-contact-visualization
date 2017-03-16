@@ -92,7 +92,7 @@ input.search {
     cursor: pointer;
 }
 
-thead td {
+.stats-column thead td {
   font-size: 12px;
   text-transform: uppercase;
   text-align: center;
@@ -137,6 +137,7 @@ tr.small-sample {
 
 .graph-title {
   text-align: center;
+  color: #666;
 }
 
 #exit-velocity {
@@ -219,10 +220,24 @@ tr.small-sample {
   display: none;
 }
 
+.visibility-hidden {
+  visibility: hidden;
+}
+
 .ev-axis line, .ev-axis path {
   stroke: #666;
 }
 
 .ev-axis text {
   fill: #666;
+}
+
+/* TOOLTIPS */
+.tooltip-table {
+  margin: 0 auto;
+}
+
+.tooltip-table thead td {
+  font-size: 12px;
+  color: #999;
 }

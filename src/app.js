@@ -63,7 +63,8 @@ new Vue({
     scaleType: 'league',
     playerBipData: [],
     anglePartitions: anglePartitions,
-    velocityPartitions: velocityPartitions
+    velocityPartitions: velocityPartitions,
+    evBipTooltip: {}
   },
 
   computed: {
@@ -173,6 +174,10 @@ new Vue({
   },
 
   methods: {
+    setTooltip (tooltip) {
+      this.evBipTooltip = tooltip;
+    },
+
     setPlayer (player) {
       this.playerBipData = [];
 
@@ -230,7 +235,7 @@ new Vue({
 
     playerVelocityWoba: function (pvw) {
       if (pvw.length && this.playerBipData.length) {
-        renderVelo(pvw);
+        renderVelo(pvw, this.setTooltip);
       }
     }
   }

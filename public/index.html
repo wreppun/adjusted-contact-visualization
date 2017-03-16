@@ -207,12 +207,55 @@
         <div class="col-md-8">
 
           <!-- used by d3 -->
-          <div id="exit-velocity" v-bind:class="{hidden: !currentPlayer.name}">
+          <div id="exit-velocity" v-bind:class="{ hidden: !currentPlayer.name }">
+
             <div class="graph-title">
               <h2>
                 Exit Velocity Production
               </h2>
             </div>
+
+            <table class="tooltip-table"
+              v-bind:class="{ 'visibility-hidden': !evBipTooltip.expected }">
+              <thead>
+                <tr>
+                  <td>
+                    League wOBA
+                  </td>
+                  <td>
+                    Actual wOBA
+                  </td>
+                  <td>
+                    Expected wOBA
+                  </td>
+                  <td>
+                    Expected Production
+                  </td>
+                  <td>
+                    Frequency
+                  </td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    {{ evBipTooltip.league }}
+                  </td>
+                  <td>
+                    {{ evBipTooltip.actual }}
+                  </td>
+                  <td>
+                    {{ evBipTooltip.expected }}
+                  </td>
+                  <td>
+                    {{ (evBipTooltip.expected * evBipTooltip.frequency).toFixed(3) }}
+                  </td>
+                  <td>
+                    {{ (evBipTooltip.frequency * 100).toFixed(0) + '%' }}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
 
             <div class="legend velo-legend">
               <div class="clearfix">
@@ -271,13 +314,12 @@
 
           <div id="launch-angle-exit-velocity">
             <div class="scale-select" v-if="currentPlayer.name">
-              <span class="scale-select-header">Select Scale</span>
               <br/>
               <input type="radio" id="playerScale" value="player" v-model="scaleType">
-              <label for="playerScale">Player</label>
+              <label for="playerScale">Player Distribution</label>
               <br>
               <input type="radio" id="leagueScale" value="league" v-model="scaleType">
-              <label for="leagueScale">League</label>
+              <label for="leagueScale">League Distribution</label>
             </div>
 
             <div class="batter-outline" v-if="currentPlayer.name">
@@ -290,6 +332,7 @@
         </div>
       </div>
     </div>
+
   </div>
   <script src="assets/bundle.js"></script>
 </body>
