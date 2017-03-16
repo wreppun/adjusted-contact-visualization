@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = function (env) {
   return {
-    devtool: 'cheap-eval-source-map',
+    devtool: 'eval-source-map',
     entry: './src/app.js',
     output: {
       path: path.join(__dirname, '../public/assets'),
@@ -13,13 +13,6 @@ module.exports = function (env) {
       alias: {
         'vue': 'vue/dist/vue.common.js'
       }
-    },
-    devServer: {
-      // port: 8080,
-      // host: 'localhost',
-      noInfo: false,
-      contentBase: './public',
-      publicPath: '/assets/'
     }
   };
 };

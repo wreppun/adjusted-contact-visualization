@@ -5,8 +5,8 @@
   "author": "Will Reppun <(none)>",
   "license": "MIT",
   "scripts": {
-    "build:dev": "webpack-dev-server --env=dev --progress --profile --colors",
-    "build:dist": "webpack --env=prod --progress --profile --colors"
+    "build:dev": "webpack --watch --env=dev --progress --profile --colors",
+    "build:dist": "webpack --env=prod --progress --profile --colors && tar -cvzf dist/build.tar.gz server public package.json yarn.lock"
   },
   "dependencies": {
     "d3": "^4.7.1",
