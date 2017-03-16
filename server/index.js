@@ -31,6 +31,6 @@ app.get('/batter/:batter', (req, res) => {
 
 app.use(express.static('public'));
 
-app.listen(3714, () => {
+app.listen(3714, 'localhost', () => {
   console.log('listening on ' + 3714);
 });
