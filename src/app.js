@@ -197,7 +197,7 @@ new Vue({
     },
 
     fetchBatter (batterId) {
-      return this.$http.get(`http://localhost:3714/batter/${batterId}`)
+      return this.$http.get(`/batter/${batterId}`)
         .then(results => {
           return results;
         })
