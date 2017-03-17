@@ -87,6 +87,13 @@ input.search {
   border: 1px solid #ddd;
 }
 
+.scale-select-header {
+  color: #999;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
 .scale-select input {
   margin-top: 12px;
   margin-right: 12px;
@@ -245,6 +252,26 @@ tr.small-sample {
 
 .ev-axis text {
   fill: #666;
+}
+
+.bip.single {
+  fill: blue;
+}
+
+.bip.double {
+  fill: yellow;
+}
+
+.bip.triple {
+  fill: aqua;
+}
+
+.bip.home-run {
+  fill: black;
+}
+
+.bip.out {
+  fill: brown;
 }
 
 /* TOOLTIPS */

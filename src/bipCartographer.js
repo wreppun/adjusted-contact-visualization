@@ -379,21 +379,9 @@ function draw (angles, velocities, leagueProduction, velAngles) {
   const points = svg.selectAll('.bip')
     .data(plotted.map(polarToGrid));
 
-  points.transition()
-    .duration(100)
-    .style('opacity', 0)
-    .transition()
-    .duration(0)
-    .attr('cx', d => d.x)
-    .attr('cy', d => d.y)
-    .transition()
-    .delay(200)
-    .duration(300)
-    .style('opacity', 1);
-
   points.enter()
     .append('circle')
-    .attr('class', 'bip')
+    .attr('class', function (d) { return 'bip ' + bipType(d); })
     .attr('cx', d => d.x)
     .attr('cy', d => d.y)
     .attr('r', 2)
@@ -403,6 +391,15 @@ function draw (angles, velocities, leagueProduction, velAngles) {
     .duration(300)
     .style('opacity', 1);
 
+  points.transition().duration(100)
+    .style('opacity', 0)
+    .transition().duration(0)
+    .attr('class', function (d) { return 'bip ' + bipType(d); })
+    .attr('cx', d => d.x)
+    .attr('cy', d => d.y)
+    .transition().delay(200).duration(300)
+    .style('opacity', 1);
+
   points.exit().remove();
 }
 
@@ -410,10 +407,13 @@ function mapToChart (rBuckets, rMinMax, thetaBuckets, thetaMinMax, velAngles) {
   const rMapper = merge(rBuckets, rMinMax);
   const thetaMapper = merge(thetaBuckets, thetaMinMax);
 
-  return velAngles.map(v => Object.assign({
-    r: mapValue(rMapper, v.velocity),
-    theta: mapValue(thetaMapper, v.angle)
-  }));
+  return velAngles.map(v => Object.assign(
+    {
+      r: mapValue(rMapper, v.velocity),
+      theta: mapValue(thetaMapper, v.angle)
+    },
+    v
+  ));
 
   function mapValue (mapper, value) {
     const fit = mapper.find(m => m.fits(value) ? m : null);
@@ -429,6 +429,21 @@ function merge (arr1, arr2) {
   }
 
   return arr1.map((a, i) => Object.assign({}, a, arr2[i]));
+}
+
+function bipType (bip) {
+  switch (bip.result) {
+    case 'Single':
+      return 'single';
+    case 'Double':
+      return 'double';
+    case 'Triple':
+      return 'triple';
+    case 'Home Run':
+      return 'home-run';
+    default:
+      return 'out';
+  }
 }
 
 export {

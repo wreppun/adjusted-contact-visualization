@@ -217,8 +217,6 @@ function tooltipHeight (woba) {
   const yTop = topTooltipBound(woba);
   const yBot = bottomTooltipBound(woba);
 
-  console.log('ytop', yTop, 'ybot', yBot);
-
   return yBot - yTop;
 }
 

@@ -2,7 +2,7 @@ const polarToGrid = polar => {
   const x = Math.sin(polar.theta) * polar.r;
   const y = -Math.cos(polar.theta) * polar.r;
 
-  return { x, y };
+  return Object.assign({ x, y }, polar);
 };
 
 // last in wins
