@@ -1,8 +1,8 @@
 import {render} from './bipCartographer';
-import {render as renderVelo} from './velocityCartographer';
+import {init as initGraph} from './velocityCartographer';
 import * as Players from './static/league/players.json';
 import * as LeagueData from './static/league/productionAll.json';
-import {woba, toFixed} from './stats';
+import {woba} from './stats';
 import {fromPartitioningArray} from './partitions';
 
 import Vue from 'vue';
@@ -37,21 +37,62 @@ const velocityPartitions = [
   110
 ];
 
-const emptyDisplayPartition = {
-  expected: '--',
-  actual: '--',
-  diff: '--',
-  count: '-'
-};
+// const emptyDisplayPartition = {
+//   expected: '--',
+//   actual: '--',
+//   // diff: '--',
+//   count: '-'
+// };
 
 const emptySafePartition = {
   expected: 0,
   actual: 0,
-  diff: 0,
+  // diff: 0,
   count: 0
 };
 
+const diffTypes = {
+  EXPECTED_LEAGUE: {
+    id: 'expectedLeague',
+    label: 'Expected vs. League',
+    calculation: 'Expected - League',
+    fwoba: woba => woba.expected - woba.league
+  },
+  ACTUAL_LEAGUE: {
+    id: 'actualLeague',
+    label: 'Actual vs. League',
+    calculation: 'Actual - League',
+    fwoba: woba => woba.actual - woba.league
+  },
+  ACTUAL_EXPECTED: {
+    id: 'expectedActual',
+    label: 'Actual vs. Expected',
+    calculation: 'Actual - Expected',
+    fwoba: woba => woba.actual - woba.expected
+  }
+};
+
+const volumeTypes = {
+  EXPECTED: {
+    id: 'expected',
+    label: 'Expected',
+    calculation: 'Expected',
+    fwoba: woba => woba.expected
+  },
+  ACTUAL: {
+    id: 'actual',
+    label: 'Actual',
+    calculation: 'Actual',
+    fwoba: woba => woba.actual
+  }
+};
+
+const renderVelo = initGraph('exit-velocity-svg-wrapper');
+const renderAngle = initGraph('launch-angle-svg-wrapper');
+
+/* eslint-disable no-new */
 new Vue({
+/* eslint-enable no-new */
   el: '#main',
 
   data: {
@@ -61,10 +102,24 @@ new Vue({
     recentPlayers: [],
     arrowed: 0,
     scaleType: 'league',
+    diffOptions: [
+      diffTypes.EXPECTED_LEAGUE,
+      diffTypes.ACTUAL_LEAGUE,
+      diffTypes.ACTUAL_EXPECTED
+    ],
+    angleDiffType: diffTypes.EXPECTED_LEAGUE,
+    velocityDiffType: diffTypes.EXPECTED_LEAGUE,
+    volumeOptions: [
+      volumeTypes.EXPECTED,
+      volumeTypes.ACTUAL
+    ],
+    angleVolumeType: volumeTypes.EXPECTED,
+    velocityVolumeType: volumeTypes.EXPECTED,
     playerBipData: [],
-    anglePartitions: anglePartitions,
-    velocityPartitions: velocityPartitions,
-    evBipTooltip: {}
+    anglePartitions: anglePartitions, // doesn't need to be in data for now
+    velocityPartitions: velocityPartitions, // doesn't need to be in data for now
+    evBipTooltip: {},
+    laBipTooltip: {}
   },
 
   computed: {
@@ -101,71 +156,20 @@ new Vue({
     playerWoba () {
       const expected = woba.expected(this.playerBipData);
       const actual = woba.actual(this.playerBipData);
-      const diff = toFixed(actual - expected, 3);
 
       return {
         expected,
         actual,
-        diff,
         count: this.playerBipData.length
       };
     },
 
     playerAngleWoba () {
-      return this.anglePartitioner.map(ap => {
-        const partition = this.playerBipData.filter(bip => ap.fits(bip.angle));
-        const leaguePartition = LeagueData.filter(bucket => ap.fits(bucket.angle));
-
-        if (!partition.length) {
-          return Object.assign({ label: ap.label }, emptyDisplayPartition);
-        }
-
-        const expected = woba.expected(partition);
-        const actual = woba.actual(partition);
-        const league = woba.league(leaguePartition);
-        const diff = (actual - expected).toFixed(3);
-
-        return {
-          label: ap.label,
-          count: partition.length,
-          expected,
-          actual,
-          league,
-          diff,
-          min: ap.min,
-          max: ap.max
-        };
-      });
+      return partitionBips(this.playerBipData, this.anglePartitioner, d => d.angle);
     },
 
     playerVelocityWoba () {
-      return this.velocityPartitioner.map(vp => {
-        const partition = this.playerBipData.filter(bip => vp.fits(bip.velocity));
-        const leaguePartition = LeagueData.filter(bucket => vp.fits(bucket.velocity));
-        const league = woba.league(leaguePartition);
-
-        if (!partition.length) {
-          return Object.assign({
-            label: vp.label,
-            min: vp.min,
-            league
-          }, emptySafePartition);
-        }
-
-        const expected = woba.expected(partition);
-        const actual = woba.actual(partition);
-        const diff = (actual - expected).toFixed(3);
-
-        return {
-          label: vp.label,
-          min: vp.min,
-          count: partition.length,
-          expected,
-          actual,
-          league,
-          diff
-        };
-      });
+      return partitionBips(this.playerBipData, this.velocityPartitioner, d => d.velocity);
     },
 
     leagueWoba () {
@@ -178,9 +182,11 @@ new Vue({
       this.evBipTooltip = tooltip;
     },
 
-    setPlayer (player) {
-      this.playerBipData = [];
+    setAngleTooltip (tooltip) {
+      this.laBipTooltip = tooltip;
+    },
 
+    setPlayer (player) {
       ifFoundRemove(player, this.recentPlayers);
       ifFoundRemove(this.currentPlayer, this.recentPlayers);
 
@@ -196,9 +202,6 @@ new Vue({
           this.playerBipData = results;
           render(this.scaleType, results);
         });
-    },
-
-    getContactWoba () {
     },
 
     fetchBatter (batterId) {
@@ -223,6 +226,26 @@ new Vue({
 
     moveArrow (increment) {
       this.arrowed = bound(this.arrowed + increment, 0, this.filteredPlayers.length);
+    },
+
+    renderAngleGraph () {
+      renderGraph(
+        this.playerAngleWoba,
+        this.angleDiffType,
+        this.angleVolumeType,
+        this.setAngleTooltip,
+        renderAngle
+      );
+    },
+
+    renderVelocityGraph () {
+      renderGraph(
+        this.playerVelocityWoba,
+        this.velocityDiffType,
+        this.velocityVolumeType,
+        this.setTooltip,
+        renderVelo
+      );
     }
   },
 
@@ -234,12 +257,75 @@ new Vue({
     },
 
     playerVelocityWoba: function (pvw) {
-      if (pvw.length && this.playerBipData.length) {
-        renderVelo(pvw, this.setTooltip);
-      }
+      this.renderVelocityGraph();
+    },
+
+    velocityDiffType: function (vst) {
+      this.renderVelocityGraph();
+    },
+
+    velocityVolumeType: function (vvt) {
+      this.renderVelocityGraph();
+    },
+
+    playerAngleWoba: function () {
+      this.renderAngleGraph();
+    },
+
+    angleDiffType: function () {
+      this.renderAngleGraph();
+    },
+
+    angleVolumeType: function () {
+      this.renderAngleGraph();
     }
   }
 });
+
+function renderGraph (wobas, diffType, volumeType, setTt, renderFn) {
+  // Don't modify original woba!
+  const withDerived = wobas.map(woba => Object.assign(
+    {
+      diff: diffType.fwoba(woba),
+      volume: volumeType.fwoba(woba)
+    },
+    woba
+  ));
+
+  return renderFn(withDerived, setTt);
+}
+
+function partitionBips (playerBips, partitioner, measurement) {
+  if (!playerBips.length) {
+    return [];
+  }
+
+  return partitioner.map(partition => {
+    const partitionedBip = playerBips.filter(bip => partition.fits(measurement(bip)));
+    const partitionedLeague = LeagueData.filter(leagueBucket => partition.fits(measurement(leagueBucket)));
+    const leagueWoba = woba.league(partitionedLeague);
+
+    if (!partitionedBip.length) {
+      return Object.assign({
+        label: partition.label,
+        min: partition.min,
+        league: leagueWoba
+      }, emptySafePartition);
+    }
+
+    const expected = woba.expected(partitionedBip);
+    const actual = woba.actual(partitionedBip);
+
+    return {
+      label: partition.label,
+      min: partition.min,
+      count: partitionedBip.length,
+      expected,
+      actual,
+      league: leagueWoba
+    };
+  });
+}
 
 function ifFoundRemove (player, players) {
   const existing = players.findIndex(p => p.name === player.name);

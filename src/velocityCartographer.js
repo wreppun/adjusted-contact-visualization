@@ -1,25 +1,8 @@
 import * as d3 from 'd3';
 import {sizeSegments} from './graphUtils';
 
-const width = 960;
+const width = 650;
 const height = 400;
-
-const initGraph = d3.select('#exit-velocity').append('svg')
-    .attr('width', width)
-    .attr('height', height)
-  .append('g')
-    .attr('id', 'main-velocity')
-    .attr('transform', `translate(100, ${height / 2})`);
-
-const vLeagueColor = d3.scaleLinear()
-  .domain([-20, 0, 20])
-  .range(['red', 'white', 'green'])
-  .clamp(true);
-
-const vSelfColor = d3.scaleLinear()
-  .domain([-20, 0, 20])
-  .range(['orange', 'white', 'blue'])
-  .clamp(true);
 
 // Relative Values
 const yMin = -0.5;
@@ -33,6 +16,11 @@ const xAxisOffsetPx = 10;
 const svgPadding = 20;
 const yMinSvg = -height / 2 + svgPadding;
 const yMaxSvg = height / 2 - svgPadding;
+
+const vLeagueColor = d3.scaleLinear()
+  .domain([-20, 0, 20])
+  .range(['red', 'white', 'green'])
+  .clamp(true);
 
 const scaleY = d3.scaleLinear()
   .domain([yMin, negYUpperBound, 0, yMax])
@@ -51,43 +39,60 @@ const scaleYVolumeHeight = function (v) {
   return -scaleYVolume(v) - xAxisOffsetPx;
 };
 
-const yAxisLeftBottom = d3.axisLeft()
-  .tickFormat(function (v, i) { return i === 0 ? i : v.toFixed(3); })
-  .scale(d3.scaleLinear().domain([0, yMin]).range([xAxisOffsetPx, yMaxSvg]))
-  .ticks(5);
+function init (svgWrapperId) {
+  const svgWrapperIdMain = svgWrapperId + '-main';
 
-const yAxisLeftTop = d3.axisLeft()
-  .tickFormat(function (v, i) { return i === 0 ? i : v.toFixed(3); })
-  .scale(d3.scaleLinear().domain([0, yMax]).range([-xAxisOffsetPx, yMinSvg]))
-  .ticks(5);
+  const yAxisLeftBottom = d3.axisLeft()
+    .tickFormat(function (v, i) { return i === 0 ? i : v.toFixed(3); })
+    .scale(d3.scaleLinear().domain([0, yMin]).range([xAxisOffsetPx, yMaxSvg]))
+    .ticks(5);
 
-initGraph.append('g')
-  .attr('class', 'ev-axis')
-  .call(yAxisLeftBottom);
+  const yAxisLeftTop = d3.axisLeft()
+    .tickFormat(function (v, i) { return i === 0 ? i : v.toFixed(3); })
+    .scale(d3.scaleLinear().domain([0, yMax]).range([-xAxisOffsetPx, yMinSvg]))
+    .ticks(5);
 
-initGraph.append('g')
-  .attr('class', 'ev-axis')
-  .call(yAxisLeftTop);
+  const yAxisRightTop = d3.axisRight()
+    .tickFormat(function (v, i) { return i === 0 ? i : v.toFixed(3); })
+    .scale(d3.scaleLinear().domain([0, (height / 2) / 1000]).range([0, yMinSvg]))
+    .ticks(5);
 
-const yAxisRightTop = d3.axisRight()
-  .tickFormat(function (v, i) { return i === 0 ? i : v.toFixed(3); })
-  .scale(d3.scaleLinear().domain([0, (height / 2) / 1000]).range([0, yMinSvg]))
-  .ticks(5);
+  const svg = d3.select('#' + svgWrapperId).append('svg')
+      .attr('class', 'ev-graph')
+      .attr('width', width)
+      .attr('height', height)
+    .append('g')
+      .attr('id', svgWrapperIdMain)
+      .attr('transform', `translate(36, ${height / 2})`);
 
-initGraph.append('g')
-  .attr('class', 'ev-axis')
-  .attr('transform', `translate(${width - 400}, ${-xAxisOffsetPx})`)
-  .call(yAxisRightTop);
+  svg.append('g')
+    .attr('class', 'ev-axis')
+    .call(yAxisLeftBottom);
 
-const scaleXBand = d3.scaleBand().range([0, width - 400]).padding(0.3);
+  svg.append('g')
+    .attr('class', 'ev-axis')
+    .call(yAxisLeftTop);
 
-function render (wobas, setTooltip) {
-  const svg = d3.select('#main-velocity');
+  svg.append('g')
+    .attr('class', 'ev-axis')
+    .attr('transform', `translate(${width - 64}, ${-xAxisOffsetPx})`)
+    .call(yAxisRightTop);
 
+  return (wobas, setTooltip) => render(svgWrapperIdMain, wobas, setTooltip);
+}
+
+const scaleXBand = d3.scaleBand().range([0, width - 72]).padding(0.3);
+
+function render (svgWrapperIdMain, wobas, setTooltip) {
+  const svg = d3.select('#' + svgWrapperIdMain);
+
+  // Calculate the frequency of each woba
   wobas = sizeSegments(wobas, d => d.count)
-    .map(sized => Object.assign({}, sized, {
-      frequency: sized.right - sized.left
-    }));
+    .map(sized => Object.assign(
+      {},
+      sized,
+      { frequency: sized.right - sized.left }
+    ));
 
   const leagueBars = svg.selectAll('.velo-league-bars')
     .data(wobas, function (woba) { return woba.label; });
@@ -99,37 +104,18 @@ function render (wobas, setTooltip) {
       .attr('class', 'velo-league-bars')
       .attr('x', function (d) { return domainedScaleX(d.label); })
       .attr('width', function (d) { return domainedScaleX.bandwidth(); })
-      .attr('y', function (d) { return offsetYStart(d.expected - d.league); })
-      .attr('height', function (d) { return scaleYHeight(d.expected - d.league); })
-      .attr('fill', function (d) { return vLeagueColor(posOrNeg(d.expected - d.league) * d.count); });
+      .attr('y', function (d) { return offsetYStart(d.diff); })
+      .attr('height', function (d) { return scaleYHeight(d.diff); })
+      .attr('fill', function (d) { return vLeagueColor(posOrNeg(d.diff) * d.count); });
 
   leagueBars.transition().duration(400)
       .attr('x', function (d) { return domainedScaleX(d.label); })
       .attr('width', function (d) { return domainedScaleX.bandwidth(); })
-      .attr('y', function (d) { return offsetYStart(d.expected - d.league); })
-      .attr('height', function (d) { return scaleYHeight(d.expected - d.league); })
-      .attr('fill', function (d) { return vLeagueColor(posOrNeg(d.expected - d.league) * d.count); });
-
-  const selfBars = svg.selectAll('.velo-self-bars')
-    .data(wobas, function (woba) { return woba.label; });
+      .attr('y', function (d) { return offsetYStart(d.diff); })
+      .attr('height', function (d) { return scaleYHeight(d.diff); })
+      .attr('fill', function (d) { return vLeagueColor(posOrNeg(d.diff) * d.count); });
 
   const stackOffset = 8;
-
-  selfBars.enter()
-    .append('rect')
-      .attr('class', 'velo-self-bars')
-      .attr('x', function (d) { return domainedScaleX(d.label) + stackOffset / 2; })
-      .attr('width', function (d) { return 5; })
-      .attr('y', function (d) { return offsetYStart(d.actual - d.expected); })
-      .attr('height', function (d) { return scaleYHeight(d.actual - d.expected); })
-      .attr('fill', function (d) { return vSelfColor(d.count * posOrNeg(d.actual - d.expected)); });
-
-  selfBars.transition().duration(400)
-      .attr('x', function (d) { return domainedScaleX(d.label) + stackOffset / 2; })
-      .attr('width', function (d) { return 5; })
-      .attr('y', function (d) { return offsetYStart(d.actual - d.expected); })
-      .attr('height', function (d) { return scaleYHeight(d.actual - d.expected); })
-      .attr('fill', function (d) { return vSelfColor(d.count * posOrNeg(d.actual - d.expected)); });
 
   const expectedVolumeBars = svg.selectAll('.velo-volume-bars')
     .data(wobas, function (woba) { return woba.label; });
@@ -140,14 +126,14 @@ function render (wobas, setTooltip) {
       .attr('opacity', 0.1)
       .attr('x', function (d) { return domainedScaleX(d.label) + stackOffset; })
       .attr('width', function (d) { return domainedScaleX.bandwidth(); })
-      .attr('y', function (d) { return scaleYVolume(volume(d)); })
-      .attr('height', function (d) { return scaleYVolumeHeight(volume(d)); });
+      .attr('y', function (d) { return scaleYVolume(d.frequency * d.volume); })
+      .attr('height', function (d) { return scaleYVolumeHeight(d.frequency * d.volume); });
 
   expectedVolumeBars.transition().duration(400)
       .attr('x', function (d) { return domainedScaleX(d.label) + stackOffset; })
       .attr('width', function (d) { return domainedScaleX.bandwidth(); })
-      .attr('y', function (d) { return scaleYVolume(volume(d)); })
-      .attr('height', function (d) { return scaleYVolumeHeight(volume(d)); });
+      .attr('y', function (d) { return scaleYVolume(d.frequency * d.volume); })
+      .attr('height', function (d) { return scaleYVolumeHeight(d.frequency * d.volume); });
 
   const tooltipBars = svg.selectAll('.tooltip-bars')
     .data(wobas, function (woba) { return woba.label; });
@@ -156,16 +142,16 @@ function render (wobas, setTooltip) {
     .append('rect')
       .attr('class', 'tooltip-bars')
       .attr('opacity', 0.0) // need fill + opacity = 0 for mouseover/out
-      .attr('x', function (d) { return domainedScaleX(d.label) - stackOffset; })
-      .attr('width', function (d) { return domainedScaleX.bandwidth() + stackOffset * 2; })
+      .attr('x', function (d) { return domainedScaleX(d.label); })
+      .attr('width', function (d) { return domainedScaleX.bandwidth() + stackOffset; })
       .attr('y', function (d) { return topTooltipBound(d); })
       .attr('height', function (d) { return tooltipHeight(d); })
       .on('mouseover', showTooltip(setTooltip))
       .on('mouseout', hideToolTip(setTooltip));
 
   tooltipBars
-      .attr('x', function (d) { return domainedScaleX(d.label) - stackOffset; })
-      .attr('width', function (d) { return domainedScaleX.bandwidth() + stackOffset * 2; })
+      .attr('x', function (d) { return domainedScaleX(d.label); })
+      .attr('width', function (d) { return domainedScaleX.bandwidth() + stackOffset; })
       .attr('y', function (d) { return topTooltipBound(d); })
       .attr('height', function (d) { return tooltipHeight(d); });
 
@@ -188,10 +174,6 @@ function render (wobas, setTooltip) {
 
 function posOrNeg (v) {
   return v < 0 ? -1 : 1;
-}
-
-function volume (woba) {
-  return woba.expected * woba.frequency;
 }
 
 function offsetYStart (v) {
@@ -217,9 +199,8 @@ function hideToolTip (setTooltip) {
 // the most negative svg y-value)
 function topTooltipBound (woba) {
   return [
-    scaleYVolume(volume(woba)),
-    scaleY(woba.expected - woba.league),
-    scaleY(woba.actual - woba.expected)
+    scaleYVolume(woba.frequency * woba.volume),
+    scaleY(woba.diff)
   ].reduce((a, b) => a < b ? a : b, -xAxisOffsetPx);
 }
 
@@ -227,9 +208,8 @@ function topTooltipBound (woba) {
 // the most positive svg y-value)
 function bottomTooltipBound (woba) {
   return [
-    scaleYVolume(volume(woba)),
-    scaleY(woba.expected - woba.league),
-    scaleY(woba.actual - woba.expected)
+    scaleYVolume(woba.frequency * woba.volume),
+    scaleY(woba.diff)
   ].reduce((a, b) => a > b ? a : b, xAxisOffsetPx);
 }
 
@@ -237,7 +217,9 @@ function tooltipHeight (woba) {
   const yTop = topTooltipBound(woba);
   const yBot = bottomTooltipBound(woba);
 
+  console.log('ytop', yTop, 'ybot', yBot);
+
   return yBot - yTop;
 }
 
-export { render };
+export { init };

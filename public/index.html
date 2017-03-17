@@ -7,7 +7,9 @@
 </head>
 <body>
   <div id="main">
+
     <div class="navbar">
+
       <div class="container">
         <div class="row">
           <div class="col-md-4 col-sm-6">
@@ -69,9 +71,6 @@
                     wOBA
                   </td>
                   <td>
-                    Diff
-                  </td>
-                  <td>
                     #
                   </td>
                 </tr>
@@ -89,9 +88,6 @@
                   </td>
                   <td class="player-woba-actual">
                     {{ playerWoba.actual }}
-                  </td>
-                  <td class="player-woba-diff">
-                    {{ playerWoba.diff }}
                   </td>
                   <td class="player-woba-count">
                     {{ playerWoba.count }}
@@ -118,9 +114,6 @@
                     WOBA
                   </td>
                   <td>
-                    Diff
-                  </td>
-                  <td>
                     #
                   </td>
                 </tr>
@@ -140,9 +133,6 @@
                   </td>
                   <td class="player-woba-actual">
                     {{ angleWoba.actual }}
-                  </td>
-                  <td class="player-woba-diff">
-                    {{ angleWoba.diff }}
                   </td>
                   <td class="player-woba-count">
                     {{ angleWoba.count }}
@@ -169,9 +159,6 @@
                     WOBA
                   </td>
                   <td>
-                    Diff
-                  </td>
-                  <td>
                     #
                   </td>
                 </tr>
@@ -192,9 +179,6 @@
                   <td class="player-woba-actual">
                     {{ velocityWoba.actual }}
                   </td>
-                  <td class="player-woba-diff">
-                    {{ velocityWoba.diff }}
-                  </td>
                   <td class="player-woba-count">
                     {{ velocityWoba.count }}
                   </td>
@@ -204,65 +188,64 @@
           </div>
         </div>
 
-        <div class="col-md-8">
+        <div class="col-md-8 graphs-column">
 
-          <!-- used by d3 -->
-          <div id="exit-velocity" v-bind:class="{ hidden: !currentPlayer.name }">
+          <div id="exit-velocity"
+              class="smf-graph"
+              v-if="currentPlayer.name">
 
-            <div class="graph-title">
-              <h2>
-                Exit Velocity Production
-              </h2>
+            <div class="graph-header">
+              <div class="graph-title">
+                Exit Velocity
+              </div>
+              <div class="scale-select">
+                <div>Compare</div>
+                <div v-for="veloOpt in diffOptions">
+                  <input type="radio" v-bind:value="veloOpt" v-model="velocityDiffType">{{ veloOpt.label }}
+                </div>
+              </div>
+              <div class="scale-select bar-chart-scale-select">
+                <div>Distribution</div>
+                <div v-for="veloVolume in volumeOptions">
+                  <input type="radio" v-bind:value="veloVolume" v-model="velocityVolumeType">{{ veloVolume.label }}
+                </div>
+              </div>
             </div>
 
             <table class="tooltip-table"
               v-bind:class="{ 'visibility-hidden': !evBipTooltip.expected }">
               <thead>
                 <tr>
-                  <td>
-                    League wOBA
-                  </td>
-                  <td>
-                    Actual wOBA
-                  </td>
-                  <td>
-                    Expected wOBA
-                  </td>
-                  <td>
-                    Expected Production
-                  </td>
-                  <td>
-                    Frequency
-                  </td>
+                  <td>League wOBA</td>
+                  <td>Actual wOBA</td>
+                  <td>Expected wOBA</td>
+                  <td>Actual Production</td>
+                  <td>Expected Production</td>
+                  <td>Frequency</td>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>
-                    {{ evBipTooltip.league }}
-                  </td>
-                  <td>
-                    {{ evBipTooltip.actual }}
-                  </td>
-                  <td>
-                    {{ evBipTooltip.expected }}
-                  </td>
-                  <td>
-                    {{ (evBipTooltip.expected * evBipTooltip.frequency).toFixed(3) }}
-                  </td>
-                  <td>
-                    {{ (evBipTooltip.frequency * 100).toFixed(0) + '%' }}
-                  </td>
+                  <td>{{ evBipTooltip.league }}</td>
+                  <td>{{ evBipTooltip.actual }}</td>
+                  <td>{{ evBipTooltip.expected }}</td>
+                  <td>{{ (evBipTooltip.actual * evBipTooltip.frequency).toFixed(3) }}</td>
+                  <td>{{ (evBipTooltip.expected * evBipTooltip.frequency).toFixed(3) }}</td>
+                  <td>{{ (evBipTooltip.frequency * 100).toFixed(0) + '%' }}</td>
                 </tr>
               </tbody>
             </table>
+
+            <!-- used by d3 -->
+            <div id="exit-velocity-svg-wrapper">
+            </div>
 
             <div class="legend velo-legend">
               <div class="clearfix">
                 <div class="swatch production-distribution"></div>
                 <div class="swatch-label">
-                  <div class="swatch-label-title">BIP Production Distribution</div>
-                  <div class="formula">(Frequency) x (Expected Production)</div>
+                  <div class="swatch-label-title">wOBA Distribution</div>
+                  <div class="formula">(Frequency) x ({{ velocityVolumeType.calculation }})</div>
                 </div>
               </div>
 
@@ -270,8 +253,8 @@
                 <div class="swatch expected-minus-league-positive"></div>
                 <div class="swatch expected-minus-league-negative"></div>
                 <div class="swatch-label">
-                  <div class="swatch-label-title">Relative Expected Production</div>
-                  <div class="formula">(Expected Production) - (League Production)</div>
+                  <div class="swatch-label-title">Relative wOBA</div>
+                  <div class="formula">{{ velocityDiffType.calculation }}</div>
                 </div>
               </div>
             </div>
@@ -312,23 +295,96 @@
             </div>
           </div>
 
-          <div id="launch-angle-exit-velocity">
-            <div class="scale-select" v-if="currentPlayer.name">
-              <br/>
-              <input type="radio" id="playerScale" value="player" v-model="scaleType">
-              <label for="playerScale">Player Distribution</label>
-              <br>
-              <input type="radio" id="leagueScale" value="league" v-model="scaleType">
-              <label for="leagueScale">League Distribution</label>
+          <div id="launch-angle"
+              class="smf-graph"
+              v-if="currentPlayer.name">
+
+            <div class="graph-header">
+              <div class="graph-title">
+                Launch Angle
+              </div>
+              <div class="scale-select">
+                <div>Compare</div>
+                <div v-for="diff in diffOptions">
+                  <input type="radio" v-bind:value="diff" v-model="angleDiffType">{{ diff.label }}
+                </div>
+              </div>
+              <div class="scale-select bar-chart-scale-select">
+                <div>Distribution</div>
+                <div v-for="volume in volumeOptions">
+                  <input type="radio" v-bind:value="volume" v-model="angleVolumeType">{{ volume.label }}
+                </div>
+              </div>
             </div>
 
-            <div class="batter-outline" v-if="currentPlayer.name">
+            <table class="tooltip-table"
+              v-bind:class="{ 'visibility-hidden': !laBipTooltip.expected }">
+              <thead>
+                <tr>
+                  <td>League wOBA</td>
+                  <td>Actual wOBA</td>
+                  <td>Expected wOBA</td>
+                  <td>Actual Production</td>
+                  <td>Expected Production</td>
+                  <td>Frequency</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>{{ laBipTooltip.league }}</td>
+                  <td>{{ laBipTooltip.actual }}</td>
+                  <td>{{ laBipTooltip.expected }}</td>
+                  <td>{{ (laBipTooltip.actual * laBipTooltip.frequency).toFixed(3) }}</td>
+                  <td>{{ (laBipTooltip.expected * laBipTooltip.frequency).toFixed(3) }}</td>
+                  <td>{{ (laBipTooltip.frequency * 100).toFixed(0) + '%' }}</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <!-- used by d3 -->
+            <div id="launch-angle-svg-wrapper">
+            </div>
+
+            <div class="legend velo-legend">
+              <div class="clearfix">
+                <div class="swatch production-distribution"></div>
+                <div class="swatch-label">
+                  <div class="swatch-label-title">wOBA Distribution</div>
+                  <div class="formula">(Frequency) x ({{ angleVolumeType.calculation }})</div>
+                </div>
+              </div>
+
+              <div class="clearfix">
+                <div class="swatch expected-minus-league-positive"></div>
+                <div class="swatch expected-minus-league-negative"></div>
+                <div class="swatch-label">
+                  <div class="swatch-label-title">Relative wOBA</div>
+                  <div class="formula">{{ angleDiffType.calculation }}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="launch-angle-exit-velocity"
+              class="smf-graph"
+              v-if="currentPlayer.name">
+
+            <div class="graph-header">
+              <div class="graph-title">
+                Ball in Play Distribution
+              </div>
+              <div class="scale-select">
+                <input type="radio" id="playerScale" value="player" v-model="scaleType"> Player Distribution
+                <br />
+                <input type="radio" id="leagueScale" value="league" v-model="scaleType"> League Distribution
+              </div>
+            </div>
+
+            <div class="batter-outline">
               <img src="images/baseball-batter-outline-silhouette.svg" />
             </div>
           </div>
 
-          <div id="launch-angle">
-          </div>
         </div>
       </div>
     </div>
