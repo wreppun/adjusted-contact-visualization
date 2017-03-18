@@ -37,17 +37,9 @@ const velocityPartitions = [
   110
 ];
 
-// const emptyDisplayPartition = {
-//   expected: '--',
-//   actual: '--',
-//   // diff: '--',
-//   count: '-'
-// };
-
 const emptySafePartition = {
   expected: 0,
   actual: 0,
-  // diff: 0,
   count: 0
 };
 
