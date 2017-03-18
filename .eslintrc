@@ -1,0 +1,9 @@
+{
+  "extends": "standard",
+  "plugins": [
+    "html"
+  ],
+  "rules": {
+    "semi": [2, "always"]
+  }
+}
