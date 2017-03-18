@@ -15,7 +15,12 @@ module.exports = function (env) {
         minimize: true,
         debug: false
       }),
-      new UglifyJSPlugin()
+      new UglifyJSPlugin(),
+      new webpack.DefinePlugin({
+        'process.env': {
+          NODE_ENV: '"production"'
+        }
+      })
     ],
     resolve: {
       extensions: ['.js'],
