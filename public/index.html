@@ -41,7 +41,7 @@
       </div>
     </div>
 
-    <div class="container">
+    <div class="container" v-if="currentPlayer.name">
 
       <div class="row">
         <div class="col-12">
@@ -52,7 +52,7 @@
       <div class="row bip-data">
 
         <div class="col-md-4 stats-column">
-          <div class="player-stats" v-if="currentPlayer.name">
+          <div class="player-stats">
             <div class="stats-header">
               wOBA for All BIP
             </div>
@@ -190,9 +190,7 @@
 
         <div class="col-md-8 graphs-column">
 
-          <div id="launch-angle"
-              class="smf-graph"
-              v-if="currentPlayer.name">
+          <div id="launch-angle" class="smf-graph">
 
             <div class="graph-header">
               <div class="graph-title">
@@ -260,9 +258,7 @@
             </div>
           </div>
 
-          <div id="exit-velocity"
-              class="smf-graph"
-              v-if="currentPlayer.name">
+          <div id="exit-velocity" class="smf-graph">
 
             <div class="graph-header">
               <div class="graph-title">
@@ -365,9 +361,7 @@
             </div>
           </div>
 
-          <div id="launch-angle-exit-velocity"
-              class="smf-graph"
-              v-if="currentPlayer.name">
+          <div id="launch-angle-exit-velocity" class="smf-graph">
 
             <div class="graph-header">
               <div class="graph-title">
