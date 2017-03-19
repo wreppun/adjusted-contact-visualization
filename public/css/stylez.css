@@ -8,16 +8,7 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
-input.search {
-  padding: 12px 12px 12px 42px;
-  font-size: 16px;
-  background: #fff url("../images/search.png") 8px 8px no-repeat;
-  background-size: 32px;
-  outline: none;
-  border: 1px solid #e3e3e3;
-  border-radius: 24px;
-  width: 100%;
-}
+/* START NAV */
 
 .navbar {
   position: fixed;
@@ -34,13 +25,20 @@ input.search {
   padding-top: 48px;
 }
 
-.player-name {
-  margin-left: 32px;
-}
-
 .player-selector {
   position: relative;
   z-index: 1;
+}
+
+input.search {
+  padding: 12px 12px 12px 42px;
+  font-size: 16px;
+  background: #fff url("../images/search.png") 8px 8px no-repeat;
+  background-size: 32px;
+  outline: none;
+  border: 1px solid #e3e3e3;
+  border-radius: 24px;
+  width: 100%;
 }
 
 .player-completions {
@@ -61,6 +59,56 @@ input.search {
 .player-completions .arrowed {
   background-color: #aaa;
 }
+
+/* END NAV */
+
+/* BIP HEADER */
+
+.bip-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.player-name {
+  margin-left: 32px;
+}
+
+.bip-header .stats-header {
+  margin: 0px;
+}
+
+.stats-header-aside {
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #999;
+}
+
+.overall-woba {
+  margin: 0px 16px;
+}
+
+.player-woba-header td {
+  color: #999;
+  font-size: 14px;
+  text-align: center;
+}
+
+.player-woba td {
+  font-weight: bold;
+  font-size: 24px;
+  letter-spacing: 1px;
+}
+
+.player-overall-stats {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+/* END BIP HEADER */
+
 
 .smf-graph {
   padding-top: 32px;
@@ -164,9 +212,6 @@ tr.small-sample {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /*position: absolute;
-  bottom: 20px;
-  left: 120px;*/
 }
 
 .swatch {

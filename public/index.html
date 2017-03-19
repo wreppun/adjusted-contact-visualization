@@ -45,7 +45,41 @@
 
       <div class="row">
         <div class="col-12">
-          <h1 class="player-name">{{ currentPlayer.name }}</h1>
+          <div class="bip-header">
+            <h1 class="player-name">{{ currentPlayer.name }}</h1>
+            <div class="player-overall-stats">
+
+              <div class="stats-header">
+                <div>Contact wOBA</div>
+              </div>
+
+              <table class="overall-woba">
+                <thead>
+                  <tr class="player-woba-header">
+                    <td>xwOBA</td>
+                    <td>wOBA</td>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <tr class="player-woba">
+                    <td class="player-woba-expected">{{ playerWoba.expected }}</td>
+                    <td class="player-woba-actual">{{ playerWoba.actual }}</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <div class="stats-header-aside">
+                <div class="stats-header-subtitle">
+                  League average is 0.401
+                </div>
+                <div class="stats-header-subtitle">
+                  Batted ball sample size of {{ playerWoba.count }}
+                </div>
+              </div>
+
+            </div>
+          </div>
         </div>
       </div>
 
@@ -53,49 +87,6 @@
 
         <div class="col-md-4 stats-column">
           <div class="player-stats">
-            <div class="stats-header">
-              wOBA for All BIP
-            </div>
-            <table>
-              <thead>
-                <tr>
-                  <td>
-                  </td>
-                  <td>
-                    League
-                  </td>
-                  <td>
-                    xWOBA
-                  </td>
-                  <td>
-                    wOBA
-                  </td>
-                  <td>
-                    #
-                  </td>
-                </tr>
-              </thead>
-              <tbody>
-                <tr class="player-woba">
-                  <td class="player-woba-label">
-                    All BIP
-                  </td>
-                  <td class="player-woba-expected">
-                    {{ leagueWoba }}
-                  </td>
-                  <td class="player-woba-expected">
-                    {{ playerWoba.expected }}
-                  </td>
-                  <td class="player-woba-actual">
-                    {{ playerWoba.actual }}
-                  </td>
-                  <td class="player-woba-count">
-                    {{ playerWoba.count }}
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-
             <div class="stats-header">
               wOBA by Launch Angle
             </div>
