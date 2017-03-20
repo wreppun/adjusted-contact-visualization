@@ -3,7 +3,7 @@ import {polarToGrid, sizeSegments} from './graphUtils';
 import {angleBucketer, velocityBucketer} from './partitions';
 import * as LeagueData from './static/league/production.json';
 
-const width = 960;
+const width = 660;
 const height = 900;
 const chartRadius = 600;
 const arcLength = Math.PI / 3;
@@ -11,6 +11,7 @@ const arcLength = Math.PI / 3;
 // init
 const initGraph =
   d3.select('#launch-angle-exit-velocity').append('svg')
+      .attr('class', 'ev-graph')
       .attr('width', width)
       .attr('height', height)
     .append('g')

@@ -108,6 +108,10 @@ input.search {
 
 /* END BIP HEADER */
 
+.graphs-column {
+  width: 760px;
+  margin: 0 auto;
+}
 
 .smf-graph {
   padding-top: 32px;
