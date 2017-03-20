@@ -26,6 +26,9 @@ app.get('/batter/:batter', (req, res) => {
       res.set('Access-Control-Allow-Origin', 'http://localhost:8082');
       res.set('Vary', 'Origin');
       res.send(results);
+    })
+    .catch(error => {
+      console.log('failed to retrieve: ', JSON.stringify(req), 'error', error);
     });
 });
 
