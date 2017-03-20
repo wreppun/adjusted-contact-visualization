@@ -56,8 +56,8 @@
               <table class="overall-woba">
                 <thead>
                   <tr class="player-woba-header">
-                    <td>xwOBA</td>
-                    <td>wOBA</td>
+                    <td>Expected</td>
+                    <td>Actual</td>
                   </tr>
                 </thead>
 
@@ -188,13 +188,13 @@
                 Launch Angle
               </div>
               <div class="scale-select">
-                <div class="scale-select-header">Compare</div>
+                <div class="scale-select-header">Contact Comparison</div>
                 <div v-for="diff in diffOptions">
                   <input type="radio" v-bind:value="diff" v-model="angleDiffType">{{ diff.label }}
                 </div>
               </div>
               <div class="scale-select bar-chart-scale-select">
-                <div class="scale-select-header">Distribution</div>
+                <div class="scale-select-header">Contact Production</div>
                 <div v-for="volume in volumeOptions">
                   <input type="radio" v-bind:value="volume" v-model="angleVolumeType">{{ volume.label }}
                 </div>
@@ -231,19 +231,19 @@
 
             <div class="legend velo-legend">
               <div class="clearfix">
-                <div class="swatch production-distribution"></div>
-                <div class="swatch-label">
-                  <div class="swatch-label-title">wOBA Distribution</div>
-                  <div class="formula">(Frequency) x ({{ angleVolumeType.calculation }})</div>
-                </div>
-              </div>
-
-              <div class="clearfix">
                 <div class="swatch expected-minus-league-positive"></div>
                 <div class="swatch expected-minus-league-negative"></div>
                 <div class="swatch-label">
                   <div class="swatch-label-title">Relative wOBA</div>
                   <div class="formula">{{ angleDiffType.calculation }}</div>
+                </div>
+              </div>
+
+              <div class="clearfix">
+                <div class="swatch production-distribution"></div>
+                <div class="swatch-label">
+                  <div class="swatch-label-title">wOBA Production</div>
+                  <div class="formula">(Frequency) x ({{ angleVolumeType.calculation }})</div>
                 </div>
               </div>
             </div>
@@ -256,13 +256,13 @@
                 Exit Velocity
               </div>
               <div class="scale-select">
-                <div class="scale-select-header">Compare</div>
+                <div class="scale-select-header">Contact Comparison</div>
                 <div v-for="veloOpt in diffOptions">
                   <input type="radio" v-bind:value="veloOpt" v-model="velocityDiffType">{{ veloOpt.label }}
                 </div>
               </div>
               <div class="scale-select bar-chart-scale-select">
-                <div class="scale-select-header">Distribution</div>
+                <div class="scale-select-header">Contact Distribution</div>
                 <div v-for="veloVolume in volumeOptions">
                   <input type="radio" v-bind:value="veloVolume" v-model="velocityVolumeType">{{ veloVolume.label }}
                 </div>
@@ -299,14 +299,6 @@
 
             <div class="legend velo-legend">
               <div class="clearfix">
-                <div class="swatch production-distribution"></div>
-                <div class="swatch-label">
-                  <div class="swatch-label-title">wOBA Distribution</div>
-                  <div class="formula">(Frequency) x ({{ velocityVolumeType.calculation }})</div>
-                </div>
-              </div>
-
-              <div class="clearfix">
                 <div class="swatch expected-minus-league-positive"></div>
                 <div class="swatch expected-minus-league-negative"></div>
                 <div class="swatch-label">
@@ -314,6 +306,15 @@
                   <div class="formula">{{ velocityDiffType.calculation }}</div>
                 </div>
               </div>
+
+              <div class="clearfix">
+                <div class="swatch production-distribution"></div>
+                <div class="swatch-label">
+                  <div class="swatch-label-title">wOBA Production</div>
+                  <div class="formula">(Frequency) x ({{ velocityVolumeType.calculation }})</div>
+                </div>
+              </div>
+
             </div>
 
             <div class="row" style="display:none;">
