@@ -328,3 +328,7 @@ tr.small-sample {
   font-size: 12px;
   color: #999;
 }
+
+.tooltip-table td {
+  text-align: center;
+}
