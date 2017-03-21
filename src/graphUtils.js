@@ -50,8 +50,24 @@ const sizeSegments = (segments, getScalar, padding) => {
   return sized;
 };
 
+const bipTypeClass = (bip) => {
+  switch (bip.result) {
+    case 'Single':
+      return 'single';
+    case 'Double':
+      return 'double';
+    case 'Triple':
+      return 'triple';
+    case 'Home Run':
+      return 'home-run';
+    default:
+      return 'out';
+  }
+};
+
 export {
   polarToGrid,
   distinctByKey,
-  sizeSegments
+  sizeSegments,
+  bipTypeClass
 };

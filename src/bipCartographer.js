@@ -1,5 +1,5 @@
 import * as d3 from 'd3';
-import {polarToGrid, sizeSegments} from './graphUtils';
+import {polarToGrid, sizeSegments, bipTypeClass} from './graphUtils';
 import {angleBucketer, velocityBucketer} from './partitions';
 import * as LeagueData from './static/league/production.json';
 
@@ -10,12 +10,12 @@ const arcLength = Math.PI / 3;
 
 // init
 const initGraph =
-  d3.select('#launch-angle-exit-velocity').append('svg')
+  d3.select('#launch-angle-exit-velocity-wrapper').append('svg')
       .attr('class', 'ev-graph')
       .attr('width', width)
       .attr('height', height)
     .append('g')
-      .attr('transform', 'translate(' + (0) + ',' + height / 2 + ')');
+      .attr('transform', 'translate(0,' + height / 2 + ')');
 
 initGraph.append('text')
   .append('textPath')
@@ -62,20 +62,22 @@ const scaleAndDraw = (function () {
     return Object.assign({}, b, {sampleSize});
   });
 
-  return (scaleType, bipData) => {
+  return (scaleType, bipData, setTooltip) => {
     if (scaleType === 'player') {
       draw(
         angleBucket(bipData, angleBucketer),
         velocityBucket(bipData, velocityBucketer),
         LeagueData,
-        bipData
+        bipData,
+        setTooltip
       );
     } else if (scaleType === 'league') {
       draw(
         leagueLaScale,
         leagueEvScale,
         LeagueData,
-        bipData
+        bipData,
+        setTooltip
       );
     } else {
       console.log('Unknown scale type', scaleType);
@@ -243,7 +245,7 @@ function arcTween (radius) {
   };
 }
 
-function draw (angles, velocities, leagueProduction, velAngles) {
+function draw (angles, velocities, leagueProduction, velAngles, setTooltip) {
   const radialSections = calculateRadii(velocities, d => Math.max(d.sampleSize, 5));
   const pied = rotatePied(angles);
   const plotted = mapToChart(
@@ -264,7 +266,7 @@ function draw (angles, velocities, leagueProduction, velAngles) {
   const exitVelocityTextPath = getExitVelocityTextPath(pied);
   const velocityTicksD = getExitVelocityTicks(pied, radialSections);
 
-  const svg = d3.select('#launch-angle-exit-velocity svg g');
+  const svg = d3.select('#launch-angle-exit-velocity-wrapper svg g');
 
   const tickSegment = d3.line()
     .x(function (d) { return d.x; })
@@ -378,28 +380,36 @@ function draw (angles, velocities, leagueProduction, velAngles) {
 
   // plot points
   const points = svg.selectAll('.bip')
-    .data(plotted.map(polarToGrid));
+    .data(
+      plotted
+        .map(polarToGrid)
+        .map(d => Object.assign({}, d, {
+          bipClass: bipTypeClass(d)
+        }))
+      );
 
   points.enter()
     .append('circle')
-    .attr('class', function (d) { return 'bip ' + bipType(d); })
-    .attr('cx', d => d.x)
-    .attr('cy', d => d.y)
-    .attr('r', 2)
-    .style('opacity', 0)
-    .transition()
-    .delay(300)
-    .duration(300)
-    .style('opacity', 1);
+      .attr('class', function (d) { return 'bip ' + d.bipClass; })
+      .attr('cx', d => d.x)
+      .attr('cy', d => d.y)
+      .attr('r', 2)
+      .style('opacity', 0)
+      .on('mouseover', function (d) { setTooltip(Object.assign({}, d)); })
+      .on('mouseout', function (d) { setTooltip({}); })
+      .transition()
+      .delay(300)
+      .duration(300)
+      .style('opacity', 1);
 
   points.transition().duration(100)
-    .style('opacity', 0)
-    .transition().duration(0)
-    .attr('class', function (d) { return 'bip ' + bipType(d); })
-    .attr('cx', d => d.x)
-    .attr('cy', d => d.y)
-    .transition().delay(200).duration(300)
-    .style('opacity', 1);
+      .style('opacity', 0)
+      .transition().duration(0)
+      .attr('class', function (d) { return 'bip ' + d.bipClass; })
+      .attr('cx', d => d.x)
+      .attr('cy', d => d.y)
+      .transition().delay(200).duration(300)
+      .style('opacity', 1);
 
   points.exit().remove();
 }
@@ -430,21 +440,6 @@ function merge (arr1, arr2) {
   }
 
   return arr1.map((a, i) => Object.assign({}, a, arr2[i]));
-}
-
-function bipType (bip) {
-  switch (bip.result) {
-    case 'Single':
-      return 'single';
-    case 'Double':
-      return 'double';
-    case 'Triple':
-      return 'triple';
-    case 'Home Run':
-      return 'home-run';
-    default:
-      return 'out';
-  }
 }
 
 export {

@@ -4,11 +4,13 @@ import * as Players from './static/league/players.json';
 import * as LeagueData from './static/league/productionAll.json';
 import {woba} from './stats';
 import {fromPartitioningArray} from './partitions';
+import intro from './intro.js';
 
 import Vue from 'vue';
 import VueResource from 'vue-resource';
 
 Vue.use(VueResource);
+Vue.component('intro', intro);
 
 const anglePartitions = [
   -40,
@@ -82,6 +84,12 @@ const volumeTypes = {
 const renderVelo = initGraph('exit-velocity-svg-wrapper');
 const renderAngle = initGraph('launch-angle-svg-wrapper');
 
+const routes = {
+  HOME: 'home',
+  PLAYER: 'player',
+  WHAT_IT_IS: 'whatItIs'
+};
+
 /* eslint-disable no-new */
 new Vue({
 /* eslint-enable no-new */
@@ -111,7 +119,9 @@ new Vue({
     anglePartitions: anglePartitions, // doesn't need to be in data for now
     velocityPartitions: velocityPartitions, // doesn't need to be in data for now
     evBipTooltip: {},
-    laBipTooltip: {}
+    laBipTooltip: {},
+    evlaBipTooltip: {},
+    page: routes.HOME
   },
 
   computed: {
@@ -170,12 +180,16 @@ new Vue({
   },
 
   methods: {
-    setTooltip (tooltip) {
+    setVelocityTooltip (tooltip) {
       this.evBipTooltip = tooltip;
     },
 
     setAngleTooltip (tooltip) {
       this.laBipTooltip = tooltip;
+    },
+
+    setEvLaTooltip (tooltip) {
+      this.evlaBipTooltip = tooltip;
     },
 
     setPlayer (player) {
@@ -192,7 +206,7 @@ new Vue({
       this.fetchBatter(player.id)
         .then(results => {
           this.playerBipData = results;
-          render(this.scaleType, results);
+          render(this.scaleType, results, this.setEvLaTooltip);
         });
     },
 
@@ -212,7 +226,7 @@ new Vue({
       const selectedViaArrow = this.filteredPlayers[this.arrowed];
 
       if (selectedViaArrow) {
-        this.setPlayer(selectedViaArrow);
+        this.goPlayer(selectedViaArrow);
       }
     },
 
@@ -235,16 +249,43 @@ new Vue({
         this.playerVelocityWoba,
         this.velocityDiffType,
         this.velocityVolumeType,
-        this.setTooltip,
+        this.setVelocityTooltip,
         renderVelo
       );
+    },
+
+    goHome () {
+      this.setPlayer({});
+      this.page = routes.HOME;
+    },
+
+    isHome () {
+      return this.page === routes.HOME;
+    },
+
+    goPlayer (player) {
+      this.setPlayer(player);
+      this.page = routes.PLAYER;
+    },
+
+    isPlayer () {
+      return this.page === routes.PLAYER;
+    },
+
+    goWhatItIs () {
+      this.setPlayer({});
+      this.page = routes.WHAT_IT_IS;
+    },
+
+    isWhatItIs () {
+      return this.page === routes.WHAT_IT_IS;
     }
   },
 
   watch: {
     scaleType: function (scaleType) {
       if (this.playerBipData.length) {
-        render(scaleType, this.playerBipData);
+        render(scaleType, this.playerBipData, this.setEvLaTooltip);
       }
     },
 

@@ -10,7 +10,9 @@
   },
   "dependencies": {
     "d3": "^4.7.1",
+    "html-loader": "^0.4.5",
     "knex": "^0.12.7",
+    "markdown-loader": "^2.0.0",
     "pg": "^6.1.4",
     "uglifyjs-webpack-plugin": "^0.3.0",
     "vue": "^2.2.1",

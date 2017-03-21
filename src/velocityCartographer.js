@@ -1,8 +1,8 @@
 import * as d3 from 'd3';
 import {sizeSegments} from './graphUtils';
 
-const width = 650;
-const height = 400;
+const width = 760;
+const height = 600;
 
 // Relative Values
 const yMin = -0.5;
@@ -12,7 +12,7 @@ const yMaxVolume = 0.2;
 const negYUpperBound = -0.001;
 
 // SVG values (mins/maxes are inverted -- max is down)
-const xAxisOffsetPx = 10;
+const xAxisOffsetPx = 14;
 const svgPadding = 20;
 const yMinSvg = -height / 2 + svgPadding;
 const yMaxSvg = height / 2 - svgPadding;
@@ -54,7 +54,7 @@ function init (svgWrapperId) {
 
   const yAxisRightTop = d3.axisRight()
     .tickFormat(function (v, i) { return i === 0 ? i : v.toFixed(3); })
-    .scale(d3.scaleLinear().domain([0, (height / 2) / 1000]).range([0, yMinSvg]))
+    .scale(d3.scaleLinear().domain([yMinVolume, yMaxVolume]).range([-xAxisOffsetPx, yMinSvg]))
     .ticks(5);
 
   const svg = d3.select('#' + svgWrapperId).append('svg')
@@ -63,7 +63,7 @@ function init (svgWrapperId) {
       .attr('height', height)
     .append('g')
       .attr('id', svgWrapperIdMain)
-      .attr('transform', `translate(36, ${height / 2})`);
+      .attr('transform', `translate(48, ${height / 2})`);
 
   svg.append('g')
     .attr('class', 'ev-axis')
@@ -75,13 +75,13 @@ function init (svgWrapperId) {
 
   svg.append('g')
     .attr('class', 'ev-axis')
-    .attr('transform', `translate(${width - 64}, ${-xAxisOffsetPx})`)
+    .attr('transform', `translate(${width - 96}, 0)`)
     .call(yAxisRightTop);
 
   return (wobas, setTooltip) => render(svgWrapperIdMain, wobas, setTooltip);
 }
 
-const scaleXBand = d3.scaleBand().range([0, width - 72]).padding(0.3);
+const scaleXBand = d3.scaleBand().range([0, width - 96]).padding(0.3);
 
 function render (svgWrapperIdMain, wobas, setTooltip) {
   const svg = d3.select('#' + svgWrapperIdMain);
@@ -161,7 +161,7 @@ function render (svgWrapperIdMain, wobas, setTooltip) {
 
   veloXAxis.enter()
     .append('text')
-      .attr('class', 'velo-x-axis-text')
+      .attr('class', 'velo-x-axis-text ev-axis')
       .attr('text-anchor', 'middle')
       .attr('x', function (d) { return domainedScaleX(d.label); })
       .attr('y', 5)

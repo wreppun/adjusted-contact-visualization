@@ -8,6 +8,14 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
+#main {
+  padding-top: 48px;
+}
+
+[v-cloak] {
+  display:none;
+}
+
 /* START NAV */
 
 .navbar {
@@ -16,13 +24,13 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  padding: 8px 0px;
+  padding: 8px 16px;
   z-index: 2;
   opacity: 0.9;
-}
 
-#main {
-  padding-top: 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .player-selector {
@@ -60,6 +68,35 @@ input.search {
   background-color: #aaa;
 }
 
+.recent-players {
+  display: flex;
+  flex: 1;
+}
+
+.recent-player {
+    padding: 12px;
+    background: #ddd;
+    margin-left: 16px;
+    border-radius: 32px;
+    font-weight: normal;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.recent-player:hover {
+  background-color: pink;
+}
+
+.how-it-works {
+  cursor: pointer;
+  padding: 12px;
+}
+
+.how-it-works:hover {
+  background-color: #ccc;
+  border-radius: 12px;
+}
+
 /* END NAV */
 
 /* BIP HEADER */
@@ -72,15 +109,18 @@ input.search {
 
 .player-name {
   margin-left: 32px;
+  font-weight: lighter;
 }
 
 .bip-header .stats-header {
   margin: 0px;
+  font-weight: lighter;
 }
 
 .stats-header-aside {
   font-size: 12px;
   color: #999;
+  font-weight: lighter;
 }
 
 .overall-woba {
@@ -108,6 +148,26 @@ input.search {
 
 /* END BIP HEADER */
 
+.intro-text {
+  max-width: 640px;
+  margin: 48px auto;
+  font-size: 16px;
+  line-height: 1.6em;
+  color: #444;
+}
+
+.intro-text h1, .intro-text h2, .intro-text h3 {
+  color: #444;
+}
+
+.home-text {
+  margin: 48px auto;
+  text-align: center;
+  font-size: 36px;
+  color: #444;
+  font-weight: lighter;
+}
+
 .graphs-column {
   width: 760px;
   margin: 0 auto;
@@ -132,36 +192,28 @@ input.search {
   color: #666;
 }
 
+.scale-selectors {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
 .scale-select {
   font-size: 14px;
   padding: 12px;
-  border: 1px solid #ddd;
 }
 
 .scale-select-header {
   color: #999;
   text-align: center;
   text-transform: uppercase;
-  font-size: 12px;
+  font-size: 14px;
+  font-weight: lighter;
 }
 
 .scale-select input {
   margin-top: 12px;
   margin-right: 12px;
-}
-
-.recent-players {
-  display: flex;
-}
-
-.recent-player {
-    padding: 12px;
-    background: #ddd;
-    margin-left: 16px;
-    border-radius: 32px;
-    font-weight: normal;
-    letter-spacing: 1px;
-    cursor: pointer;
 }
 
 .stats-column thead td {
@@ -215,6 +267,7 @@ tr.small-sample {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: -80px;
 }
 
 .swatch {
@@ -266,10 +319,12 @@ tr.small-sample {
   margin: 0 auto;
 }
 
+.ev-axis {
+  font-size: 12px;
+}
+
 #launch-angle-exit-velocity {
   position: relative;
-  /*border-top: 1px solid #ddd;
-  margin-top: 16px;*/
 }
 
 .arc path {
@@ -284,10 +339,6 @@ tr.small-sample {
 .axis-label {
   letter-spacing: 8px;
   font-size: 24px;
-}
-
-.velo-x-axis-text {
-  font-size: 10px;
 }
 
 .visibility-hidden {
@@ -325,14 +376,41 @@ tr.small-sample {
 /* TOOLTIPS */
 .tooltip-table {
   clear: both;
-  margin: 0 auto;
+  margin: 0 auto -64px;
 }
 
 .tooltip-table thead td {
-  font-size: 12px;
+  font-size: 14px;
   color: #999;
 }
 
 .tooltip-table td {
   text-align: center;
+  padding: 4px 16px;
+}
+
+.tooltip-table .bip-type {
+  color: white;
+}
+
+.tooltip-table .home-run {
+  background: #444;
+}
+
+.tooltip-table .triple {
+  background: aqua;
+  color: #444;
+}
+
+.tooltip-table .double {
+  background: yellow;
+  color: #444;
+}
+
+.tooltip-table .single {
+  background: blue;
+}
+
+.tooltip-table .out {
+  background-color: brown;
 }

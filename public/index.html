@@ -6,38 +6,33 @@
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
 </head>
 <body>
-  <div id="main">
+  <div id="main" v-cloak>
 
     <div class="navbar">
-
-      <div class="container">
-        <div class="row">
-          <div class="col-md-4 col-sm-6">
-            <div class="player-selector">
-              <input v-model="playerInput" class="search" v-on:keyup.enter="selectArrowed()" v-on:keyup.down="moveArrow(1)" v-on:keyup.up="moveArrow(-1)">
-              <ul class="player-completions">
-                <li v-for="(player, index) in filteredPlayers">
-                  <div v-on:click="setPlayer(player)" v-bind:class="{arrowed: index === arrowed}">
-                    {{ player.name }}
-                  </div>
-                </li>
-                <li v-if="overflow > 0">
-                  <div>
-                    {{ overflow }} others...
-                  </div>
-                </li>
-              </ul>
+      <div class="player-selector">
+        <input v-model="playerInput" class="search" v-on:keyup.enter="selectArrowed()" v-on:keyup.down="moveArrow(1)" v-on:keyup.up="moveArrow(-1)">
+        <ul class="player-completions">
+          <li v-for="(player, index) in filteredPlayers">
+            <div v-on:click="goPlayer(player)" v-bind:class="{arrowed: index === arrowed}">
+              {{ player.name }}
             </div>
-          </div>
-
-          <div class="col-md-8 col-sm-6">
-            <div class="recent-players">
-              <div v-for="recentPlayer in recentPlayers" class="recent-player" v-on:click="setPlayer(recentPlayer)">
-                  {{ getInitials(recentPlayer) }}
-              </div>
+          </li>
+          <li v-if="overflow > 0">
+            <div>
+              {{ overflow }} others...
             </div>
-          </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="recent-players">
+        <div v-for="recentPlayer in recentPlayers" class="recent-player" v-on:click="goPlayer(recentPlayer)">
+            {{ getInitials(recentPlayer) }}
         </div>
+      </div>
+
+      <div class="how-it-works" v-on:click="goWhatItIs()">
+        What is this place?
       </div>
     </div>
 
@@ -90,18 +85,20 @@
 
             <div class="graph-header">
               <div class="graph-title">
-                Launch Angle
+                Launch Angle Contact
               </div>
-              <div class="scale-select">
-                <div class="scale-select-header">Contact Comparison</div>
-                <div v-for="diff in diffOptions">
-                  <input type="radio" v-bind:value="diff" v-model="angleDiffType">{{ diff.label }}
+              <div class="scale-selectors">
+                <div class="scale-select">
+                  <div class="scale-select-header">Contact Comparison</div>
+                  <div v-for="diff in diffOptions">
+                    <input type="radio" v-bind:value="diff" v-model="angleDiffType">{{ diff.label }}
+                  </div>
                 </div>
-              </div>
-              <div class="scale-select bar-chart-scale-select">
-                <div class="scale-select-header">Contact Production</div>
-                <div v-for="volume in volumeOptions">
-                  <input type="radio" v-bind:value="volume" v-model="angleVolumeType">{{ volume.label }}
+                <div class="scale-select bar-chart-scale-select">
+                  <div class="scale-select-header">Contact Production</div>
+                  <div v-for="volume in volumeOptions">
+                    <input type="radio" v-bind:value="volume" v-model="angleVolumeType">{{ volume.label }}
+                  </div>
                 </div>
               </div>
             </div>
@@ -158,20 +155,22 @@
 
             <div class="graph-header">
               <div class="graph-title">
-                Exit Velocity
+                Exit Velocity Contact
               </div>
 
-              <div class="scale-select">
-                <div class="scale-select-header">Contact Comparison</div>
-                <div v-for="veloOpt in diffOptions">
-                  <input type="radio" v-bind:value="veloOpt" v-model="velocityDiffType">{{ veloOpt.label }}
+              <div class="scale-selectors">
+                <div class="scale-select">
+                  <div class="scale-select-header">Contact Comparison</div>
+                  <div v-for="veloOpt in diffOptions">
+                    <input type="radio" v-bind:value="veloOpt" v-model="velocityDiffType">{{ veloOpt.label }}
+                  </div>
                 </div>
-              </div>
 
-              <div class="scale-select">
-                <div class="scale-select-header">Contact Distribution</div>
-                <div v-for="veloVolume in volumeOptions">
-                  <input type="radio" v-bind:value="veloVolume" v-model="velocityVolumeType">{{ veloVolume.label }}
+                <div class="scale-select">
+                  <div class="scale-select-header">Contact Distribution</div>
+                  <div v-for="veloVolume in volumeOptions">
+                    <input type="radio" v-bind:value="veloVolume" v-model="velocityVolumeType">{{ veloVolume.label }}
+                  </div>
                 </div>
               </div>
             </div>
@@ -223,41 +222,6 @@
               </div>
 
             </div>
-
-            <div class="row" style="display:none;">
-              <div class="col-sm-6">
-                <ul>
-                  <li class="list-header">
-                    Possible reasons for positive difference:
-                  </li>
-                  <li>
-                    BIP distribution skews towards flyball/line-drives
-                  </li>
-                  <li>
-                    Heavy pull-tendency on fly balls
-                  </li>
-                  <li>
-                    Foot speed (fast)
-                  </li>
-                </ul>
-              </div>
-              <div class=col-sm-6>
-                <ul>
-                  <li class="list-header">
-                    Possible reasons for negative difference:
-                  </li>
-                  <li>
-                    BIP distribution skews towards ground balls
-                  </li>
-                  <li>
-                    Heavy pull-tendency on ground balls
-                  </li>
-                  <li>
-                    Foot speed (slow)
-                  </li>
-                </ul>
-              </div>
-            </div>
           </div>
 
           <div id="launch-angle-exit-velocity" class="smf-graph">
@@ -266,22 +230,63 @@
               <div class="graph-title">
                 Ball in Play Distribution
               </div>
-              <div class="scale-select">
-                <input type="radio" id="playerScale" value="player" v-model="scaleType"> Player Distribution
-                <br />
-                <input type="radio" id="leagueScale" value="league" v-model="scaleType"> League Distribution
+
+              <div class="scale-selectors">
+
+                <div class="scale-select">
+                  <div>
+                    <input type="radio" id="playerScale" value="player" v-model="scaleType"> Player Distribution
+                  </div>
+                  <div>
+                    <input type="radio" id="leagueScale" value="league" v-model="scaleType"> League Distribution
+                  </div>
+                </div>
+
               </div>
             </div>
+
+            <table class="tooltip-table"
+              v-bind:class="{ 'visibility-hidden': !evlaBipTooltip.angle }">
+              <thead>
+                <tr>
+                  <td></td>
+                  <td>Exit Velocity</td>
+                  <td>Launch Angle</td>
+                  <td>Expected wOBA</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="bip-type" v-bind:class="[evlaBipTooltip.bipClass]">{{ evlaBipTooltip.result }}</td>
+                  <td>{{ evlaBipTooltip.velocity }}</td>
+                  <td>{{ evlaBipTooltip.angle }}</td>
+                  <td>{{ (evlaBipTooltip.xwoba || 0).toFixed(3) }}</td>
+                </tr>
+              </tbody>
+            </table>
 
             <div class="batter-outline">
               <img src="images/baseball-batter-outline-silhouette.svg" />
             </div>
+
+            <div id="launch-angle-exit-velocity-wrapper">
+            </div>
+
           </div>
 
         </div>
       </div>
     </div>
 
+    <div class="container" v-if="isHome()">
+      <div class="home-text">
+        Search for a player to begin
+      </div>
+    </div>
+
+    <div class="container" v-if="isWhatItIs()">
+      <intro></intro>
+    </div>
   </div>
   <script src="assets/bundle.js"></script>
 </body>
