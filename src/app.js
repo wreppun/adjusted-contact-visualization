@@ -203,11 +203,14 @@ new Vue({
       this.currentPlayer = player;
       this.playerInput = null;
       this.overflow = 0;
-      this.fetchBatter(player.id)
-        .then(results => {
-          this.playerBipData = results;
-          render(this.scaleType, results, this.setEvLaTooltip);
-        });
+
+      if (player.id) {
+        this.fetchBatter(player.id)
+          .then(results => {
+            this.playerBipData = results;
+            render(this.scaleType, results, this.setEvLaTooltip);
+          });
+      }
     },
 
     fetchBatter (batterId) {

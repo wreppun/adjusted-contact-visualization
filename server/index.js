@@ -28,7 +28,7 @@ app.get('/batter/:batter', (req, res) => {
       res.send(results);
     })
     .catch(error => {
-      console.log('failed to retrieve: ', JSON.stringify(req), 'error', error);
+      console.log('failed to retrieve: ', req.params, 'error', error);
     });
 });
 
