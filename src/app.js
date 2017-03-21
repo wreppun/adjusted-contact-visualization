@@ -140,8 +140,8 @@ new Vue({
         return [];
       }
 
-      const allInOrder = new RegExp(this.playerInput.split('').join('.*'), 'i');
-      const filtered = Players.filter(p => allInOrder.test(p.name));
+      const lettersInOrderRegExp = new RegExp(this.playerInput.toLowerCase().split('').join('.*'));
+      const filtered = Players.filter(p => lettersInOrderRegExp.test(p.normalized));
       const trimmed = filtered.slice(0, 10);
 
       if (trimmed.length < filtered.length) {

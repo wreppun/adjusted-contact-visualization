@@ -1,3538 +1,4422 @@
 [
   {
     "name": "A.J. Cole",
-    "id": 595918
+    "id": 595918,
+    "normalized": "a.j. cole"
   },
   {
     "name": "A.J. Ellis",
-    "id": 454560
+    "id": 454560,
+    "normalized": "a.j. ellis"
   },
   {
     "name": "A.J. Pierzynski",
-    "id": 150229
+    "id": 150229,
+    "normalized": "a.j. pierzynski"
   },
   {
     "name": "A.J. Pollock",
-    "id": 572041
+    "id": 572041,
+    "normalized": "a.j. pollock"
   },
   {
     "name": "A.J. Reed",
-    "id": 607223
+    "id": 607223,
+    "normalized": "a.j. reed"
   },
   {
     "name": "Aaron Altherr",
-    "id": 571437
+    "id": 571437,
+    "normalized": "aaron altherr"
   },
   {
     "name": "Aaron Blair",
-    "id": 594760
+    "id": 594760,
+    "normalized": "aaron blair"
   },
   {
     "name": "Aaron Hicks",
-    "id": 543305
+    "id": 543305,
+    "normalized": "aaron hicks"
   },
   {
     "name": "Aaron Hill",
-    "id": 431094
+    "id": 431094,
+    "normalized": "aaron hill"
   },
   {
     "name": "Aaron Judge",
-    "id": 592450
+    "id": 592450,
+    "normalized": "aaron judge"
   },
   {
     "name": "Aaron Nola",
-    "id": 605400
+    "id": 605400,
+    "normalized": "aaron nola"
   },
   {
     "name": "Aaron Sanchez",
-    "id": 592717
+    "id": 592717,
+    "normalized": "aaron sanchez"
   },
   {
     "name": "Abraham Almonte",
-    "id": 501659
+    "id": 501659,
+    "normalized": "abraham almonte"
   },
   {
     "name": "Adam Conley",
-    "id": 543045
+    "id": 543045,
+    "normalized": "adam conley"
   },
   {
     "name": "Adam Duvall",
-    "id": 594807
+    "id": 594807,
+    "normalized": "adam duvall"
   },
   {
     "name": "Adam Eaton",
-    "id": 594809
+    "id": 594809,
+    "normalized": "adam eaton"
   },
   {
     "name": "Adam Frazier",
-    "id": 624428
+    "id": 624428,
+    "normalized": "adam frazier"
   },
   {
     "name": "Adam Jones",
-    "id": 430945
+    "id": 430945,
+    "normalized": "adam jones"
   },
   {
     "name": "Adam Lind",
-    "id": 452252
+    "id": 452252,
+    "normalized": "adam lind"
   },
   {
     "name": "Adam Moore",
-    "id": 446192
+    "id": 446192,
+    "normalized": "adam moore"
   },
   {
     "name": "Adam Morgan",
-    "id": 605388
+    "id": 605388,
+    "normalized": "adam morgan"
   },
   {
     "name": "Adam Rosales",
-    "id": 489267
+    "id": 489267,
+    "normalized": "adam rosales"
   },
   {
     "name": "Adam Wainwright",
-    "id": 425794
+    "id": 425794,
+    "normalized": "adam wainwright"
   },
   {
     "name": "Addison Russell",
-    "id": 608365
+    "id": 608365,
+    "normalized": "addison russell"
   },
   {
     "name": "Adeiny Hechavarría",
-    "id": 588751
+    "id": 588751,
+    "normalized": "adeiny hechavarria"
   },
   {
     "name": "Adonis Garcia",
-    "id": 611177
+    "id": 611177,
+    "normalized": "adonis garcia"
   },
   {
     "name": "Adrian Beltre",
-    "id": 134181
+    "id": 134181,
+    "normalized": "adrian beltre"
   },
   {
     "name": "Adrián González",
-    "id": 408236
+    "id": 408236,
+    "normalized": "adrian gonzalez"
   },
   {
     "name": "Albert Almora Jr.",
-    "id": 546991
+    "id": 546991,
+    "normalized": "albert almora jr."
   },
   {
     "name": "Albert Pujols",
-    "id": 405395
+    "id": 405395,
+    "normalized": "albert pujols"
   },
   {
     "name": "Albert Suárez",
-    "id": 544150
+    "id": 544150,
+    "normalized": "albert suarez"
   },
   {
     "name": "Alberto Rosario",
-    "id": 451705
+    "id": 451705,
+    "normalized": "alberto rosario"
   },
   {
     "name": "Alcides Escobar",
-    "id": 444876
+    "id": 444876,
+    "normalized": "alcides escobar"
   },
   {
     "name": "Alec Asher",
-    "id": 594742
+    "id": 594742,
+    "normalized": "alec asher"
   },
   {
     "name": "Aledmys Díaz",
-    "id": 649557
+    "id": 649557,
+    "normalized": "aledmys diaz"
   },
   {
     "name": "Alejandro De Aza",
-    "id": 457477
+    "id": 457477,
+    "normalized": "alejandro de aza"
   },
   {
     "name": "Alen Hanson",
-    "id": 593700
+    "id": 593700,
+    "normalized": "alen hanson"
   },
   {
     "name": "Alex Avila",
-    "id": 488671
+    "id": 488671,
+    "normalized": "alex avila"
   },
   {
     "name": "Alex Bregman",
-    "id": 608324
+    "id": 608324,
+    "normalized": "alex bregman"
   },
   {
     "name": "Alex Dickerson",
-    "id": 543105
+    "id": 543105,
+    "normalized": "alex dickerson"
   },
   {
     "name": "Alex Gordon",
-    "id": 460086
+    "id": 460086,
+    "normalized": "alex gordon"
   },
   {
     "name": "Alex Presley",
-    "id": 502100
+    "id": 502100,
+    "normalized": "alex presley"
   },
   {
     "name": "Alex Reyes",
-    "id": 621052
+    "id": 621052,
+    "normalized": "alex reyes"
   },
   {
     "name": "Alex Rodriguez",
-    "id": 121347
+    "id": 121347,
+    "normalized": "alex rodriguez"
   },
   {
     "name": "Alex Wood",
-    "id": 622072
+    "id": 622072,
+    "normalized": "alex wood"
   },
   {
     "name": "Alexei Ramirez",
-    "id": 493351
+    "id": 493351,
+    "normalized": "alexei ramirez"
   },
   {
     "name": "Alexi Amarista",
-    "id": 506560
+    "id": 506560,
+    "normalized": "alexi amarista"
   },
   {
     "name": "Alfredo Simon",
-    "id": 430580
+    "id": 430580,
+    "normalized": "alfredo simon"
   },
   {
     "name": "Andre Ethier",
-    "id": 444843
+    "id": 444843,
+    "normalized": "andre ethier"
   },
   {
     "name": "Andrelton Simmons",
-    "id": 592743
+    "id": 592743,
+    "normalized": "andrelton simmons"
   },
   {
     "name": "Andrés Blanco",
-    "id": 433217
+    "id": 433217,
+    "normalized": "andres blanco"
   },
   {
     "name": "Andrew Benintendi",
-    "id": 643217
+    "id": 643217,
+    "normalized": "andrew benintendi"
   },
   {
     "name": "Andrew Cashner",
-    "id": 488768
+    "id": 488768,
+    "normalized": "andrew cashner"
   },
   {
     "name": "Andrew Lambo",
-    "id": 518911
+    "id": 518911,
+    "normalized": "andrew lambo"
   },
   {
     "name": "Andrew McCutchen",
-    "id": 457705
+    "id": 457705,
+    "normalized": "andrew mccutchen"
   },
   {
     "name": "Andrew Romine",
-    "id": 461865
+    "id": 461865,
+    "normalized": "andrew romine"
   },
   {
     "name": "Andrew Susac",
-    "id": 572180
+    "id": 572180,
+    "normalized": "andrew susac"
   },
   {
     "name": "Andrew Toles",
-    "id": 592808
+    "id": 592808,
+    "normalized": "andrew toles"
   },
   {
     "name": "Andy Burns",
-    "id": 542992
+    "id": 542992,
+    "normalized": "andy burns"
   },
   {
     "name": "Andy Wilkins",
-    "id": 519421
+    "id": 519421,
+    "normalized": "andy wilkins"
   },
   {
     "name": "Ángel Pagán",
-    "id": 434636
+    "id": 434636,
+    "normalized": "angel pagan"
   },
   {
     "name": "Anibal Sanchez",
-    "id": 434671
+    "id": 434671,
+    "normalized": "anibal sanchez"
   },
   {
     "name": "Anthony DeSclafani",
-    "id": 543101
+    "id": 543101,
+    "normalized": "anthony desclafani"
   },
   {
     "name": "Anthony Gose",
-    "id": 543238
+    "id": 543238,
+    "normalized": "anthony gose"
   },
   {
     "name": "Anthony Ranaudo",
-    "id": 519168
+    "id": 519168,
+    "normalized": "anthony ranaudo"
   },
   {
     "name": "Anthony Recker",
-    "id": 489232
+    "id": 489232,
+    "normalized": "anthony recker"
   },
   {
     "name": "Anthony Rendon",
-    "id": 543685
+    "id": 543685,
+    "normalized": "anthony rendon"
   },
   {
     "name": "Anthony Rizzo",
-    "id": 519203
+    "id": 519203,
+    "normalized": "anthony rizzo"
   },
   {
     "name": "Archie Bradley",
-    "id": 605151
+    "id": 605151,
+    "normalized": "archie bradley"
   },
   {
     "name": "Arismendy Alcantara",
-    "id": 570489
+    "id": 570489,
+    "normalized": "arismendy alcantara"
   },
   {
     "name": "Arquimedes Caminero",
-    "id": 491708
+    "id": 491708,
+    "normalized": "arquimedes caminero"
   },
   {
     "name": "Asdrubal Cabrera",
-    "id": 452678
+    "id": 452678,
+    "normalized": "asdrubal cabrera"
   },
   {
     "name": "Austin Barnes",
-    "id": 605131
+    "id": 605131,
+    "normalized": "austin barnes"
   },
   {
     "name": "Austin Hedges",
-    "id": 595978
+    "id": 595978,
+    "normalized": "austin hedges"
   },
   {
     "name": "Austin Jackson",
-    "id": 457706
+    "id": 457706,
+    "normalized": "austin jackson"
   },
   {
     "name": "Austin Romine",
-    "id": 519222
+    "id": 519222,
+    "normalized": "austin romine"
   },
   {
     "name": "Avisail García",
-    "id": 541645
+    "id": 541645,
+    "normalized": "avisail garcia"
   },
   {
     "name": "Bartolo Colón",
-    "id": 112526
+    "id": 112526,
+    "normalized": "bartolo colon"
   },
   {
     "name": "Ben Gamel",
-    "id": 592325
+    "id": 592325,
+    "normalized": "ben gamel"
   },
   {
     "name": "Ben Paulsen",
-    "id": 572019
+    "id": 572019,
+    "normalized": "ben paulsen"
   },
   {
     "name": "Ben Revere",
-    "id": 519184
+    "id": 519184,
+    "normalized": "ben revere"
   },
   {
     "name": "Ben Zobrist",
-    "id": 450314
+    "id": 450314,
+    "normalized": "ben zobrist"
   },
   {
     "name": "Billy Burns",
-    "id": 542993
+    "id": 542993,
+    "normalized": "billy burns"
   },
   {
     "name": "Billy Butler",
-    "id": 456714
+    "id": 456714,
+    "normalized": "billy butler"
   },
   {
     "name": "Billy Hamilton",
-    "id": 571740
+    "id": 571740,
+    "normalized": "billy hamilton"
   },
   {
     "name": "Blaine Boyer",
-    "id": 430641
+    "id": 430641,
+    "normalized": "blaine boyer"
   },
   {
     "name": "Blake Lalli",
-    "id": 503351
+    "id": 503351,
+    "normalized": "blake lalli"
   },
   {
     "name": "Blake Snell",
-    "id": 605483
+    "id": 605483,
+    "normalized": "blake snell"
   },
   {
     "name": "Blake Swihart",
-    "id": 596119
+    "id": 596119,
+    "normalized": "blake swihart"
   },
   {
     "name": "Bobby Wilson",
-    "id": 435064
+    "id": 435064,
+    "normalized": "bobby wilson"
   },
   {
     "name": "Brad Hand",
-    "id": 543272
+    "id": 543272,
+    "normalized": "brad hand"
   },
   {
     "name": "Brad Miller",
-    "id": 543543
+    "id": 543543,
+    "normalized": "brad miller"
   },
   {
     "name": "Braden Shipley",
-    "id": 640463
+    "id": 640463,
+    "normalized": "braden shipley"
   },
   {
     "name": "Brandon Barnes",
-    "id": 488681
+    "id": 488681,
+    "normalized": "brandon barnes"
   },
   {
     "name": "Brandon Belt",
-    "id": 474832
+    "id": 474832,
+    "normalized": "brandon belt"
   },
   {
     "name": "Brandon Crawford",
-    "id": 543063
+    "id": 543063,
+    "normalized": "brandon crawford"
   },
   {
     "name": "Brandon Drury",
-    "id": 592273
+    "id": 592273,
+    "normalized": "brandon drury"
   },
   {
     "name": "Brandon Finnegan",
-    "id": 605232
+    "id": 605232,
+    "normalized": "brandon finnegan"
   },
   {
     "name": "Brandon Guyer",
-    "id": 446386
+    "id": 446386,
+    "normalized": "brandon guyer"
   },
   {
     "name": "Brandon McCarthy",
-    "id": 435221
+    "id": 435221,
+    "normalized": "brandon mccarthy"
   },
   {
     "name": "Brandon Moss",
-    "id": 461235
+    "id": 461235,
+    "normalized": "brandon moss"
   },
   {
     "name": "Brandon Nimmo",
-    "id": 607043
+    "id": 607043,
+    "normalized": "brandon nimmo"
   },
   {
     "name": "Brandon Phillips",
-    "id": 408252
+    "id": 408252,
+    "normalized": "brandon phillips"
   },
   {
     "name": "Brandon Snyder",
-    "id": 474319
+    "id": 474319,
+    "normalized": "brandon snyder"
   },
   {
     "name": "Brayan Peña",
-    "id": 430910
+    "id": 430910,
+    "normalized": "brayan peña"
   },
   {
     "name": "Brendan Ryan",
-    "id": 453895
+    "id": 453895,
+    "normalized": "brendan ryan"
   },
   {
     "name": "Brent Suter",
-    "id": 608718
+    "id": 608718,
+    "normalized": "brent suter"
   },
   {
     "name": "Brett Anderson",
-    "id": 474463
+    "id": 474463,
+    "normalized": "brett anderson"
   },
   {
     "name": "Brett Eibner",
-    "id": 518649
+    "id": 518649,
+    "normalized": "brett eibner"
   },
   {
     "name": "Brett Gardner",
-    "id": 458731
+    "id": 458731,
+    "normalized": "brett gardner"
   },
   {
     "name": "Brett Lawrie",
-    "id": 543434
+    "id": 543434,
+    "normalized": "brett lawrie"
   },
   {
     "name": "Brett Nicholas",
-    "id": 592592
+    "id": 592592,
+    "normalized": "brett nicholas"
   },
   {
     "name": "Brett Oberholtzer",
-    "id": 519085
+    "id": 519085,
+    "normalized": "brett oberholtzer"
   },
   {
     "name": "Brett Wallace",
-    "id": 477165
+    "id": 477165,
+    "normalized": "brett wallace"
   },
   {
     "name": "Brian Dozier",
-    "id": 572821
+    "id": 572821,
+    "normalized": "brian dozier"
   },
   {
     "name": "Brian Goodwin",
-    "id": 571718
+    "id": 571718,
+    "normalized": "brian goodwin"
   },
   {
     "name": "Brian McCann",
-    "id": 435263
+    "id": 435263,
+    "normalized": "brian mccann"
   },
   {
     "name": "Brock Holt",
-    "id": 571788
+    "id": 571788,
+    "normalized": "brock holt"
   },
   {
     "name": "Brock Stewart",
-    "id": 592779
+    "id": 592779,
+    "normalized": "brock stewart"
   },
   {
     "name": "Bruce Maxwell",
-    "id": 622194
+    "id": 622194,
+    "normalized": "bruce maxwell"
   },
   {
     "name": "Bryan Holaday",
-    "id": 592407
+    "id": 592407,
+    "normalized": "bryan holaday"
   },
   {
     "name": "Bryce Brentz",
-    "id": 518490
+    "id": 518490,
+    "normalized": "bryce brentz"
   },
   {
     "name": "Bryce Harper",
-    "id": 547180
+    "id": 547180,
+    "normalized": "bryce harper"
   },
   {
     "name": "Bud Norris",
-    "id": 502032
+    "id": 502032,
+    "normalized": "bud norris"
   },
   {
     "name": "Buster Posey",
-    "id": 457763
+    "id": 457763,
+    "normalized": "buster posey"
   },
   {
     "name": "Byron Buxton",
-    "id": 621439
+    "id": 621439,
+    "normalized": "byron buxton"
   },
   {
     "name": "Byungho Park",
-    "id": 666560
+    "id": 666560,
+    "normalized": "byungho park"
   },
   {
     "name": "C.J. Cron",
-    "id": 543068
+    "id": 543068,
+    "normalized": "c.j. cron"
   },
   {
     "name": "Caleb Joseph",
-    "id": 543376
+    "id": 543376,
+    "normalized": "caleb joseph"
   },
   {
     "name": "Cameron Maybin",
-    "id": 457727
+    "id": 457727,
+    "normalized": "cameron maybin"
   },
   {
     "name": "Cameron Rupp",
-    "id": 519237
+    "id": 519237,
+    "normalized": "cameron rupp"
   },
   {
     "name": "Carl Crawford",
-    "id": 408307
+    "id": 408307,
+    "normalized": "carl crawford"
   },
   {
     "name": "Carlos Asuaje",
-    "id": 641319
+    "id": 641319,
+    "normalized": "carlos asuaje"
   },
   {
     "name": "Carlos Beltrán",
-    "id": 136860
+    "id": 136860,
+    "normalized": "carlos beltran"
   },
   {
     "name": "Carlos Correa",
-    "id": 621043
+    "id": 621043,
+    "normalized": "carlos correa"
   },
   {
     "name": "Carlos Gómez",
-    "id": 460576
+    "id": 460576,
+    "normalized": "carlos gomez"
   },
   {
     "name": "Carlos Gonzalez",
-    "id": 471865
+    "id": 471865,
+    "normalized": "carlos gonzalez"
   },
   {
     "name": "Carlos Martinez",
-    "id": 593372
+    "id": 593372,
+    "normalized": "carlos martinez"
   },
   {
     "name": "Carlos Perez",
-    "id": 542208
+    "id": 542208,
+    "normalized": "carlos perez"
   },
   {
     "name": "Carlos Ruiz",
-    "id": 434563
+    "id": 434563,
+    "normalized": "carlos ruiz"
   },
   {
     "name": "Carlos Santana",
-    "id": 467793
+    "id": 467793,
+    "normalized": "carlos santana"
   },
   {
     "name": "Carlos Villanueva",
-    "id": 453646
+    "id": 453646,
+    "normalized": "carlos villanueva"
   },
   {
     "name": "Carson Kelly",
-    "id": 608348
+    "id": 608348,
+    "normalized": "carson kelly"
   },
   {
     "name": "Casey Kelly",
-    "id": 543391
+    "id": 543391,
+    "normalized": "casey kelly"
   },
   {
     "name": "Casey McGehee",
-    "id": 431171
+    "id": 431171,
+    "normalized": "casey mcgehee"
   },
   {
     "name": "CC Sabathia",
-    "id": 282332
+    "id": 282332,
+    "normalized": "cc sabathia"
   },
   {
     "name": "Cedric Hunter",
-    "id": 501986
+    "id": 501986,
+    "normalized": "cedric hunter"
   },
   {
     "name": "César Hernández",
-    "id": 514917
+    "id": 514917,
+    "normalized": "cesar hernandez"
   },
   {
     "name": "César Vargas",
-    "id": 570714
+    "id": 570714,
+    "normalized": "cesar vargas"
   },
   {
     "name": "Chad Bettis",
-    "id": 518452
+    "id": 518452,
+    "normalized": "chad bettis"
   },
   {
     "name": "Chad Hinshaw",
-    "id": 643364
+    "id": 643364,
+    "normalized": "chad hinshaw"
   },
   {
     "name": "Chad Kuhl",
-    "id": 641771
+    "id": 641771,
+    "normalized": "chad kuhl"
   },
   {
     "name": "Chad Pinder",
-    "id": 640461
+    "id": 640461,
+    "normalized": "chad pinder"
   },
   {
     "name": "Charlie Blackmon",
-    "id": 453568
+    "id": 453568,
+    "normalized": "charlie blackmon"
   },
   {
     "name": "Charlie Culberson",
-    "id": 518586
+    "id": 518586,
+    "normalized": "charlie culberson"
   },
   {
     "name": "Charlie Morton",
-    "id": 450203
+    "id": 450203,
+    "normalized": "charlie morton"
   },
   {
     "name": "Charlie Tilson",
-    "id": 605508
+    "id": 605508,
+    "normalized": "charlie tilson"
   },
   {
     "name": "Chase Anderson",
-    "id": 502624
+    "id": 502624,
+    "normalized": "chase anderson"
   },
   {
     "name": "Chase d'Arnaud",
-    "id": 488818
+    "id": 488818,
+    "normalized": "chase d'arnaud"
   },
   {
     "name": "Chase Headley",
-    "id": 452104
+    "id": 452104,
+    "normalized": "chase headley"
   },
   {
     "name": "Chase Utley",
-    "id": 400284
+    "id": 400284,
+    "normalized": "chase utley"
   },
   {
     "name": "Cheslor Cuthbert",
-    "id": 596144
+    "id": 596144,
+    "normalized": "cheslor cuthbert"
   },
   {
     "name": "Chris Archer",
-    "id": 502042
+    "id": 502042,
+    "normalized": "chris archer"
   },
   {
     "name": "Chris Carter",
-    "id": 474892
+    "id": 474892,
+    "normalized": "chris carter"
   },
   {
     "name": "Chris Coghlan",
-    "id": 458085
+    "id": 458085,
+    "normalized": "chris coghlan"
   },
   {
     "name": "Chris Colabello",
-    "id": 499624
+    "id": 499624,
+    "normalized": "chris colabello"
   },
   {
     "name": "Chris Davis",
-    "id": 448801
+    "id": 448801,
+    "normalized": "chris davis"
   },
   {
     "name": "Chris Gimenez",
-    "id": 460269
+    "id": 460269,
+    "normalized": "chris gimenez"
   },
   {
     "name": "Chris Hatcher",
-    "id": 501822
+    "id": 501822,
+    "normalized": "chris hatcher"
   },
   {
     "name": "Chris Heisey",
-    "id": 502317
+    "id": 502317,
+    "normalized": "chris heisey"
   },
   {
     "name": "Chris Herrmann",
-    "id": 543302
+    "id": 543302,
+    "normalized": "chris herrmann"
   },
   {
     "name": "Chris Iannetta",
-    "id": 455104
+    "id": 455104,
+    "normalized": "chris iannetta"
   },
   {
     "name": "Chris Johnson",
-    "id": 453400
+    "id": 453400,
+    "normalized": "chris johnson"
   },
   {
     "name": "Chris Narveson",
-    "id": 429780
+    "id": 429780,
+    "normalized": "chris narveson"
   },
   {
     "name": "Chris Owings",
-    "id": 572008
+    "id": 572008,
+    "normalized": "chris owings"
   },
   {
     "name": "Chris Parmelee",
-    "id": 476633
+    "id": 476633,
+    "normalized": "chris parmelee"
   },
   {
     "name": "Chris Rusin",
-    "id": 543734
+    "id": 543734,
+    "normalized": "chris rusin"
   },
   {
     "name": "Chris Sale",
-    "id": 519242
+    "id": 519242,
+    "normalized": "chris sale"
   },
   {
     "name": "Chris Stewart",
-    "id": 455755
+    "id": 455755,
+    "normalized": "chris stewart"
   },
   {
     "name": "Chris Stratton",
-    "id": 608717
+    "id": 608717,
+    "normalized": "chris stratton"
   },
   {
     "name": "Chris Taylor",
-    "id": 621035
+    "id": 621035,
+    "normalized": "chris taylor"
   },
   {
     "name": "Chris Tillman",
-    "id": 501957
+    "id": 501957,
+    "normalized": "chris tillman"
   },
   {
     "name": "Chris Young",
-    "id": 455759
+    "id": 455759,
+    "normalized": "chris young"
   },
   {
     "name": "Christian Bergman",
-    "id": 548357
+    "id": 548357,
+    "normalized": "christian bergman"
   },
   {
     "name": "Christian Bethancourt",
-    "id": 542194
+    "id": 542194,
+    "normalized": "christian bethancourt"
   },
   {
     "name": "Christian Colón",
-    "id": 518568
+    "id": 518568,
+    "normalized": "christian colon"
   },
   {
     "name": "Christian Friedrich",
-    "id": 543184
+    "id": 543184,
+    "normalized": "christian friedrich"
   },
   {
     "name": "Christian Vazquez",
-    "id": 543877
+    "id": 543877,
+    "normalized": "christian vazquez"
   },
   {
     "name": "Christian Yelich",
-    "id": 592885
+    "id": 592885,
+    "normalized": "christian yelich"
   },
   {
     "name": "Clayton Kershaw",
-    "id": 477132
+    "id": 477132,
+    "normalized": "clayton kershaw"
   },
   {
     "name": "Clayton Richard",
-    "id": 453385
+    "id": 453385,
+    "normalized": "clayton richard"
   },
   {
     "name": "Cliff Pennington",
-    "id": 460060
+    "id": 460060,
+    "normalized": "cliff pennington"
   },
   {
     "name": "Clint Robinson",
-    "id": 519208
+    "id": 519208,
+    "normalized": "clint robinson"
   },
   {
     "name": "Coco Crisp",
-    "id": 424825
+    "id": 424825,
+    "normalized": "coco crisp"
   },
   {
     "name": "Cody Asche",
-    "id": 605125
+    "id": 605125,
+    "normalized": "cody asche"
   },
   {
     "name": "Cody Ege",
-    "id": 643297
+    "id": 643297,
+    "normalized": "cody ege"
   },
   {
     "name": "Cody Reed",
-    "id": 642003
+    "id": 642003,
+    "normalized": "cody reed"
   },
   {
     "name": "Colby Rasmus",
-    "id": 458675
+    "id": 458675,
+    "normalized": "colby rasmus"
   },
   {
     "name": "Cole Figueroa",
-    "id": 502676
+    "id": 502676,
+    "normalized": "cole figueroa"
   },
   {
     "name": "Cole Gillespie",
-    "id": 502261
+    "id": 502261,
+    "normalized": "cole gillespie"
   },
   {
     "name": "Cole Hamels",
-    "id": 430935
+    "id": 430935,
+    "normalized": "cole hamels"
   },
   {
     "name": "Colin Moran",
-    "id": 592567
+    "id": 592567,
+    "normalized": "colin moran"
   },
   {
     "name": "Colin Rea",
-    "id": 607067
+    "id": 607067,
+    "normalized": "colin rea"
   },
   {
     "name": "Colin Walsh",
-    "id": 595023
+    "id": 595023,
+    "normalized": "colin walsh"
   },
   {
     "name": "Collin Cowgill",
-    "id": 518577
+    "id": 518577,
+    "normalized": "collin cowgill"
   },
   {
     "name": "Collin McHugh",
-    "id": 543521
+    "id": 543521,
+    "normalized": "collin mchugh"
   },
   {
     "name": "Conor Gillaspie",
-    "id": 543216
+    "id": 543216,
+    "normalized": "conor gillaspie"
   },
   {
     "name": "Corey Dickerson",
-    "id": 572816
+    "id": 572816,
+    "normalized": "corey dickerson"
   },
   {
     "name": "Corey Kluber",
-    "id": 446372
+    "id": 446372,
+    "normalized": "corey kluber"
   },
   {
     "name": "Corey Seager",
-    "id": 608369
+    "id": 608369,
+    "normalized": "corey seager"
   },
   {
     "name": "Cory Gearrin",
-    "id": 518715
+    "id": 518715,
+    "normalized": "cory gearrin"
   },
   {
     "name": "Cory Spangenberg",
-    "id": 605486
+    "id": 605486,
+    "normalized": "cory spangenberg"
   },
   {
     "name": "Craig Gentry",
-    "id": 502226
+    "id": 502226,
+    "normalized": "craig gentry"
   },
   {
     "name": "Cristhian Adames",
-    "id": 542436
+    "id": 542436,
+    "normalized": "cristhian adames"
   },
   {
     "name": "Curt Casali",
-    "id": 592200
+    "id": 592200,
+    "normalized": "curt casali"
   },
   {
     "name": "Curtis Granderson",
-    "id": 434158
+    "id": 434158,
+    "normalized": "curtis granderson"
   },
   {
     "name": "Dae-Ho Lee",
-    "id": 493193
+    "id": 493193,
+    "normalized": "dae-ho lee"
   },
   {
     "name": "Dallas Keuchel",
-    "id": 572971
+    "id": 572971,
+    "normalized": "dallas keuchel"
   },
   {
     "name": "Dalton Pompey",
-    "id": 592647
+    "id": 592647,
+    "normalized": "dalton pompey"
   },
   {
     "name": "Dan Straily",
-    "id": 573185
+    "id": 573185,
+    "normalized": "dan straily"
   },
   {
     "name": "Daniel Castro",
-    "id": 593495
+    "id": 593495,
+    "normalized": "daniel castro"
   },
   {
     "name": "Daniel Descalso",
-    "id": 518614
+    "id": 518614,
+    "normalized": "daniel descalso"
   },
   {
     "name": "Daniel Mengden",
-    "id": 596043
+    "id": 596043,
+    "normalized": "daniel mengden"
   },
   {
     "name": "Daniel Murphy",
-    "id": 502517
+    "id": 502517,
+    "normalized": "daniel murphy"
   },
   {
     "name": "Daniel Nava",
-    "id": 537953
+    "id": 537953,
+    "normalized": "daniel nava"
   },
   {
     "name": "Daniel Norris",
-    "id": 596057
+    "id": 596057,
+    "normalized": "daniel norris"
   },
   {
     "name": "Daniel Robertson",
-    "id": 543706
+    "id": 543706,
+    "normalized": "daniel robertson"
   },
   {
     "name": "Daniel Vogelbach",
-    "id": 596129
+    "id": 596129,
+    "normalized": "daniel vogelbach"
   },
   {
     "name": "Daniel Wright",
-    "id": 642229
+    "id": 642229,
+    "normalized": "daniel wright"
   },
   {
     "name": "Danny Duffy",
-    "id": 518633
+    "id": 518633,
+    "normalized": "danny duffy"
   },
   {
     "name": "Danny Espinosa",
-    "id": 457787
+    "id": 457787,
+    "normalized": "danny espinosa"
   },
   {
     "name": "Danny Salazar",
-    "id": 517593
+    "id": 517593,
+    "normalized": "danny salazar"
   },
   {
     "name": "Danny Santana",
-    "id": 542454
+    "id": 542454,
+    "normalized": "danny santana"
   },
   {
     "name": "Danny Valencia",
-    "id": 502143
+    "id": 502143,
+    "normalized": "danny valencia"
   },
   {
     "name": "Danny Worth",
-    "id": 519445
+    "id": 519445,
+    "normalized": "danny worth"
   },
   {
     "name": "Dansby Swanson",
-    "id": 621020
+    "id": 621020,
+    "normalized": "dansby swanson"
   },
   {
     "name": "Dariel Álvarez",
-    "id": 645848
+    "id": 645848,
+    "normalized": "dariel alvarez"
   },
   {
     "name": "Darin Mastroianni",
-    "id": 518991
+    "id": 518991,
+    "normalized": "darin mastroianni"
   },
   {
     "name": "Darin Ruf",
-    "id": 573131
+    "id": 573131,
+    "normalized": "darin ruf"
   },
   {
     "name": "Darrell Ceciliani",
-    "id": 571553
+    "id": 571553,
+    "normalized": "darrell ceciliani"
   },
   {
     "name": "Darwin Barney",
-    "id": 446381
+    "id": 446381,
+    "normalized": "darwin barney"
   },
   {
     "name": "David Dahl",
-    "id": 621311
+    "id": 621311,
+    "normalized": "david dahl"
   },
   {
     "name": "David Fletcher",
-    "id": 664058
+    "id": 664058,
+    "normalized": "david fletcher"
   },
   {
     "name": "David Freese",
-    "id": 501896
+    "id": 501896,
+    "normalized": "david freese"
   },
   {
     "name": "David Lough",
-    "id": 518953
+    "id": 518953,
+    "normalized": "david lough"
   },
   {
     "name": "David Ortiz",
-    "id": 120074
+    "id": 120074,
+    "normalized": "david ortiz"
   },
   {
     "name": "David Peralta",
-    "id": 444482
+    "id": 444482,
+    "normalized": "david peralta"
   },
   {
     "name": "David Phelps",
-    "id": 475479
+    "id": 475479,
+    "normalized": "david phelps"
   },
   {
     "name": "David Price",
-    "id": 456034
+    "id": 456034,
+    "normalized": "david price"
   },
   {
     "name": "David Ross",
-    "id": 424325
+    "id": 424325,
+    "normalized": "david ross"
   },
   {
     "name": "David Wright",
-    "id": 431151
+    "id": 431151,
+    "normalized": "david wright"
   },
   {
     "name": "Dean Kiekhefer",
-    "id": 518883
+    "id": 518883,
+    "normalized": "dean kiekhefer"
   },
   {
     "name": "Dee Gordon",
-    "id": 543829
+    "id": 543829,
+    "normalized": "dee gordon"
   },
   {
     "name": "Delino DeShields",
-    "id": 592261
+    "id": 592261,
+    "normalized": "delino deshields"
   },
   {
     "name": "Denard Span",
-    "id": 452655
+    "id": 452655,
+    "normalized": "denard span"
   },
   {
     "name": "Derek Dietrich",
-    "id": 518618
+    "id": 518618,
+    "normalized": "derek dietrich"
   },
   {
     "name": "Derek Holland",
-    "id": 502706
+    "id": 502706,
+    "normalized": "derek holland"
   },
   {
     "name": "Derek Law",
-    "id": 571882
+    "id": 571882,
+    "normalized": "derek law"
   },
   {
     "name": "Derek Norris",
-    "id": 519083
+    "id": 519083,
+    "normalized": "derek norris"
   },
   {
     "name": "Desmond Jennings",
-    "id": 457775
+    "id": 457775,
+    "normalized": "desmond jennings"
   },
   {
     "name": "Destin Hood",
-    "id": 543329
+    "id": 543329,
+    "normalized": "destin hood"
   },
   {
     "name": "Deven Marrero",
-    "id": 571918
+    "id": 571918,
+    "normalized": "deven marrero"
   },
   {
     "name": "Devin Mesoraco",
-    "id": 519023
+    "id": 519023,
+    "normalized": "devin mesoraco"
   },
   {
     "name": "Devon Travis",
-    "id": 581527
+    "id": 581527,
+    "normalized": "devon travis"
   },
   {
     "name": "Dexter Fowler",
-    "id": 451594
+    "id": 451594,
+    "normalized": "dexter fowler"
   },
   {
     "name": "Didi Gregorius",
-    "id": 544369
+    "id": 544369,
+    "normalized": "didi gregorius"
   },
   {
     "name": "Dillon Gee",
-    "id": 518716
+    "id": 518716,
+    "normalized": "dillon gee"
   },
   {
     "name": "Dioner Navarro",
-    "id": 425900
+    "id": 425900,
+    "normalized": "dioner navarro"
   },
   {
     "name": "Dixon Machado",
-    "id": 553988
+    "id": 553988,
+    "normalized": "dixon machado"
   },
   {
     "name": "DJ LeMahieu",
-    "id": 518934
+    "id": 518934,
+    "normalized": "dj lemahieu"
   },
   {
     "name": "Domingo Santana",
-    "id": 570267
+    "id": 570267,
+    "normalized": "domingo santana"
   },
   {
     "name": "Don Kelly",
-    "id": 430603
+    "id": 430603,
+    "normalized": "don kelly"
   },
   {
     "name": "Donovan Solano",
-    "id": 456781
+    "id": 456781,
+    "normalized": "donovan solano"
   },
   {
     "name": "Doug Fister",
-    "id": 450729
+    "id": 450729,
+    "normalized": "doug fister"
   },
   {
     "name": "Drew Butera",
-    "id": 460077
+    "id": 460077,
+    "normalized": "drew butera"
   },
   {
     "name": "Drew Hayes",
-    "id": 502457
+    "id": 502457,
+    "normalized": "drew hayes"
   },
   {
     "name": "Drew Pomeranz",
-    "id": 519141
+    "id": 519141,
+    "normalized": "drew pomeranz"
   },
   {
     "name": "Drew Smyly",
-    "id": 592767
+    "id": 592767,
+    "normalized": "drew smyly"
   },
   {
     "name": "Drew Stubbs",
-    "id": 453211
+    "id": 453211,
+    "normalized": "drew stubbs"
   },
   {
     "name": "Dustin Ackley",
-    "id": 554429
+    "id": 554429,
+    "normalized": "dustin ackley"
   },
   {
     "name": "Dustin Garneau",
-    "id": 572863
+    "id": 572863,
+    "normalized": "dustin garneau"
   },
   {
     "name": "Dustin McGowan",
-    "id": 430661
+    "id": 430661,
+    "normalized": "dustin mcgowan"
   },
   {
     "name": "Dustin Pedroia",
-    "id": 456030
+    "id": 456030,
+    "normalized": "dustin pedroia"
   },
   {
     "name": "Eddie Butler",
-    "id": 572750
+    "id": 572750,
+    "normalized": "eddie butler"
   },
   {
     "name": "Eddie Rosario",
-    "id": 592696
+    "id": 592696,
+    "normalized": "eddie rosario"
   },
   {
     "name": "Edinson Volquez",
-    "id": 450172
+    "id": 450172,
+    "normalized": "edinson volquez"
   },
   {
     "name": "Eduardo Escobar",
-    "id": 500871
+    "id": 500871,
+    "normalized": "eduardo escobar"
   },
   {
     "name": "Eduardo Nuñez",
-    "id": 456488
+    "id": 456488,
+    "normalized": "eduardo nuñez"
   },
   {
     "name": "Edwin Encarnacion",
-    "id": 429665
+    "id": 429665,
+    "normalized": "edwin encarnacion"
   },
   {
     "name": "Edwin Jackson",
-    "id": 429719
+    "id": 429719,
+    "normalized": "edwin jackson"
   },
   {
     "name": "Ehire Adrianza",
-    "id": 501303
+    "id": 501303,
+    "normalized": "ehire adrianza"
   },
   {
     "name": "Elias Diaz",
-    "id": 553869
+    "id": 553869,
+    "normalized": "elias diaz"
   },
   {
     "name": "Elvis Andrus",
-    "id": 462101
+    "id": 462101,
+    "normalized": "elvis andrus"
   },
   {
     "name": "Emilio Bonifacio",
-    "id": 466988
+    "id": 466988,
+    "normalized": "emilio bonifacio"
   },
   {
     "name": "Emmanuel Burriss",
-    "id": 502034
+    "id": 502034,
+    "normalized": "emmanuel burriss"
   },
   {
     "name": "Ender Inciarte",
-    "id": 542255
+    "id": 542255,
+    "normalized": "ender inciarte"
   },
   {
     "name": "Enrique Hernández",
-    "id": 571771
+    "id": 571771,
+    "normalized": "enrique hernandez"
   },
   {
     "name": "Eric Campbell",
-    "id": 493472
+    "id": 493472,
+    "normalized": "eric campbell"
   },
   {
     "name": "Eric Fryer",
-    "id": 518700
+    "id": 518700,
+    "normalized": "eric fryer"
   },
   {
     "name": "Eric Hosmer",
-    "id": 543333
+    "id": 543333,
+    "normalized": "eric hosmer"
   },
   {
     "name": "Eric Young Jr.",
-    "id": 458913
+    "id": 458913,
+    "normalized": "eric young jr."
   },
   {
     "name": "Erick Aybar",
-    "id": 430947
+    "id": 430947,
+    "normalized": "erick aybar"
   },
   {
     "name": "Erik Gonzalez",
-    "id": 570481
+    "id": 570481,
+    "normalized": "erik gonzalez"
   },
   {
     "name": "Erik Johnson",
-    "id": 605304
+    "id": 605304,
+    "normalized": "erik johnson"
   },
   {
     "name": "Erik Kratz",
-    "id": 456124
+    "id": 456124,
+    "normalized": "erik kratz"
   },
   {
     "name": "Ervin Santana",
-    "id": 429722
+    "id": 429722,
+    "normalized": "ervin santana"
   },
   {
     "name": "Eugenio Suarez",
-    "id": 553993
+    "id": 553993,
+    "normalized": "eugenio suarez"
   },
   {
     "name": "Evan Gattis",
-    "id": 594828
+    "id": 594828,
+    "normalized": "evan gattis"
   },
   {
     "name": "Evan Longoria",
-    "id": 446334
+    "id": 446334,
+    "normalized": "evan longoria"
   },
   {
     "name": "Ezequiel Carrera",
-    "id": 485567
+    "id": 485567,
+    "normalized": "ezequiel carrera"
   },
   {
     "name": "Felix Hernandez",
-    "id": 433587
+    "id": 433587,
+    "normalized": "felix hernandez"
   },
   {
     "name": "Francisco Cervelli",
-    "id": 465041
+    "id": 465041,
+    "normalized": "francisco cervelli"
   },
   {
     "name": "Francisco Lindor",
-    "id": 596019
+    "id": 596019,
+    "normalized": "francisco lindor"
   },
   {
     "name": "Francisco Liriano",
-    "id": 434538
+    "id": 434538,
+    "normalized": "francisco liriano"
   },
   {
     "name": "Francisco Peña",
-    "id": 506747
+    "id": 506747,
+    "normalized": "francisco peña"
   },
   {
     "name": "Franklin Gutierrez",
-    "id": 429711
+    "id": 429711,
+    "normalized": "franklin gutierrez"
   },
   {
     "name": "Freddie Freeman",
-    "id": 518692
+    "id": 518692,
+    "normalized": "freddie freeman"
   },
   {
     "name": "Freddy Galvis",
-    "id": 520471
+    "id": 520471,
+    "normalized": "freddy galvis"
   },
   {
     "name": "Gabriel Ynoa",
-    "id": 593679
+    "id": 593679,
+    "normalized": "gabriel ynoa"
   },
   {
     "name": "Gary Sánchez",
-    "id": 596142
+    "id": 596142,
+    "normalized": "gary sanchez"
   },
   {
     "name": "Gavin Cecchini",
-    "id": 608325
+    "id": 608325,
+    "normalized": "gavin cecchini"
   },
   {
     "name": "Gavin Floyd",
-    "id": 425856
+    "id": 425856,
+    "normalized": "gavin floyd"
   },
   {
     "name": "George Springer",
-    "id": 543807
+    "id": 543807,
+    "normalized": "george springer"
   },
   {
     "name": "Geovany Soto",
-    "id": 434567
+    "id": 434567,
+    "normalized": "geovany soto"
   },
   {
     "name": "Gerardo Parra",
-    "id": 467827
+    "id": 467827,
+    "normalized": "gerardo parra"
   },
   {
     "name": "German Marquez",
-    "id": 608566
+    "id": 608566,
+    "normalized": "german marquez"
   },
   {
     "name": "Gerrit Cole",
-    "id": 543037
+    "id": 543037,
+    "normalized": "gerrit cole"
   },
   {
     "name": "Giancarlo Stanton",
-    "id": 519317
+    "id": 519317,
+    "normalized": "giancarlo stanton"
   },
   {
     "name": "Gio Gonzalez",
-    "id": 461829
+    "id": 461829,
+    "normalized": "gio gonzalez"
   },
   {
     "name": "Gonzalez Germen",
-    "id": 542674
+    "id": 542674,
+    "normalized": "gonzalez germen"
   },
   {
     "name": "Gordon Beckham",
-    "id": 493596
+    "id": 493596,
+    "normalized": "gordon beckham"
   },
   {
     "name": "Gorkys Hernandez",
-    "id": 491676
+    "id": 491676,
+    "normalized": "gorkys hernandez"
   },
   {
     "name": "Grant Green",
-    "id": 502205
+    "id": 502205,
+    "normalized": "grant green"
   },
   {
     "name": "Greg Garcia",
-    "id": 594824
+    "id": 594824,
+    "normalized": "greg garcia"
   },
   {
     "name": "Gregor Blanco",
-    "id": 453923
+    "id": 453923,
+    "normalized": "gregor blanco"
   },
   {
     "name": "Gregorio Petit",
-    "id": 463610
+    "id": 463610,
+    "normalized": "gregorio petit"
   },
   {
     "name": "Gregory Polanco",
-    "id": 570256
+    "id": 570256,
+    "normalized": "gregory polanco"
   },
   {
     "name": "Guillermo Heredia",
-    "id": 628338
+    "id": 628338,
+    "normalized": "guillermo heredia"
   },
   {
     "name": "Hank Conger",
-    "id": 474233
+    "id": 474233,
+    "normalized": "hank conger"
   },
   {
     "name": "Hanley Ramirez",
-    "id": 434670
+    "id": 434670,
+    "normalized": "hanley ramirez"
   },
   {
     "name": "Hanser Alberto",
-    "id": 593643
+    "id": 593643,
+    "normalized": "hanser alberto"
   },
   {
     "name": "Héctor Olivera",
-    "id": 493343
+    "id": 493343,
+    "normalized": "hector olivera"
   },
   {
     "name": "Héctor Sánchez",
-    "id": 516949
+    "id": 516949,
+    "normalized": "hector sanchez"
   },
   {
     "name": "Hector Santiago",
-    "id": 502327
+    "id": 502327,
+    "normalized": "hector santiago"
   },
   {
     "name": "Hernan Iribarren",
-    "id": 454975
+    "id": 454975,
+    "normalized": "hernan iribarren"
   },
   {
     "name": "Hernán Pérez",
-    "id": 541650
+    "id": 541650,
+    "normalized": "hernan perez"
   },
   {
     "name": "Hisashi Iwakuma",
-    "id": 547874
+    "id": 547874,
+    "normalized": "hisashi iwakuma"
   },
   {
     "name": "Homer Bailey",
-    "id": 456701
+    "id": 456701,
+    "normalized": "homer bailey"
   },
   {
     "name": "Howie Kendrick",
-    "id": 435062
+    "id": 435062,
+    "normalized": "howie kendrick"
   },
   {
     "name": "Hunter Dozier",
-    "id": 641531
+    "id": 641531,
+    "normalized": "hunter dozier"
   },
   {
     "name": "Hunter Pence",
-    "id": 452254
+    "id": 452254,
+    "normalized": "hunter pence"
   },
   {
     "name": "Hunter Renfroe",
-    "id": 592669
+    "id": 592669,
+    "normalized": "hunter renfroe"
   },
   {
     "name": "Hyun Soo Kim",
-    "id": 547957
+    "id": 547957,
+    "normalized": "hyun soo kim"
   },
   {
     "name": "Ian Desmond",
-    "id": 435622
+    "id": 435622,
+    "normalized": "ian desmond"
   },
   {
     "name": "Ian Kennedy",
-    "id": 453178
+    "id": 453178,
+    "normalized": "ian kennedy"
   },
   {
     "name": "Ian Kinsler",
-    "id": 435079
+    "id": 435079,
+    "normalized": "ian kinsler"
   },
   {
     "name": "Ian Krol",
-    "id": 571871
+    "id": 571871,
+    "normalized": "ian krol"
   },
   {
     "name": "Ichiro Suzuki",
-    "id": 400085
+    "id": 400085,
+    "normalized": "ichiro suzuki"
   },
   {
     "name": "Ike Davis",
-    "id": 477195
+    "id": 477195,
+    "normalized": "ike davis"
   },
   {
     "name": "Ivan De Jesus Jr.",
-    "id": 474443
+    "id": 474443,
+    "normalized": "ivan de jesus jr."
   },
   {
     "name": "Iván Nova",
-    "id": 467100
+    "id": 467100,
+    "normalized": "ivan nova"
   },
   {
     "name": "J.A. Happ",
-    "id": 457918
+    "id": 457918,
+    "normalized": "j.a. happ"
   },
   {
     "name": "J.B. Shuck",
-    "id": 543776
+    "id": 543776,
+    "normalized": "j.b. shuck"
   },
   {
     "name": "J.D. Martinez",
-    "id": 502110
+    "id": 502110,
+    "normalized": "j.d. martinez"
   },
   {
     "name": "J.J. Hardy",
-    "id": 429666
+    "id": 429666,
+    "normalized": "j.j. hardy"
   },
   {
     "name": "J.T. Realmuto",
-    "id": 592663
+    "id": 592663,
+    "normalized": "j.t. realmuto"
   },
   {
     "name": "Jabari Blash",
-    "id": 518466
+    "id": 518466,
+    "normalized": "jabari blash"
   },
   {
     "name": "Jace Peterson",
-    "id": 607054
+    "id": 607054,
+    "normalized": "jace peterson"
   },
   {
     "name": "Jackie Bradley Jr.",
-    "id": 598265
+    "id": 598265,
+    "normalized": "jackie bradley jr."
   },
   {
     "name": "Jacob deGrom",
-    "id": 594798
+    "id": 594798,
+    "normalized": "jacob degrom"
   },
   {
     "name": "Jacob Stallings",
-    "id": 607732
+    "id": 607732,
+    "normalized": "jacob stallings"
   },
   {
     "name": "Jacoby Ellsbury",
-    "id": 453056
+    "id": 453056,
+    "normalized": "jacoby ellsbury"
   },
   {
     "name": "JaCoby Jones",
-    "id": 592444
+    "id": 592444,
+    "normalized": "jacoby jones"
   },
   {
     "name": "Jaff Decker",
-    "id": 543094
+    "id": 543094,
+    "normalized": "jaff decker"
   },
   {
     "name": "Jaime García",
-    "id": 448802
+    "id": 448802,
+    "normalized": "jaime garcia"
   },
   {
     "name": "Jake Arrieta",
-    "id": 453562
+    "id": 453562,
+    "normalized": "jake arrieta"
   },
   {
     "name": "Jake Elmore",
-    "id": 518653
+    "id": 518653,
+    "normalized": "jake elmore"
   },
   {
     "name": "Jake Esch",
-    "id": 605222
+    "id": 605222,
+    "normalized": "jake esch"
   },
   {
     "name": "Jake Lamb",
-    "id": 571875
+    "id": 571875,
+    "normalized": "jake lamb"
   },
   {
     "name": "Jake Marisnick",
-    "id": 545350
+    "id": 545350,
+    "normalized": "jake marisnick"
   },
   {
     "name": "Jake Odorizzi",
-    "id": 543606
+    "id": 543606,
+    "normalized": "jake odorizzi"
   },
   {
     "name": "Jake Peavy",
-    "id": 408241
+    "id": 408241,
+    "normalized": "jake peavy"
   },
   {
     "name": "Jake Smolinski",
-    "id": 519295
+    "id": 519295,
+    "normalized": "jake smolinski"
   },
   {
     "name": "Jake Thompson",
-    "id": 622097
+    "id": 622097,
+    "normalized": "jake thompson"
   },
   {
     "name": "James Beresford",
-    "id": 503437
+    "id": 503437,
+    "normalized": "james beresford"
   },
   {
     "name": "James Loney",
-    "id": 425766
+    "id": 425766,
+    "normalized": "james loney"
   },
   {
     "name": "James McCann",
-    "id": 543510
+    "id": 543510,
+    "normalized": "james mccann"
   },
   {
     "name": "James Shields",
-    "id": 448306
+    "id": 448306,
+    "normalized": "james shields"
   },
   {
     "name": "Jameson Taillon",
-    "id": 592791
+    "id": 592791,
+    "normalized": "jameson taillon"
   },
   {
     "name": "Jared Hoying",
-    "id": 592419
+    "id": 592419,
+    "normalized": "jared hoying"
   },
   {
     "name": "Jarred Cosart",
-    "id": 543054
+    "id": 543054,
+    "normalized": "jarred cosart"
   },
   {
     "name": "Jarrett Parker",
-    "id": 592620
+    "id": 592620,
+    "normalized": "jarrett parker"
   },
   {
     "name": "Jarrod Dyson",
-    "id": 502481
+    "id": 502481,
+    "normalized": "jarrod dyson"
   },
   {
     "name": "Jarrod Saltalamacchia",
-    "id": 457454
+    "id": 457454,
+    "normalized": "jarrod saltalamacchia"
   },
   {
     "name": "Jason Castro",
-    "id": 488771
+    "id": 488771,
+    "normalized": "jason castro"
   },
   {
     "name": "Jason Coats",
-    "id": 605183
+    "id": 605183,
+    "normalized": "jason coats"
   },
   {
     "name": "Jason Hammel",
-    "id": 434628
+    "id": 434628,
+    "normalized": "jason hammel"
   },
   {
     "name": "Jason Heyward",
-    "id": 518792
+    "id": 518792,
+    "normalized": "jason heyward"
   },
   {
     "name": "Jason Kipnis",
-    "id": 543401
+    "id": 543401,
+    "normalized": "jason kipnis"
   },
   {
     "name": "Jason Rogers",
-    "id": 595386
+    "id": 595386,
+    "normalized": "jason rogers"
   },
   {
     "name": "Javier Baez",
-    "id": 595879
+    "id": 595879,
+    "normalized": "javier baez"
   },
   {
     "name": "Jay Bruce",
-    "id": 457803
+    "id": 457803,
+    "normalized": "jay bruce"
   },
   {
     "name": "Jayson Werth",
-    "id": 150029
+    "id": 150029,
+    "normalized": "jayson werth"
   },
   {
     "name": "Jean Segura",
-    "id": 516416
+    "id": 516416,
+    "normalized": "jean segura"
   },
   {
     "name": "Jed Lowrie",
-    "id": 476704
+    "id": 476704,
+    "normalized": "jed lowrie"
   },
   {
     "name": "Jedd Gyorko",
-    "id": 576397
+    "id": 576397,
+    "normalized": "jedd gyorko"
   },
   {
     "name": "Jeff Francoeur",
-    "id": 425796
+    "id": 425796,
+    "normalized": "jeff francoeur"
   },
   {
     "name": "Jeff Hoffman",
-    "id": 656546
+    "id": 656546,
+    "normalized": "jeff hoffman"
   },
   {
     "name": "Jeff Locke",
-    "id": 502046
+    "id": 502046,
+    "normalized": "jeff locke"
   },
   {
     "name": "Jeff Mathis",
-    "id": 425772
+    "id": 425772,
+    "normalized": "jeff mathis"
   },
   {
     "name": "Jeff Samardzija",
-    "id": 502188
+    "id": 502188,
+    "normalized": "jeff samardzija"
   },
   {
     "name": "Jefry Marte",
-    "id": 527043
+    "id": 527043,
+    "normalized": "jefry marte"
   },
   {
     "name": "Jeimer Candelario",
-    "id": 600869
+    "id": 600869,
+    "normalized": "jeimer candelario"
   },
   {
     "name": "Jemile Weeks",
-    "id": 457789
+    "id": 457789,
+    "normalized": "jemile weeks"
   },
   {
     "name": "Jerad Eickhoff",
-    "id": 595191
+    "id": 595191,
+    "normalized": "jerad eickhoff"
   },
   {
     "name": "Jered Weaver",
-    "id": 450308
+    "id": 450308,
+    "normalized": "jered weaver"
   },
   {
     "name": "Jeremy Hazelbaker",
-    "id": 571757
+    "id": 571757,
+    "normalized": "jeremy hazelbaker"
   },
   {
     "name": "Jeremy Hellickson",
-    "id": 476451
+    "id": 476451,
+    "normalized": "jeremy hellickson"
   },
   {
     "name": "Jerry Blevins",
-    "id": 460283
+    "id": 460283,
+    "normalized": "jerry blevins"
   },
   {
     "name": "Jerry Sands",
-    "id": 543742
+    "id": 543742,
+    "normalized": "jerry sands"
   },
   {
     "name": "Jesus Aguilar",
-    "id": 542583
+    "id": 542583,
+    "normalized": "jesus aguilar"
   },
   {
     "name": "Jesus Sucre",
-    "id": 491696
+    "id": 491696,
+    "normalized": "jesus sucre"
   },
   {
     "name": "Jett Bandy",
-    "id": 542908
+    "id": 542908,
+    "normalized": "jett bandy"
   },
   {
     "name": "Jhan Mariñez",
-    "id": 501697
+    "id": 501697,
+    "normalized": "jhan mariñez"
   },
   {
     "name": "Jhonny Peralta",
-    "id": 425509
+    "id": 425509,
+    "normalized": "jhonny peralta"
   },
   {
     "name": "Jhoulys Chacín",
-    "id": 468504
+    "id": 468504,
+    "normalized": "jhoulys chacin"
   },
   {
     "name": "Ji-Man Choi",
-    "id": 596847
+    "id": 596847,
+    "normalized": "ji-man choi"
   },
   {
     "name": "Jimmy Nelson",
-    "id": 519076
+    "id": 519076,
+    "normalized": "jimmy nelson"
   },
   {
     "name": "Jimmy Paredes",
-    "id": 517370
+    "id": 517370,
+    "normalized": "jimmy paredes"
   },
   {
     "name": "Jimmy Rollins",
-    "id": 276519
+    "id": 276519,
+    "normalized": "jimmy rollins"
   },
   {
     "name": "Joc Pederson",
-    "id": 592626
+    "id": 592626,
+    "normalized": "joc pederson"
   },
   {
     "name": "Joe Mauer",
-    "id": 408045
+    "id": 408045,
+    "normalized": "joe mauer"
   },
   {
     "name": "Joe Panik",
-    "id": 605412
+    "id": 605412,
+    "normalized": "joe panik"
   },
   {
     "name": "Joe Ross",
-    "id": 605452
+    "id": 605452,
+    "normalized": "joe ross"
   },
   {
     "name": "Joel De La Cruz",
-    "id": 503444
+    "id": 503444,
+    "normalized": "joel de la cruz"
   },
   {
     "name": "Joel Peralta",
-    "id": 407908
+    "id": 407908,
+    "normalized": "joel peralta"
   },
   {
     "name": "Joey Gallo",
-    "id": 608336
+    "id": 608336,
+    "normalized": "joey gallo"
   },
   {
     "name": "Joey Rickard",
-    "id": 572073
+    "id": 572073,
+    "normalized": "joey rickard"
   },
   {
     "name": "Joey Votto",
-    "id": 458015
+    "id": 458015,
+    "normalized": "joey votto"
   },
   {
     "name": "Joey Wendle",
-    "id": 621563
+    "id": 621563,
+    "normalized": "joey wendle"
   },
   {
     "name": "John Andreoli",
-    "id": 607430
+    "id": 607430,
+    "normalized": "john andreoli"
   },
   {
     "name": "John Gant",
-    "id": 607231
+    "id": 607231,
+    "normalized": "john gant"
   },
   {
     "name": "John Hicks",
-    "id": 543308
+    "id": 543308,
+    "normalized": "john hicks"
   },
   {
     "name": "John Jaso",
-    "id": 444379
+    "id": 444379,
+    "normalized": "john jaso"
   },
   {
     "name": "John Lackey",
-    "id": 407793
+    "id": 407793,
+    "normalized": "john lackey"
   },
   {
     "name": "John Lamb",
-    "id": 543424
+    "id": 543424,
+    "normalized": "john lamb"
   },
   {
     "name": "John Ryan Murphy",
-    "id": 571974
+    "id": 571974,
+    "normalized": "john ryan murphy"
   },
   {
     "name": "Johnny Cueto",
-    "id": 456501
+    "id": 456501,
+    "normalized": "johnny cueto"
   },
   {
     "name": "Johnny Giavotella",
-    "id": 543213
+    "id": 543213,
+    "normalized": "johnny giavotella"
   },
   {
     "name": "Jon Gray",
-    "id": 592351
+    "id": 592351,
+    "normalized": "jon gray"
   },
   {
     "name": "Jon Jay",
-    "id": 445055
+    "id": 445055,
+    "normalized": "jon jay"
   },
   {
     "name": "Jon Lester",
-    "id": 452657
+    "id": 452657,
+    "normalized": "jon lester"
   },
   {
     "name": "Jon Moscot",
-    "id": 621209
+    "id": 621209,
+    "normalized": "jon moscot"
   },
   {
     "name": "Jonathan Lucroy",
-    "id": 518960
+    "id": 518960,
+    "normalized": "jonathan lucroy"
   },
   {
     "name": "Jonathan Schoop",
-    "id": 570731
+    "id": 570731,
+    "normalized": "jonathan schoop"
   },
   {
     "name": "Jonathan Villar",
-    "id": 542340
+    "id": 542340,
+    "normalized": "jonathan villar"
   },
   {
     "name": "Jonathon Niese",
-    "id": 477003
+    "id": 477003,
+    "normalized": "jonathon niese"
   },
   {
     "name": "Jordan Lyles",
-    "id": 543475
+    "id": 543475,
+    "normalized": "jordan lyles"
   },
   {
     "name": "Jordan Pacheco",
-    "id": 457574
+    "id": 457574,
+    "normalized": "jordan pacheco"
   },
   {
     "name": "Jordan Patterson",
-    "id": 641958
+    "id": 641958,
+    "normalized": "jordan patterson"
   },
   {
     "name": "Jordan Zimmermann",
-    "id": 519455
+    "id": 519455,
+    "normalized": "jordan zimmermann"
   },
   {
     "name": "Jordy Mercer",
-    "id": 474568
+    "id": 474568,
+    "normalized": "jordy mercer"
   },
   {
     "name": "Jorge Alfaro",
-    "id": 595751
+    "id": 595751,
+    "normalized": "jorge alfaro"
   },
   {
     "name": "Jorge De La Rosa",
-    "id": 407822
+    "id": 407822,
+    "normalized": "jorge de la rosa"
   },
   {
     "name": "Jorge Polanco",
-    "id": 593871
+    "id": 593871,
+    "normalized": "jorge polanco"
   },
   {
     "name": "Jorge Soler",
-    "id": 624585
+    "id": 624585,
+    "normalized": "jorge soler"
   },
   {
     "name": "Jose Abreu",
-    "id": 547989
+    "id": 547989,
+    "normalized": "jose abreu"
   },
   {
     "name": "José Altuve",
-    "id": 514888
+    "id": 514888,
+    "normalized": "jose altuve"
   },
   {
     "name": "José Bautista",
-    "id": 430832
+    "id": 430832,
+    "normalized": "jose bautista"
   },
   {
     "name": "José Berríos",
-    "id": 621244
+    "id": 621244,
+    "normalized": "jose berrios"
   },
   {
     "name": "Jose De Leon",
-    "id": 592254
+    "id": 592254,
+    "normalized": "jose de leon"
   },
   {
     "name": "Jose Fernandez",
-    "id": 605228
+    "id": 605228,
+    "normalized": "jose fernandez"
   },
   {
     "name": "Jose Iglesias",
-    "id": 578428
+    "id": 578428,
+    "normalized": "jose iglesias"
   },
   {
     "name": "José Lobatón",
-    "id": 446653
+    "id": 446653,
+    "normalized": "jose lobaton"
   },
   {
     "name": "Jose Martinez",
-    "id": 500874
+    "id": 500874,
+    "normalized": "jose martinez"
   },
   {
     "name": "José Peraza",
-    "id": 606299
+    "id": 606299,
+    "normalized": "jose peraza"
   },
   {
     "name": "José Pírela",
-    "id": 517369
+    "id": 517369,
+    "normalized": "jose pirela"
   },
   {
     "name": "Jose Quintana",
-    "id": 500779
+    "id": 500779,
+    "normalized": "jose quintana"
   },
   {
     "name": "Jose Ramirez",
-    "id": 608070
+    "id": 608070,
+    "normalized": "jose ramirez"
   },
   {
     "name": "Jose Reyes",
-    "id": 408314
+    "id": 408314,
+    "normalized": "jose reyes"
   },
   {
     "name": "José Rondón",
-    "id": 602922
+    "id": 602922,
+    "normalized": "jose rondon"
   },
   {
     "name": "José Ureña",
-    "id": 570632
+    "id": 570632,
+    "normalized": "jose ureña"
   },
   {
     "name": "Josh Bell",
-    "id": 605137
+    "id": 605137,
+    "normalized": "josh bell"
   },
   {
     "name": "Josh Donaldson",
-    "id": 518626
+    "id": 518626,
+    "normalized": "josh donaldson"
   },
   {
     "name": "Josh Harrison",
-    "id": 543281
+    "id": 543281,
+    "normalized": "josh harrison"
   },
   {
     "name": "Josh Phegley",
-    "id": 572033
+    "id": 572033,
+    "normalized": "josh phegley"
   },
   {
     "name": "Josh Reddick",
-    "id": 502210
+    "id": 502210,
+    "normalized": "josh reddick"
   },
   {
     "name": "Josh Rutledge",
-    "id": 592710
+    "id": 592710,
+    "normalized": "josh rutledge"
   },
   {
     "name": "Josh Smith",
-    "id": 595001
+    "id": 595001,
+    "normalized": "josh smith"
   },
   {
     "name": "Josh Thole",
-    "id": 489365
+    "id": 489365,
+    "normalized": "josh thole"
   },
   {
     "name": "Josh Tomlin",
-    "id": 458708
+    "id": 458708,
+    "normalized": "josh tomlin"
   },
   {
     "name": "Josmil Pinto",
-    "id": 500887
+    "id": 500887,
+    "normalized": "josmil pinto"
   },
   {
     "name": "Juan Centeno",
-    "id": 518542
+    "id": 518542,
+    "normalized": "juan centeno"
   },
   {
     "name": "Juan Graterol",
-    "id": 492802
+    "id": 492802,
+    "normalized": "juan graterol"
   },
   {
     "name": "Juan Lagares",
-    "id": 501571
+    "id": 501571,
+    "normalized": "juan lagares"
   },
   {
     "name": "Juan Nicasio",
-    "id": 504379
+    "id": 504379,
+    "normalized": "juan nicasio"
   },
   {
     "name": "Juan Uribe",
-    "id": 346874
+    "id": 346874,
+    "normalized": "juan uribe"
   },
   {
     "name": "Julio Borbon",
-    "id": 474865
+    "id": 474865,
+    "normalized": "julio borbon"
   },
   {
     "name": "Julio Teheran",
-    "id": 527054
+    "id": 527054,
+    "normalized": "julio teheran"
   },
   {
     "name": "Julio Urías",
-    "id": 628711
+    "id": 628711,
+    "normalized": "julio urias"
   },
   {
     "name": "Jumbo Diaz",
-    "id": 471822
+    "id": 471822,
+    "normalized": "jumbo diaz"
   },
   {
     "name": "Jung Ho Kang",
-    "id": 628356
+    "id": 628356,
+    "normalized": "jung ho kang"
   },
   {
     "name": "Juniel Querecuto",
-    "id": 578570
+    "id": 578570,
+    "normalized": "juniel querecuto"
   },
   {
     "name": "Junior Guerra",
-    "id": 448855
+    "id": 448855,
+    "normalized": "junior guerra"
   },
   {
     "name": "Junior Lake",
-    "id": 516809
+    "id": 516809,
+    "normalized": "junior lake"
   },
   {
     "name": "Jurickson Profar",
-    "id": 595777
+    "id": 595777,
+    "normalized": "jurickson profar"
   },
   {
     "name": "Justin Bour",
-    "id": 571506
+    "id": 571506,
+    "normalized": "justin bour"
   },
   {
     "name": "Justin Morneau",
-    "id": 408047
+    "id": 408047,
+    "normalized": "justin morneau"
   },
   {
     "name": "Justin Nicolino",
-    "id": 592593
+    "id": 592593,
+    "normalized": "justin nicolino"
   },
   {
     "name": "Justin Ruggiano",
-    "id": 448605
+    "id": 448605,
+    "normalized": "justin ruggiano"
   },
   {
     "name": "Justin Smoak",
-    "id": 475253
+    "id": 475253,
+    "normalized": "justin smoak"
   },
   {
     "name": "Justin Turner",
-    "id": 457759
+    "id": 457759,
+    "normalized": "justin turner"
   },
   {
     "name": "Justin Upton",
-    "id": 457708
+    "id": 457708,
+    "normalized": "justin upton"
   },
   {
     "name": "Justin Verlander",
-    "id": 434378
+    "id": 434378,
+    "normalized": "justin verlander"
   },
   {
     "name": "Kaleb Cowart",
-    "id": 592230
+    "id": 592230,
+    "normalized": "kaleb cowart"
   },
   {
     "name": "Kelby Tomlinson",
-    "id": 605509
+    "id": 605509,
+    "normalized": "kelby tomlinson"
   },
   {
     "name": "Kelly Johnson",
-    "id": 430637
+    "id": 430637,
+    "normalized": "kelly johnson"
   },
   {
     "name": "Kendall Graveman",
-    "id": 608665
+    "id": 608665,
+    "normalized": "kendall graveman"
   },
   {
     "name": "Kendrys Morales",
-    "id": 434778
+    "id": 434778,
+    "normalized": "kendrys morales"
   },
   {
     "name": "Kennys Vargas",
-    "id": 573627
+    "id": 573627,
+    "normalized": "kennys vargas"
   },
   {
     "name": "Kenta Maeda",
-    "id": 628317
+    "id": 628317,
+    "normalized": "kenta maeda"
   },
   {
     "name": "Keon Broxton",
-    "id": 542979
+    "id": 542979,
+    "normalized": "keon broxton"
   },
   {
     "name": "Ketel Marte",
-    "id": 606466
+    "id": 606466,
+    "normalized": "ketel marte"
   },
   {
     "name": "Kevan Smith",
-    "id": 607345
+    "id": 607345,
+    "normalized": "kevan smith"
   },
   {
     "name": "Kevin Kiermaier",
-    "id": 595281
+    "id": 595281,
+    "normalized": "kevin kiermaier"
   },
   {
     "name": "Kevin Pillar",
-    "id": 607680
+    "id": 607680,
+    "normalized": "kevin pillar"
   },
   {
     "name": "Kevin Plawecki",
-    "id": 608700
+    "id": 608700,
+    "normalized": "kevin plawecki"
   },
   {
     "name": "Keyvius Sampson",
-    "id": 572102
+    "id": 572102,
+    "normalized": "keyvius sampson"
   },
   {
     "name": "Khris Davis",
-    "id": 501981
+    "id": 501981,
+    "normalized": "khris davis"
   },
   {
     "name": "Kirk Nieuwenhuis",
-    "id": 543590
+    "id": 543590,
+    "normalized": "kirk nieuwenhuis"
   },
   {
     "name": "Kole Calhoun",
-    "id": 594777
+    "id": 594777,
+    "normalized": "kole calhoun"
   },
   {
     "name": "Kolten Wong",
-    "id": 543939
+    "id": 543939,
+    "normalized": "kolten wong"
   },
   {
     "name": "Kris Bryant",
-    "id": 592178
+    "id": 592178,
+    "normalized": "kris bryant"
   },
   {
     "name": "Kurt Suzuki",
-    "id": 435559
+    "id": 435559,
+    "normalized": "kurt suzuki"
   },
   {
     "name": "Kyle Gibson",
-    "id": 502043
+    "id": 502043,
+    "normalized": "kyle gibson"
   },
   {
     "name": "Kyle Hendricks",
-    "id": 543294
+    "id": 543294,
+    "normalized": "kyle hendricks"
   },
   {
     "name": "Kyle Jensen",
-    "id": 571812
+    "id": 571812,
+    "normalized": "kyle jensen"
   },
   {
     "name": "Kyle Lobstein",
-    "id": 543456
+    "id": 543456,
+    "normalized": "kyle lobstein"
   },
   {
     "name": "Kyle Schwarber",
-    "id": 656941
+    "id": 656941,
+    "normalized": "kyle schwarber"
   },
   {
     "name": "Kyle Seager",
-    "id": 572122
+    "id": 572122,
+    "normalized": "kyle seager"
   },
   {
     "name": "Kyle Waldrop",
-    "id": 592835
+    "id": 592835,
+    "normalized": "kyle waldrop"
   },
   {
     "name": "Lance McCullers Jr.",
-    "id": 621121
+    "id": 621121,
+    "normalized": "lance mccullers jr."
   },
   {
     "name": "Leonys Martin",
-    "id": 547982
+    "id": 547982,
+    "normalized": "leonys martin"
   },
   {
     "name": "Leury Garcia",
-    "id": 544725
+    "id": 544725,
+    "normalized": "leury garcia"
   },
   {
     "name": "Logan Forsythe",
-    "id": 523253
+    "id": 523253,
+    "normalized": "logan forsythe"
   },
   {
     "name": "Logan Morrison",
-    "id": 489149
+    "id": 489149,
+    "normalized": "logan morrison"
   },
   {
     "name": "Logan Schafer",
-    "id": 502582
+    "id": 502582,
+    "normalized": "logan schafer"
   },
   {
     "name": "Logan Verrett",
-    "id": 548337
+    "id": 548337,
+    "normalized": "logan verrett"
   },
   {
     "name": "Lonnie Chisenhall",
-    "id": 502082
+    "id": 502082,
+    "normalized": "lonnie chisenhall"
   },
   {
     "name": "Lorenzo Cain",
-    "id": 456715
+    "id": 456715,
+    "normalized": "lorenzo cain"
   },
   {
     "name": "Lucas Duda",
-    "id": 446263
+    "id": 446263,
+    "normalized": "lucas duda"
   },
   {
     "name": "Lucas Giolito",
-    "id": 608337
+    "id": 608337,
+    "normalized": "lucas giolito"
   },
   {
     "name": "Lucas Harrell",
-    "id": 449173
+    "id": 449173,
+    "normalized": "lucas harrell"
   },
   {
     "name": "Luis Perdomo",
-    "id": 606131
+    "id": 606131,
+    "normalized": "luis perdomo"
   },
   {
     "name": "Luis Sardiñas",
-    "id": 596143
+    "id": 596143,
+    "normalized": "luis sardiñas"
   },
   {
     "name": "Luis Valbuena",
-    "id": 472528
+    "id": 472528,
+    "normalized": "luis valbuena"
   },
   {
     "name": "Luke Maile",
-    "id": 571912
+    "id": 571912,
+    "normalized": "luke maile"
   },
   {
     "name": "Luke Weaver",
-    "id": 596133
+    "id": 596133,
+    "normalized": "luke weaver"
   },
   {
     "name": "Mac Williamson",
-    "id": 607776
+    "id": 607776,
+    "normalized": "mac williamson"
   },
   {
     "name": "Madison Bumgarner",
-    "id": 518516
+    "id": 518516,
+    "normalized": "madison bumgarner"
   },
   {
     "name": "Maikel Franco",
-    "id": 596748
+    "id": 596748,
+    "normalized": "maikel franco"
   },
   {
     "name": "Mallex Smith",
-    "id": 605480
+    "id": 605480,
+    "normalized": "mallex smith"
   },
   {
     "name": "Manny Machado",
-    "id": 592518
+    "id": 592518,
+    "normalized": "manny machado"
   },
   {
     "name": "Manny Piña",
-    "id": 444489
+    "id": 444489,
+    "normalized": "manny piña"
   },
   {
     "name": "Manuel Margot",
-    "id": 622534
+    "id": 622534,
+    "normalized": "manuel margot"
   },
   {
     "name": "Marcell Ozuna",
-    "id": 542303
+    "id": 542303,
+    "normalized": "marcell ozuna"
   },
   {
     "name": "Marco Estrada",
-    "id": 462136
+    "id": 462136,
+    "normalized": "marco estrada"
   },
   {
     "name": "Marco Hernandez",
-    "id": 593523
+    "id": 593523,
+    "normalized": "marco hernandez"
   },
   {
     "name": "Marcus Semien",
-    "id": 543760
+    "id": 543760,
+    "normalized": "marcus semien"
   },
   {
     "name": "Marcus Stroman",
-    "id": 573186
+    "id": 573186,
+    "normalized": "marcus stroman"
   },
   {
     "name": "Mark Canha",
-    "id": 592192
+    "id": 592192,
+    "normalized": "mark canha"
   },
   {
     "name": "Mark Reynolds",
-    "id": 448602
+    "id": 448602,
+    "normalized": "mark reynolds"
   },
   {
     "name": "Mark Teixeira",
-    "id": 407893
+    "id": 407893,
+    "normalized": "mark teixeira"
   },
   {
     "name": "Mark Trumbo",
-    "id": 444432
+    "id": 444432,
+    "normalized": "mark trumbo"
   },
   {
     "name": "Marlon Byrd",
-    "id": 407781
+    "id": 407781,
+    "normalized": "marlon byrd"
   },
   {
     "name": "Martín Maldonado",
-    "id": 455117
+    "id": 455117,
+    "normalized": "martin maldonado"
   },
   {
     "name": "Martin Perez",
-    "id": 527048
+    "id": 527048,
+    "normalized": "martin perez"
   },
   {
     "name": "Martín Prado",
-    "id": 445988
+    "id": 445988,
+    "normalized": "martin prado"
   },
   {
     "name": "Marwin Gonzalez",
-    "id": 503556
+    "id": 503556,
+    "normalized": "marwin gonzalez"
   },
   {
     "name": "Mason Williams",
-    "id": 592863
+    "id": 592863,
+    "normalized": "mason williams"
   },
   {
     "name": "Mat Latos",
-    "id": 502009
+    "id": 502009,
+    "normalized": "mat latos"
   },
   {
     "name": "Matt Adams",
-    "id": 571431
+    "id": 571431,
+    "normalized": "matt adams"
   },
   {
     "name": "Matt Albers",
-    "id": 458006
+    "id": 458006,
+    "normalized": "matt albers"
   },
   {
     "name": "Matt Andriese",
-    "id": 542882
+    "id": 542882,
+    "normalized": "matt andriese"
   },
   {
     "name": "Matt Buschmann",
-    "id": 501936
+    "id": 501936,
+    "normalized": "matt buschmann"
   },
   {
     "name": "Matt Cain",
-    "id": 430912
+    "id": 430912,
+    "normalized": "matt cain"
   },
   {
     "name": "Matt Carpenter",
-    "id": 572761
+    "id": 572761,
+    "normalized": "matt carpenter"
   },
   {
     "name": "Matt Davidson",
-    "id": 571602
+    "id": 571602,
+    "normalized": "matt davidson"
   },
   {
     "name": "Matt den Dekker",
-    "id": 544925
+    "id": 544925,
+    "normalized": "matt den dekker"
   },
   {
     "name": "Matt Dominguez",
-    "id": 518625
+    "id": 518625,
+    "normalized": "matt dominguez"
   },
   {
     "name": "Matt Duffy",
-    "id": 592274
+    "id": 592274,
+    "normalized": "matt duffy"
   },
   {
     "name": "Matt Duffy",
-    "id": 622110
+    "id": 622110,
+    "normalized": "matt duffy"
   },
   {
     "name": "Matt Garza",
-    "id": 490063
+    "id": 490063,
+    "normalized": "matt garza"
   },
   {
     "name": "Matt Harvey",
-    "id": 518774
+    "id": 518774,
+    "normalized": "matt harvey"
   },
   {
     "name": "Matt Holliday",
-    "id": 407812
+    "id": 407812,
+    "normalized": "matt holliday"
   },
   {
     "name": "Matt Joyce",
-    "id": 459964
+    "id": 459964,
+    "normalized": "matt joyce"
   },
   {
     "name": "Matt Kemp",
-    "id": 461314
+    "id": 461314,
+    "normalized": "matt kemp"
   },
   {
     "name": "Matt McBride",
-    "id": 473724
+    "id": 473724,
+    "normalized": "matt mcbride"
   },
   {
     "name": "Matt Moore",
-    "id": 519043
+    "id": 519043,
+    "normalized": "matt moore"
   },
   {
     "name": "Matt Olson",
-    "id": 621566
+    "id": 621566,
+    "normalized": "matt olson"
   },
   {
     "name": "Matt Reynolds",
-    "id": 608703
+    "id": 608703,
+    "normalized": "matt reynolds"
   },
   {
     "name": "Matt Szczur",
-    "id": 519333
+    "id": 519333,
+    "normalized": "matt szczur"
   },
   {
     "name": "Matt Tuiasosopo",
-    "id": 449168
+    "id": 449168,
+    "normalized": "matt tuiasosopo"
   },
   {
     "name": "Matt Wieters",
-    "id": 446308
+    "id": 446308,
+    "normalized": "matt wieters"
   },
   {
     "name": "Matt Wisler",
-    "id": 605538
+    "id": 605538,
+    "normalized": "matt wisler"
   },
   {
     "name": "Max Kepler",
-    "id": 596146
+    "id": 596146,
+    "normalized": "max kepler"
   },
   {
     "name": "Max Muncy",
-    "id": 571970
+    "id": 571970,
+    "normalized": "max muncy"
   },
   {
     "name": "Max Scherzer",
-    "id": 453286
+    "id": 453286,
+    "normalized": "max scherzer"
   },
   {
     "name": "Max Stassi",
-    "id": 545358
+    "id": 545358,
+    "normalized": "max stassi"
   },
   {
     "name": "Melky Cabrera",
-    "id": 466320
+    "id": 466320,
+    "normalized": "melky cabrera"
   },
   {
     "name": "Melvin Upton Jr.",
-    "id": 425834
+    "id": 425834,
+    "normalized": "melvin upton jr."
   },
   {
     "name": "Micah Johnson",
-    "id": 608672
+    "id": 608672,
+    "normalized": "micah johnson"
   },
   {
     "name": "Michael Bourn",
-    "id": 456422
+    "id": 456422,
+    "normalized": "michael bourn"
   },
   {
     "name": "Michael Brantley",
-    "id": 488726
+    "id": 488726,
+    "normalized": "michael brantley"
   },
   {
     "name": "Michael Conforto",
-    "id": 624424
+    "id": 624424,
+    "normalized": "michael conforto"
   },
   {
     "name": "Michael Lorenzen",
-    "id": 547179
+    "id": 547179,
+    "normalized": "michael lorenzen"
   },
   {
     "name": "Michael Martinez",
-    "id": 492841
+    "id": 492841,
+    "normalized": "michael martinez"
   },
   {
     "name": "Michael Morse",
-    "id": 434604
+    "id": 434604,
+    "normalized": "michael morse"
   },
   {
     "name": "Michael Reed",
-    "id": 605439
+    "id": 605439,
+    "normalized": "michael reed"
   },
   {
     "name": "Michael Saunders",
-    "id": 459431
+    "id": 459431,
+    "normalized": "michael saunders"
   },
   {
     "name": "Michael Taylor",
-    "id": 572191
+    "id": 572191,
+    "normalized": "michael taylor"
   },
   {
     "name": "Michael Wacha",
-    "id": 608379
+    "id": 608379,
+    "normalized": "michael wacha"
   },
   {
     "name": "Miguel Cabrera",
-    "id": 408234
+    "id": 408234,
+    "normalized": "miguel cabrera"
   },
   {
     "name": "Miguel Montero",
-    "id": 471083
+    "id": 471083,
+    "normalized": "miguel montero"
   },
   {
     "name": "Miguel Rojas",
-    "id": 500743
+    "id": 500743,
+    "normalized": "miguel rojas"
   },
   {
     "name": "Miguel Sanó",
-    "id": 593934
+    "id": 593934,
+    "normalized": "miguel sano"
   },
   {
     "name": "Mike Aviles",
-    "id": 449107
+    "id": 449107,
+    "normalized": "mike aviles"
   },
   {
     "name": "Mike Bolsinger",
-    "id": 502211
+    "id": 502211,
+    "normalized": "mike bolsinger"
   },
   {
     "name": "Mike Clevinger",
-    "id": 605182
+    "id": 605182,
+    "normalized": "mike clevinger"
   },
   {
     "name": "Mike Foltynewicz",
-    "id": 592314
+    "id": 592314,
+    "normalized": "mike foltynewicz"
   },
   {
     "name": "Mike Freeman",
-    "id": 502273
+    "id": 502273,
+    "normalized": "mike freeman"
   },
   {
     "name": "Mike Leake",
-    "id": 502190
+    "id": 502190,
+    "normalized": "mike leake"
   },
   {
     "name": "Mike Miller",
-    "id": 623166
+    "id": 623166,
+    "normalized": "mike miller"
   },
   {
     "name": "Mike Montgomery",
-    "id": 543557
+    "id": 543557,
+    "normalized": "mike montgomery"
   },
   {
     "name": "Mike Moustakas",
-    "id": 519058
+    "id": 519058,
+    "normalized": "mike moustakas"
   },
   {
     "name": "Mike Napoli",
-    "id": 435063
+    "id": 435063,
+    "normalized": "mike napoli"
   },
   {
     "name": "Mike Trout",
-    "id": 545361
+    "id": 545361,
+    "normalized": "mike trout"
   },
   {
     "name": "Mike Zunino",
-    "id": 572287
+    "id": 572287,
+    "normalized": "mike zunino"
   },
   {
     "name": "Mikie Mahtook",
-    "id": 543484
+    "id": 543484,
+    "normalized": "mikie mahtook"
   },
   {
     "name": "Mitch Haniger",
-    "id": 571745
+    "id": 571745,
+    "normalized": "mitch haniger"
   },
   {
     "name": "Mitch Moreland",
-    "id": 519048
+    "id": 519048,
+    "normalized": "mitch moreland"
   },
   {
     "name": "Mookie Betts",
-    "id": 605141
+    "id": 605141,
+    "normalized": "mookie betts"
   },
   {
     "name": "Munenori Kawasaki",
-    "id": 493128
+    "id": 493128,
+    "normalized": "munenori kawasaki"
   },
   {
     "name": "Mychal Givens",
-    "id": 571710
+    "id": 571710,
+    "normalized": "mychal givens"
   },
   {
     "name": "Nathan Karns",
-    "id": 501992
+    "id": 501992,
+    "normalized": "nathan karns"
   },
   {
     "name": "Neil Walker",
-    "id": 435522
+    "id": 435522,
+    "normalized": "neil walker"
   },
   {
     "name": "Nelson Cruz",
-    "id": 443558
+    "id": 443558,
+    "normalized": "nelson cruz"
   },
   {
     "name": "Nick Ahmed",
-    "id": 605113
+    "id": 605113,
+    "normalized": "nick ahmed"
   },
   {
     "name": "Nick Buss",
-    "id": 502544
+    "id": 502544,
+    "normalized": "nick buss"
   },
   {
     "name": "Nick Castellanos",
-    "id": 592206
+    "id": 592206,
+    "normalized": "nick castellanos"
   },
   {
     "name": "Nick Franklin",
-    "id": 545338
+    "id": 545338,
+    "normalized": "nick franklin"
   },
   {
     "name": "Nick Hundley",
-    "id": 460026
+    "id": 460026,
+    "normalized": "nick hundley"
   },
   {
     "name": "Nick Markakis",
-    "id": 455976
+    "id": 455976,
+    "normalized": "nick markakis"
   },
   {
     "name": "Nick Martinez",
-    "id": 607259
+    "id": 607259,
+    "normalized": "nick martinez"
   },
   {
     "name": "Nick Noonan",
-    "id": 519082
+    "id": 519082,
+    "normalized": "nick noonan"
   },
   {
     "name": "Nick Tropeano",
-    "id": 607374
+    "id": 607374,
+    "normalized": "nick tropeano"
   },
   {
     "name": "Noah Syndergaard",
-    "id": 592789
+    "id": 592789,
+    "normalized": "noah syndergaard"
   },
   {
     "name": "Nolan Arenado",
-    "id": 571448
+    "id": 571448,
+    "normalized": "nolan arenado"
   },
   {
     "name": "Nolan Reimold",
-    "id": 460099
+    "id": 460099,
+    "normalized": "nolan reimold"
   },
   {
     "name": "Nomar Mazara",
-    "id": 608577
+    "id": 608577,
+    "normalized": "nomar mazara"
   },
   {
     "name": "Norichika Aoki",
-    "id": 493114
+    "id": 493114,
+    "normalized": "norichika aoki"
   },
   {
     "name": "Odubel Herrera",
-    "id": 546318
+    "id": 546318,
+    "normalized": "odubel herrera"
   },
   {
     "name": "Óliver Pérez",
-    "id": 424144
+    "id": 424144,
+    "normalized": "oliver perez"
   },
   {
     "name": "Omar Infante",
-    "id": 408299
+    "id": 408299,
+    "normalized": "omar infante"
   },
   {
     "name": "Omar Narvaez",
-    "id": 553882
+    "id": 553882,
+    "normalized": "omar narvaez"
   },
   {
     "name": "Orlando Arcia",
-    "id": 606115
+    "id": 606115,
+    "normalized": "orlando arcia"
   },
   {
     "name": "Óscar Hernández",
-    "id": 591712
+    "id": 591712,
+    "normalized": "oscar hernandez"
   },
   {
     "name": "Oswaldo Arcía",
-    "id": 542455
+    "id": 542455,
+    "normalized": "oswaldo arcia"
   },
   {
     "name": "Pablo Sandoval",
-    "id": 467055
+    "id": 467055,
+    "normalized": "pablo sandoval"
   },
   {
     "name": "Pat Valaika",
-    "id": 642162
+    "id": 642162,
+    "normalized": "pat valaika"
   },
   {
     "name": "Patrick Corbin",
-    "id": 571578
+    "id": 571578,
+    "normalized": "patrick corbin"
   },
   {
     "name": "Patrick Kivlehan",
-    "id": 623182
+    "id": 623182,
+    "normalized": "patrick kivlehan"
   },
   {
     "name": "Paul Clemens",
-    "id": 518560
+    "id": 518560,
+    "normalized": "paul clemens"
   },
   {
     "name": "Paul Goldschmidt",
-    "id": 502671
+    "id": 502671,
+    "normalized": "paul goldschmidt"
   },
   {
     "name": "Paul Janish",
-    "id": 457926
+    "id": 457926,
+    "normalized": "paul janish"
   },
   {
     "name": "Paulo Orlando",
-    "id": 449181
+    "id": 449181,
+    "normalized": "paulo orlando"
   },
   {
     "name": "Pedro Álvarez",
-    "id": 476883
+    "id": 476883,
+    "normalized": "pedro alvarez"
   },
   {
     "name": "Pedro Báez",
-    "id": 520980
+    "id": 520980,
+    "normalized": "pedro baez"
   },
   {
     "name": "Pedro Florimon",
-    "id": 465753
+    "id": 465753,
+    "normalized": "pedro florimon"
   },
   {
     "name": "Pedro Severino",
-    "id": 600474
+    "id": 600474,
+    "normalized": "pedro severino"
   },
   {
     "name": "Pedro Strop",
-    "id": 467008
+    "id": 467008,
+    "normalized": "pedro strop"
   },
   {
     "name": "Peter Bourjos",
-    "id": 488721
+    "id": 488721,
+    "normalized": "peter bourjos"
   },
   {
     "name": "Peter O'Brien",
-    "id": 598284
+    "id": 598284,
+    "normalized": "peter o'brien"
   },
   {
     "name": "Phil Gosselin",
-    "id": 594838
+    "id": 594838,
+    "normalized": "phil gosselin"
   },
   {
     "name": "Preston Tucker",
-    "id": 605512
+    "id": 605512,
+    "normalized": "preston tucker"
   },
   {
     "name": "Prince Fielder",
-    "id": 425902
+    "id": 425902,
+    "normalized": "prince fielder"
   },
   {
     "name": "Rafael Montero",
-    "id": 606160
+    "id": 606160,
+    "normalized": "rafael montero"
   },
   {
     "name": "Rafael Ortega",
-    "id": 542364
+    "id": 542364,
+    "normalized": "rafael ortega"
   },
   {
     "name": "Rafael Ynoa",
-    "id": 501255
+    "id": 501255,
+    "normalized": "rafael ynoa"
   },
   {
     "name": "Raffy Lopez",
-    "id": 607257
+    "id": 607257,
+    "normalized": "raffy lopez"
   },
   {
     "name": "Raimel Tapia",
-    "id": 606132
+    "id": 606132,
+    "normalized": "raimel tapia"
   },
   {
     "name": "Raisel Iglesias",
-    "id": 628452
+    "id": 628452,
+    "normalized": "raisel iglesias"
   },
   {
     "name": "Rajai Davis",
-    "id": 434658
+    "id": 434658,
+    "normalized": "rajai davis"
   },
   {
     "name": "Ramiro Pena",
-    "id": 455369
+    "id": 455369,
+    "normalized": "ramiro pena"
   },
   {
     "name": "Ramon Cabrera",
-    "id": 541608
+    "id": 541608,
+    "normalized": "ramon cabrera"
   },
   {
     "name": "Ramón Flores",
-    "id": 570717
+    "id": 570717,
+    "normalized": "ramon flores"
   },
   {
     "name": "Randal Grichuk",
-    "id": 545341
+    "id": 545341,
+    "normalized": "randal grichuk"
   },
   {
     "name": "Randall Delgado",
-    "id": 517414
+    "id": 517414,
+    "normalized": "randall delgado"
   },
   {
     "name": "Raul Mondesi",
-    "id": 609275
+    "id": 609275,
+    "normalized": "raul mondesi"
   },
   {
     "name": "Reid Brignac",
-    "id": 458582
+    "id": 458582,
+    "normalized": "reid brignac"
   },
   {
     "name": "Renato Núñez",
-    "id": 600524
+    "id": 600524,
+    "normalized": "renato nuñez"
   },
   {
     "name": "Rene Rivera",
-    "id": 425784
+    "id": 425784,
+    "normalized": "rene rivera"
   },
   {
     "name": "Reymond Fuentes",
-    "id": 571681
+    "id": 571681,
+    "normalized": "reymond fuentes"
   },
   {
     "name": "Reynaldo Lopez",
-    "id": 625643
+    "id": 625643,
+    "normalized": "reynaldo lopez"
   },
   {
     "name": "Rich Hill",
-    "id": 448179
+    "id": 448179,
+    "normalized": "rich hill"
   },
   {
     "name": "Richie Shaffer",
-    "id": 572128
+    "id": 572128,
+    "normalized": "richie shaffer"
   },
   {
     "name": "Rick Porcello",
-    "id": 519144
+    "id": 519144,
+    "normalized": "rick porcello"
   },
   {
     "name": "Rickie Weeks Jr.",
-    "id": 430001
+    "id": 430001,
+    "normalized": "rickie weeks jr."
   },
   {
     "name": "Ricky Nolasco",
-    "id": 445060
+    "id": 445060,
+    "normalized": "ricky nolasco"
   },
   {
     "name": "Rio Ruiz",
-    "id": 547004
+    "id": 547004,
+    "normalized": "rio ruiz"
   },
   {
     "name": "Rob Refsnyder",
-    "id": 608701
+    "id": 608701,
+    "normalized": "rob refsnyder"
   },
   {
     "name": "Rob Scahill",
-    "id": 543746
+    "id": 543746,
+    "normalized": "rob scahill"
   },
   {
     "name": "Rob Segedin",
-    "id": 574847
+    "id": 574847,
+    "normalized": "rob segedin"
   },
   {
     "name": "Rob Whalen",
-    "id": 547007
+    "id": 547007,
+    "normalized": "rob whalen"
   },
   {
     "name": "Rob Zastryzny",
-    "id": 642239
+    "id": 642239,
+    "normalized": "rob zastryzny"
   },
   {
     "name": "Robbie Erlin",
-    "id": 572362
+    "id": 572362,
+    "normalized": "robbie erlin"
   },
   {
     "name": "Robbie Grossman",
-    "id": 543257
+    "id": 543257,
+    "normalized": "robbie grossman"
   },
   {
     "name": "Robbie Ray",
-    "id": 592662
+    "id": 592662,
+    "normalized": "robbie ray"
   },
   {
     "name": "Robert Andino",
-    "id": 435180
+    "id": 435180,
+    "normalized": "robert andino"
   },
   {
     "name": "Robert Gsellman",
-    "id": 607229
+    "id": 607229,
+    "normalized": "robert gsellman"
   },
   {
     "name": "Robert Stephenson",
-    "id": 596112
+    "id": 596112,
+    "normalized": "robert stephenson"
   },
   {
     "name": "Roberto Baldoquin",
-    "id": 660168
+    "id": 660168,
+    "normalized": "roberto baldoquin"
   },
   {
     "name": "Roberto Hernandez",
-    "id": 433584
+    "id": 433584,
+    "normalized": "roberto hernandez"
   },
   {
     "name": "Roberto Perez",
-    "id": 547379
+    "id": 547379,
+    "normalized": "roberto perez"
   },
   {
     "name": "Robinson Canó",
-    "id": 429664
+    "id": 429664,
+    "normalized": "robinson cano"
   },
   {
     "name": "Robinson Chirinos",
-    "id": 455139
+    "id": 455139,
+    "normalized": "robinson chirinos"
   },
   {
     "name": "Roman Quinn",
-    "id": 596451
+    "id": 596451,
+    "normalized": "roman quinn"
   },
   {
     "name": "Ronald Torreyes",
-    "id": 591720
+    "id": 591720,
+    "normalized": "ronald torreyes"
   },
   {
     "name": "Ross Stripling",
-    "id": 548389
+    "id": 548389,
+    "normalized": "ross stripling"
   },
   {
     "name": "Rougned Odor",
-    "id": 596059
+    "id": 596059,
+    "normalized": "rougned odor"
   },
   {
     "name": "Rubby De La Rosa",
-    "id": 523989
+    "id": 523989,
+    "normalized": "rubby de la rosa"
   },
   {
     "name": "Rubén Tejada",
-    "id": 514913
+    "id": 514913,
+    "normalized": "ruben tejada"
   },
   {
     "name": "Rusney Castillo",
-    "id": 628329
+    "id": 628329,
+    "normalized": "rusney castillo"
   },
   {
     "name": "Russell Martin",
-    "id": 431145
+    "id": 431145,
+    "normalized": "russell martin"
   },
   {
     "name": "Ryan Braun",
-    "id": 460075
+    "id": 460075,
+    "normalized": "ryan braun"
   },
   {
     "name": "Ryan Flaherty",
-    "id": 475247
+    "id": 475247,
+    "normalized": "ryan flaherty"
   },
   {
     "name": "Ryan Goins",
-    "id": 572365
+    "id": 572365,
+    "normalized": "ryan goins"
   },
   {
     "name": "Ryan Hanigan",
-    "id": 452672
+    "id": 452672,
+    "normalized": "ryan hanigan"
   },
   {
     "name": "Ryan Howard",
-    "id": 429667
+    "id": 429667,
+    "normalized": "ryan howard"
   },
   {
     "name": "Ryan Kalish",
-    "id": 501888
+    "id": 501888,
+    "normalized": "ryan kalish"
   },
   {
     "name": "Ryan LaMarre",
-    "id": 534606
+    "id": 534606,
+    "normalized": "ryan lamarre"
   },
   {
     "name": "Ryan Raburn",
-    "id": 430605
+    "id": 430605,
+    "normalized": "ryan raburn"
   },
   {
     "name": "Ryan Rua",
-    "id": 607387
+    "id": 607387,
+    "normalized": "ryan rua"
   },
   {
     "name": "Ryan Schimpf",
-    "id": 572114
+    "id": 572114,
+    "normalized": "ryan schimpf"
   },
   {
     "name": "Ryan Vogelsong",
-    "id": 285064
+    "id": 285064,
+    "normalized": "ryan vogelsong"
   },
   {
     "name": "Ryan Weber",
-    "id": 543901
+    "id": 543901,
+    "normalized": "ryan weber"
   },
   {
     "name": "Ryan Zimmerman",
-    "id": 475582
+    "id": 475582,
+    "normalized": "ryan zimmerman"
   },
   {
     "name": "Ryon Healy",
-    "id": 592387
+    "id": 592387,
+    "normalized": "ryon healy"
   },
   {
     "name": "Salvador Perez",
-    "id": 521692
+    "id": 521692,
+    "normalized": "salvador perez"
   },
   {
     "name": "Sammy Solis",
-    "id": 519301
+    "id": 519301,
+    "normalized": "sammy solis"
   },
   {
     "name": "Sandy Leon",
-    "id": 506702
+    "id": 506702,
+    "normalized": "sandy leon"
   },
   {
     "name": "Scooter Gennett",
-    "id": 571697
+    "id": 571697,
+    "normalized": "scooter gennett"
   },
   {
     "name": "Scott Kazmir",
-    "id": 431148
+    "id": 431148,
+    "normalized": "scott kazmir"
   },
   {
     "name": "Scott Schebler",
-    "id": 594988
+    "id": 594988,
+    "normalized": "scott schebler"
   },
   {
     "name": "Scott Van Slyke",
-    "id": 475100
+    "id": 475100,
+    "normalized": "scott van slyke"
   },
   {
     "name": "Sean Rodríguez",
-    "id": 446481
+    "id": 446481,
+    "normalized": "sean rodriguez"
   },
   {
     "name": "Seth Lugo",
-    "id": 607625
+    "id": 607625,
+    "normalized": "seth lugo"
   },
   {
     "name": "Seth Smith",
-    "id": 452234
+    "id": 452234,
+    "normalized": "seth smith"
   },
   {
     "name": "Shane Greene",
-    "id": 572888
+    "id": 572888,
+    "normalized": "shane greene"
   },
   {
     "name": "Shane Robinson",
-    "id": 453203
+    "id": 453203,
+    "normalized": "shane robinson"
   },
   {
     "name": "Shawn O'Malley",
-    "id": 502523
+    "id": 502523,
+    "normalized": "shawn o'malley"
   },
   {
     "name": "Shelby Miller",
-    "id": 571946
+    "id": 571946,
+    "normalized": "shelby miller"
   },
   {
     "name": "Shin-Soo Choo",
-    "id": 425783
+    "id": 425783,
+    "normalized": "shin-soo choo"
   },
   {
     "name": "Sócrates Brito",
-    "id": 593647
+    "id": 593647,
+    "normalized": "socrates brito"
   },
   {
     "name": "Sonny Gray",
-    "id": 543243
+    "id": 543243,
+    "normalized": "sonny gray"
   },
   {
     "name": "Starlin Castro",
-    "id": 516770
+    "id": 516770,
+    "normalized": "starlin castro"
   },
   {
     "name": "Starling Marte",
-    "id": 516782
+    "id": 516782,
+    "normalized": "starling marte"
   },
   {
     "name": "Stefen Romero",
-    "id": 552662
+    "id": 552662,
+    "normalized": "stefen romero"
   },
   {
     "name": "Stephen Cardullo",
-    "id": 506924
+    "id": 506924,
+    "normalized": "stephen cardullo"
   },
   {
     "name": "Stephen Drew",
-    "id": 452220
+    "id": 452220,
+    "normalized": "stephen drew"
   },
   {
     "name": "Stephen Piscotty",
-    "id": 572039
+    "id": 572039,
+    "normalized": "stephen piscotty"
   },
   {
     "name": "Stephen Strasburg",
-    "id": 544931
+    "id": 544931,
+    "normalized": "stephen strasburg"
   },
   {
     "name": "Stephen Vogt",
-    "id": 519390
+    "id": 519390,
+    "normalized": "stephen vogt"
   },
   {
     "name": "Steve Clevenger",
-    "id": 502182
+    "id": 502182,
+    "normalized": "steve clevenger"
   },
   {
     "name": "Steve Pearce",
-    "id": 456665
+    "id": 456665,
+    "normalized": "steve pearce"
   },
   {
     "name": "Steve Selsky",
-    "id": 592731
+    "id": 592731,
+    "normalized": "steve selsky"
   },
   {
     "name": "Steven Brault",
-    "id": 643230
+    "id": 643230,
+    "normalized": "steven brault"
   },
   {
     "name": "Steven Matz",
-    "id": 571927
+    "id": 571927,
+    "normalized": "steven matz"
   },
   {
     "name": "Steven Moya",
-    "id": 570615
+    "id": 570615,
+    "normalized": "steven moya"
   },
   {
     "name": "Steven Souza Jr.",
-    "id": 519306
+    "id": 519306,
+    "normalized": "steven souza jr."
   },
   {
     "name": "Steven Wright",
-    "id": 453214
+    "id": 453214,
+    "normalized": "steven wright"
   },
   {
     "name": "T.J. Rivera",
-    "id": 608061
+    "id": 608061,
+    "normalized": "t.j. rivera"
   },
   {
     "name": "Tanner Roark",
-    "id": 543699
+    "id": 543699,
+    "normalized": "tanner roark"
   },
   {
     "name": "Taylor Featherston",
-    "id": 605227
+    "id": 605227,
+    "normalized": "taylor featherston"
   },
   {
     "name": "Taylor Jungmann",
-    "id": 543380
+    "id": 543380,
+    "normalized": "taylor jungmann"
   },
   {
     "name": "Taylor Motter",
-    "id": 600301
+    "id": 600301,
+    "normalized": "taylor motter"
   },
   {
     "name": "Taylor Ward",
-    "id": 621493
+    "id": 621493,
+    "normalized": "taylor ward"
   },
   {
     "name": "Teoscar Hernandez",
-    "id": 606192
+    "id": 606192,
+    "normalized": "teoscar hernandez"
   },
   {
     "name": "Terrance Gore",
-    "id": 605253
+    "id": 605253,
+    "normalized": "terrance gore"
   },
   {
     "name": "Tim Adleman",
-    "id": 534947
+    "id": 534947,
+    "normalized": "tim adleman"
   },
   {
     "name": "Tim Anderson",
-    "id": 641313
+    "id": 641313,
+    "normalized": "tim anderson"
   },
   {
     "name": "Tim Beckham",
-    "id": 542921
+    "id": 542921,
+    "normalized": "tim beckham"
   },
   {
     "name": "Tim Federowicz",
-    "id": 543148
+    "id": 543148,
+    "normalized": "tim federowicz"
   },
   {
     "name": "Todd Cunningham",
-    "id": 592239
+    "id": 592239,
+    "normalized": "todd cunningham"
   },
   {
     "name": "Todd Frazier",
-    "id": 453943
+    "id": 453943,
+    "normalized": "todd frazier"
   },
   {
     "name": "Tom Koehler",
-    "id": 543408
+    "id": 543408,
+    "normalized": "tom koehler"
   },
   {
     "name": "Tom Murphy",
-    "id": 608596
+    "id": 608596,
+    "normalized": "tom murphy"
   },
   {
     "name": "Tomás Telis",
-    "id": 542513
+    "id": 542513,
+    "normalized": "tomas telis"
   },
   {
     "name": "Tommy Joseph",
-    "id": 571830
+    "id": 571830,
+    "normalized": "tommy joseph"
   },
   {
     "name": "Tommy La Stella",
-    "id": 600303
+    "id": 600303,
+    "normalized": "tommy la stella"
   },
   {
     "name": "Tommy Milone",
-    "id": 543548
+    "id": 543548,
+    "normalized": "tommy milone"
   },
   {
     "name": "Tommy Pham",
-    "id": 502054
+    "id": 502054,
+    "normalized": "tommy pham"
   },
   {
     "name": "Tony Cruz",
-    "id": 488810
+    "id": 488810,
+    "normalized": "tony cruz"
   },
   {
     "name": "Tony Kemp",
-    "id": 643393
+    "id": 643393,
+    "normalized": "tony kemp"
   },
   {
     "name": "Tony Renda",
-    "id": 573113
+    "id": 573113,
+    "normalized": "tony renda"
   },
   {
     "name": "Tony Wolters",
-    "id": 547172
+    "id": 547172,
+    "normalized": "tony wolters"
   },
   {
     "name": "Travis d'Arnaud",
-    "id": 518595
+    "id": 518595,
+    "normalized": "travis d'arnaud"
   },
   {
     "name": "Travis Jankowski",
-    "id": 608671
+    "id": 608671,
+    "normalized": "travis jankowski"
   },
   {
     "name": "Travis Shaw",
-    "id": 543768
+    "id": 543768,
+    "normalized": "travis shaw"
   },
   {
     "name": "Travis Wood",
-    "id": 475243
+    "id": 475243,
+    "normalized": "travis wood"
   },
   {
     "name": "Trayce Thompson",
-    "id": 572204
+    "id": 572204,
+    "normalized": "trayce thompson"
   },
   {
     "name": "Trea Turner",
-    "id": 607208
+    "id": 607208,
+    "normalized": "trea turner"
   },
   {
     "name": "Trevor Brown",
-    "id": 623143
+    "id": 623143,
+    "normalized": "trevor brown"
   },
   {
     "name": "Trevor Cahill",
-    "id": 502239
+    "id": 502239,
+    "normalized": "trevor cahill"
   },
   {
     "name": "Trevor Plouffe",
-    "id": 461858
+    "id": 461858,
+    "normalized": "trevor plouffe"
   },
   {
     "name": "Trevor Story",
-    "id": 596115
+    "id": 596115,
+    "normalized": "trevor story"
   },
   {
     "name": "Trey Mancini",
-    "id": 641820
+    "id": 641820,
+    "normalized": "trey mancini"
   },
   {
     "name": "Troy Tulowitzki",
-    "id": 453064
+    "id": 453064,
+    "normalized": "troy tulowitzki"
   },
   {
     "name": "Tucker Barnhart",
-    "id": 571466
+    "id": 571466,
+    "normalized": "tucker barnhart"
   },
   {
     "name": "Tuffy Gosewisch",
-    "id": 488912
+    "id": 488912,
+    "normalized": "tuffy gosewisch"
   },
   {
     "name": "Ty Blach",
-    "id": 621389
+    "id": 621389,
+    "normalized": "ty blach"
   },
   {
     "name": "Ty Kelly",
-    "id": 571841
+    "id": 571841,
+    "normalized": "ty kelly"
   },
   {
     "name": "Tyler Anderson",
-    "id": 542881
+    "id": 542881,
+    "normalized": "tyler anderson"
   },
   {
     "name": "Tyler Austin",
-    "id": 592122
+    "id": 592122,
+    "normalized": "tyler austin"
   },
   {
     "name": "Tyler Chatwood",
-    "id": 543022
+    "id": 543022,
+    "normalized": "tyler chatwood"
   },
   {
     "name": "Tyler Collins",
-    "id": 607385
+    "id": 607385,
+    "normalized": "tyler collins"
   },
   {
     "name": "Tyler Cravy",
-    "id": 572788
+    "id": 572788,
+    "normalized": "tyler cravy"
   },
   {
     "name": "Tyler Flowers",
-    "id": 452095
+    "id": 452095,
+    "normalized": "tyler flowers"
   },
   {
     "name": "Tyler Glasnow",
-    "id": 607192
+    "id": 607192,
+    "normalized": "tyler glasnow"
   },
   {
     "name": "Tyler Goeddel",
-    "id": 595963
+    "id": 595963,
+    "normalized": "tyler goeddel"
   },
   {
     "name": "Tyler Holt",
-    "id": 534627
+    "id": 534627,
+    "normalized": "tyler holt"
   },
   {
     "name": "Tyler Ladendorf",
-    "id": 502285
+    "id": 502285,
+    "normalized": "tyler ladendorf"
   },
   {
     "name": "Tyler Lyons",
-    "id": 544928
+    "id": 544928,
+    "normalized": "tyler lyons"
   },
   {
     "name": "Tyler Naquin",
-    "id": 571980
+    "id": 571980,
+    "normalized": "tyler naquin"
   },
   {
     "name": "Tyler Saladino",
-    "id": 573135
+    "id": 573135,
+    "normalized": "tyler saladino"
   },
   {
     "name": "Tyler Wagner",
-    "id": 621281
+    "id": 621281,
+    "normalized": "tyler wagner"
   },
   {
     "name": "Tyler White",
-    "id": 643603
+    "id": 643603,
+    "normalized": "tyler white"
   },
   {
     "name": "Tyrell Jenkins",
-    "id": 592433
+    "id": 592433,
+    "normalized": "tyrell jenkins"
   },
   {
     "name": "Ubaldo Jiménez",
-    "id": 434622
+    "id": 434622,
+    "normalized": "ubaldo jimenez"
   },
   {
     "name": "Vicente Campos",
-    "id": 553883
+    "id": 553883,
+    "normalized": "vicente campos"
   },
   {
     "name": "Victor Martinez",
-    "id": 400121
+    "id": 400121,
+    "normalized": "victor martinez"
   },
   {
     "name": "Vince Velasquez",
-    "id": 592826
+    "id": 592826,
+    "normalized": "vince velasquez"
   },
   {
     "name": "Wade Miley",
-    "id": 489119
+    "id": 489119,
+    "normalized": "wade miley"
   },
   {
     "name": "Wei-Yin Chen",
-    "id": 612672
+    "id": 612672,
+    "normalized": "wei-yin chen"
   },
   {
     "name": "Welington Castillo",
-    "id": 456078
+    "id": 456078,
+    "normalized": "welington castillo"
   },
   {
     "name": "Whit Merrifield",
-    "id": 593160
+    "id": 593160,
+    "normalized": "whit merrifield"
   },
   {
     "name": "Wil Myers",
-    "id": 571976
+    "id": 571976,
+    "normalized": "wil myers"
   },
   {
     "name": "Wilfredo Boscan",
-    "id": 517448
+    "id": 517448,
+    "normalized": "wilfredo boscan"
   },
   {
     "name": "Will Middlebrooks",
-    "id": 519025
+    "id": 519025,
+    "normalized": "will middlebrooks"
   },
   {
     "name": "Will Venable",
-    "id": 461416
+    "id": 461416,
+    "normalized": "will venable"
   },
   {
     "name": "Williams Perez",
-    "id": 554234
+    "id": 554234,
+    "normalized": "williams perez"
   },
   {
     "name": "Willson Contreras",
-    "id": 575929
+    "id": 575929,
+    "normalized": "willson contreras"
   },
   {
     "name": "Wilmer Difo",
-    "id": 594694
+    "id": 594694,
+    "normalized": "wilmer difo"
   },
   {
     "name": "Wilmer Flores",
-    "id": 527038
+    "id": 527038,
+    "normalized": "wilmer flores"
   },
   {
     "name": "Wilson Ramos",
-    "id": 467092
+    "id": 467092,
+    "normalized": "wilson ramos"
   },
   {
     "name": "Wily Peralta",
-    "id": 503449
+    "id": 503449,
+    "normalized": "wily peralta"
   },
   {
     "name": "Xander Bogaerts",
-    "id": 593428
+    "id": 593428,
+    "normalized": "xander bogaerts"
   },
   {
     "name": "Xavier Scruggs",
-    "id": 489305
+    "id": 489305,
+    "normalized": "xavier scruggs"
   },
   {
     "name": "Yadiel Rivera",
-    "id": 592680
+    "id": 592680,
+    "normalized": "yadiel rivera"
   },
   {
     "name": "Yadier Molina",
-    "id": 425877
+    "id": 425877,
+    "normalized": "yadier molina"
   },
   {
     "name": "Yan Gomes",
-    "id": 543228
+    "id": 543228,
+    "normalized": "yan gomes"
   },
   {
     "name": "Yangervis Solarte",
-    "id": 500208
+    "id": 500208,
+    "normalized": "yangervis solarte"
   },
   {
     "name": "Yasiel Balaguert",
-    "id": 622017
+    "id": 622017,
+    "normalized": "yasiel balaguert"
   },
   {
     "name": "Yasiel Puig",
-    "id": 624577
+    "id": 624577,
+    "normalized": "yasiel puig"
   },
   {
     "name": "Yasmani Grandal",
-    "id": 518735
+    "id": 518735,
+    "normalized": "yasmani grandal"
   },
   {
     "name": "Yasmany Tomás",
-    "id": 630111
+    "id": 630111,
+    "normalized": "yasmany tomas"
   },
   {
     "name": "Yefri Perez",
-    "id": 570639
+    "id": 570639,
+    "normalized": "yefri perez"
   },
   {
     "name": "Yoan Moncada",
-    "id": 660162
+    "id": 660162,
+    "normalized": "yoan moncada"
   },
   {
     "name": "Yoenis Céspedes",
-    "id": 493316
+    "id": 493316,
+    "normalized": "yoenis cespedes"
   },
   {
     "name": "Yolmer Sanchez",
-    "id": 570560
+    "id": 570560,
+    "normalized": "yolmer sanchez"
   },
   {
     "name": "Yonder Alonso",
-    "id": 475174
+    "id": 475174,
+    "normalized": "yonder alonso"
   },
   {
     "name": "Yordano Ventura",
-    "id": 570649
+    "id": 570649,
+    "normalized": "yordano ventura"
   },
   {
     "name": "Yovani Gallardo",
-    "id": 451596
+    "id": 451596,
+    "normalized": "yovani gallardo"
   },
   {
     "name": "Yu Darvish",
-    "id": 506433
+    "id": 506433,
+    "normalized": "yu darvish"
   },
   {
     "name": "Yulieski Gurriel",
-    "id": 493329
+    "id": 493329,
+    "normalized": "yulieski gurriel"
   },
   {
     "name": "Yunel Escobar",
-    "id": 488862
+    "id": 488862,
+    "normalized": "yunel escobar"
   },
   {
     "name": "Yusmeiro Petit",
-    "id": 433589
+    "id": 433589,
+    "normalized": "yusmeiro petit"
   },
   {
     "name": "Zach Davies",
-    "id": 605200
+    "id": 605200,
+    "normalized": "zach davies"
   },
   {
     "name": "Zach Eflin",
-    "id": 621107
+    "id": 621107,
+    "normalized": "zach eflin"
   },
   {
     "name": "Zach Neal",
-    "id": 594943
+    "id": 594943,
+    "normalized": "zach neal"
   },
   {
     "name": "Zach Walters",
-    "id": 595025
+    "id": 595025,
+    "normalized": "zach walters"
   },
   {
     "name": "Zack Cozart",
-    "id": 446359
+    "id": 446359,
+    "normalized": "zack cozart"
   },
   {
     "name": "Zack Godley",
-    "id": 643327
+    "id": 643327,
+    "normalized": "zack godley"
   },
   {
     "name": "Zack Greinke",
-    "id": 425844
+    "id": 425844,
+    "normalized": "zack greinke"
   }
 ]
