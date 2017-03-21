@@ -5,7 +5,7 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 module.exports = function (env) {
   return {
     devtool: 'source-map',
-    entry: './src/app.js',
+    entry: ['./src/app.js', './src/lib/googleAnalytics.js'],
     output: {
       path: path.resolve(__dirname, '../public/assets'),
       filename: 'bundle.js'
